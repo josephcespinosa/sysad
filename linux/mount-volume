@@ -1,0 +1,62 @@
+Table of Contents
+Table of Contents
+Partition
+Format to Ext4
+Mount Directory
+Unmount Directory
+Validate
+Related Articles
+Get the name of the newly attached volume. In this case, we have attached an additional 10GB disk sdb.
+
+administrator@testserver:~$  lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   50G  0 disk
+└─sda1   8:1    0   50G  0 part /
+sdb      8:16   0   10G  0 disk
+sr0     11:0    1  900M  0 rom
+Partition
+Partition the volume using fdisk.
+
+fdisk /dev/sdb
+Enter
+Enter 
+w (write)
+Format to Ext4
+Format to ext4 File System Type  
+
+mkfs.ext4 /dev/sdb1
+Mount Directory
+Attach the volume to the specific directory. 
+
+mkdir /home/mountpoint
+mount -t ext4 /dev/sda1 /home/mountpoint
+
+
+joseph@testserver:~$  lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   50G  0 disk
+└─sda1   8:1    0   50G  0 part /
+sdb      8:16   0   10G  0 disk
+└─sdb1   8:17   0   10G  0 part /home/mountpoint
+sr0     11:0    1  900M  0 rom
+Unmount Directory
+sudo umount /home/mountpoint -l
+Modify /etc/fstab in any editor you preferred and insert the below command.
+
+/dev/sdb1 /home/mountpoint  auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+
+#	Description 
+/dev/sdb1	is the partition of the drive. 
+/home/mountpoint	Is the mount point for the device.
+auto	Automatically determine the file system
+nosuid 	Specifies that the filesystem cannot contain set userid files. This prevents root escalation and other security issues.
+nodev 	Specifies that the filesystem cannot contain special devices (to prevent access to random device hardware).
+nofail 	Removes the error check.
+x-gvfs-show 	Show the mount option in the file manager. If this is on a GUI-less server, this option won't be necessary.
+0	Determines which filesystems need to be dumped (0 is the default).
+0	Determine the order in which filesystem checks are done at boot time (0 is the default).
+
+
+Validate
+sudo umount /home/mountpoint -l
