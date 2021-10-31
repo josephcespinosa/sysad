@@ -1,0 +1,1054 @@
+Table of Contents
+Terminology	5
+AWS Secrets Manager	5
+CloudFront	6
+Edge Location	6
+Origin	6
+Distribution	6
+Signed URLS	6
+Signed Cookie	6
+IAM	7
+KMS	7
+Customer Managed Keys	7
+AWS Managed CMK	7
+AWS Owned CMK	8
+S3	8
+S3-Standard	8
+S3-IA	8
+S3-IA One Zone	8
+S3 Intelligent Tiering	9
+S3 Glacier	9
+S3 Glacier Deep Archive	9
+S3 Select	9
+S3 Lock Modes	10
+Object Lock	10
+2 Modes	10
+Governance Mode	10
+Compliance Mode	10
+S3 Glacier Vault Lock	10
+S3 Sharing	10
+S3 Transfer Acceleration	10
+PrivateLink	11
+VPC	11
+DHCP Options	11
+Elastic IP Address	11
+Elastic Network Interfaces	11
+VPC Gateway Endpoints	11
+VPC Peering	11
+AWS Organization	12
+AWS DataSync	12
+EFS	12
+FSx	12
+Cognito	13
+Event Processing Pattern	13
+Snowball	13
+Snowball Edge	13
+SnowMobile	13
+Storage Gateway	14
+Types	14
+File Gateway	14
+Volume Gateway	14
+Tape Gateway (VTL)	14
+Athena	14
+Macie	14
+Lambda	14
+ECS	15
+Fargate	15
+EKS	16
+ECR	16
+SAM	16
+EC2	16
+EC2 Types	18
+On-Demand	18
+Reserved	18
+Spot Instances	19
+Dedicated Hosts	19
+Security Groups	19
+NACLs	19
+NAT	20
+Elastic Block Store - EBS	20
+Gateways (VPG and CGW)	20
+VPN Configuration Options	20
+Snapshot	20
+EBS Types	21
+Migrate	21
+AMI Types	22
+EBS	22
+ENIS vs ENA vs EFA	22
+Encrypted Root Device	23
+Spot Fleet	23
+Hibernate	23
+CloudWatch	23
+CloudTrail	24
+API Gateway	24
+Kinesis	24
+Kinesis Stream	24
+Kinesis Firehose	24
+Kinesis Analytics	24
+Elastic Transcoder	25
+SQS	25
+SNS	25
+SWF	25
+Workflow Starter	26
+Deciders	26
+Activity Workers	26
+AWS Command Line	26
+IAM Roles	26
+Bootstrap Scripts	26
+Instance Metadata	26
+Aurora	26
+Aurora Serverless	27
+RDS	27
+DynamoDB	27
+DynamoDB Accelerator - DAX	27
+Transactions	27
+On-Demand Capacity	28
+Backup and Restore	28
+Streams	28
+Global Tables	28
+Data Migration Service - DMS	28
+RedShift	29
+Massive Parallel Processing - MPP	29
+Backups	29
+Availability	29
+Elasticache	29
+EMR	30
+Node Type	30
+Master Node	30
+Core Node	30
+Task Node	30
+ELB	30
+Application Load Balancer	31
+Network Load Balancer	31
+Classic Load Balancer	31
+Advanced Load Balancer Theory	31
+Sticky Sessions	31
+Cross Zone Load Balancing	32
+Path Pattern	32
+Autoscaling	32
+Groups	32
+Configuration Templates	32
+Scaling Options	32
+
+
+
+
+
+
+
+
+
+AWS Secrets Manager
+The service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle
+
+AWS Systems Manager Parameter Store
+Parameter Store, a capability of AWS Systems Manager, provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data. You can reference Systems Manager parameters in your scripts, commands, SSM documents, and configuration and automation workflows by using the unique name that you specified when you created the parameter.
+CloudFront
+Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.
+
+Edge Location
+Where content is cached. 
+Not just READ only, you can write to them. ie. put an object on them.
+Use Edge Location to the nearest AZ to deliver content in low latency.
+You can clear cached objects, but you will be charged.
+Origin
+Origin of the files that the CDN will distribute. Can be EC2, S3, ELB or Route53
+Origin Access Identity
+Prevent direct access to files in S3.
+Distribution 
+This is the name given the CDN which consists of a collection of Edge Locations.
+Objects are cached for the life of the TTL (Time To Live)
+Two type of use
+Web Distribution - Typically used for websites.	
+RTMP - Used for media streaming.
+
+Signed URLS
+Use this when you want to secure content so that only authorized people you authorize are able to access it.
+If origin is EC2, use CloudFront
+When creating we attached a policy.
+1 FILE = 1 URL
+Can have different origins. Does not have to be EC2
+key-pair is account wide and managed by the root user
+Can utilize caching features
+Can filter by date, path, IP address, expiration etc.
+Issues a request as the IAM User who creates the presigned URL
+Limited lifetime
+You want to use an RTMP distribution
+You want to restrict access to individual files.
+Signed Cookie 
+1 Cookie = Multiple files
+Provide access to multiple files.
+You don't want to change your current URLs.
+
+IAM
+Is universal 
+New user has no permissions when first created
+Access 
+	Console Access
+	Programmatic Access - Access Key and Private ID
+
+KMS
+Key Management Systems
+
+AWS KMS supports two kinds of keys: master keys and data keys. Master keys can be used to directly encrypt and decrypt up to 4 kilobytes of data and can also be used to protect data keys. The data keys are then used to encrypt the customer data and the master keys are used to decrypt the customer data.
+
+Regional secure key management and encryption and decryption
+Manages customer master keys (CMKs)
+Ideal for S3 objects database passwords and API keys stored in Systems Manager Parameter Store
+Encrypt and Decrypt data up to 4KB
+Integrated with most AWS services.
+Pay per API call.
+Audit capability using Cloudtrail - logs delivered to S3 
+FIPS-140-2 Level 2
+FIPS-140-2 Level 3 is CloudHSM
+
+
+
+Types of CMK
+Customer Managed Keys
+Allows key rotation, controlled via key policies and can be enabled/disabled.
+AWS Managed CMK
+Free
+Used by default if you pick encryption in most AWS services. Only that service can use them directly.
+AWS Owned CMK
+Used by CMK on a shared basis across many accounts, you typically won't see these.
+
+
+S3
+Simple Storage Service
+Object Based
+File from 0 up to 5TB
+Universal namespace - Globally accessible but regional
+Unlimited Storage
+Stored in Buckets
+User versioning
+Versioning cannot be disabled, only suspended
+if delete object with versioning it only marked as delete
+has MFA for delete 
+integrates with lifecycle policy/rules
+Used prefix unlike usual folder hierarchy
+Used encryption AES-256
+Use notifications such as email.
+Object level storage
+Object level logging
+Bucket name must be globally unique
+Use cloudwatch
+Add account for access
+Provide key for access
+Host static websites
+Replicate in other region
+Maintenance to automatically delete old objects
+Add policy
+Upto 10 tags
+
+S3-Standard
+S3-IA
+less availability, less cost
+S3-IA One Zone
+Reduced availability into one zone.
+S3 Intelligent Tiering
+Automatic archive
+S3 Glacier
+from minutes to hours retrieval.
+Cold storage, less frequently used.
+Access methods
+Expedited 3-5mins
+Standard 3-5hours 
+Bulk 5-12hours
+AES-256
+Can be integrated with S3 via lifecycle rules
+Storage Gateway can connect to Glacier
+Upto 5% retrieval no cost
+Vault locks 
+Archive data storage
+1000 Vaults/Account 
+Empty vaults can be deleted
+Supports multipart
+
+S3 Glacier Deep Archive 
+12 hours retrieval
+
+- Encryption
+	SSL/TLS - Encryption in transit 
+	Managed Keys - SSE-S3
+	Key Management Service - SSE-KMS 
+	Service Side Encryption with customer provided keys SSE-C 
+	Client Side Encryption - You encrypt the file and then upload to S3
+
+- Use Multipart uploads to increase performance recommended > 100MB
+- 2 prefix can reach 11000/sec
+- can't request quota increase for KMS
+- Use byte-range fetches to increase performance when downloading files  
+
+S3 Select
+	enable applications to retrieve only a subset of data from an object by
+	using simple SQL expressions. 400% improvement.
+S3 Lock Modes 
+	Object Lock 
+- Store objects using Write Once Read Many (WORM) 
+	
+2 Modes
+Governance Mode 
+- Can't delete or overwrite an object version or alter its lock settings, only retention settings.
+Compliance Mode
+- a protected object version cant be overwritten or deleted by a user including the root user for a duration of a retention period.
+
+	Retention Period
+		- Protect an object for a period of time
+	Legal Holds
+		- a legal hold prevents an object version from being overwritten or deleted.
+
+S3 Glacier Vault Lock
+	Easily deploy and enforce compliance controls for individual s3 Glacier vaults with a vault lock policy. You can specify policy such as WORM. Once locked the policy can no longer change.
+
+S3 Sharing
+	3 Ways to share
+		Bucker Policy and IAM
+		Bucket ACL and IAM
+		Cross-account IAM Roles, Programmatic and Console access.
+S3 Transfer Acceleration 
+	Speed up transfer and utilize cloudfront edge networks. Reduces the variability in Internet routing, congestion and speeds that can affect transfers, and logically shortens the distance to S3 for remote applications.
+
+
+PrivateLink
+Provides secure connection for services, vpc and applications in AWS. Endpoints are created within VPC.
+
+VPC
+One in each region
+AWS Recommend not to delete default VPC
+Direct Connect - Can provide VPN
+
+DHCP Options
+Elastic IP Address
+Public IP address assigned to EC2
+Can be moved between instances in the same region
+Elastic Network Interfaces
+Virtual network card or adapter attached to an AWS EC2 instance 
+Multiple ENIs connected to a single instances allows Dual-homing
+Each ENI is associated with a subnet within the VPC just as a physical 
+Network interface would be associated with a subnet on a local network.
+VPC Gateway Endpoints
+Connects VPC to AWS Services
+Can enforce policies on different endpoints
+Services are specified based on region and service name
+More like proxies to services.
+2 Types
+Interface Endpoints 
+Utilize ENI with a private IP address.
+Powered by PrivateLink
+
+Gateway Endpoints
+Target for a specific route in route table
+Used by S3 and DynamoDB
+
+
+VPC Peering
+Connects VPC to another
+Owner role required
+IP CIDR must not overlap
+Each VPC needs a defined route to the other VPC
+may require routing table modification
+Security Group rules may require modification for the VPC peers
+
+AWS Organization
+Under Management & Governance
+Share buckets across accounts
+Bucket Policies and IAM (applies across the entire bucket) - Programmatic only.
+Using bucket ACL and IAM (individual objects) - Programmatic only
+Cross-Account IAM Roles - Programmatic and Console Access
+
+Consolidated billing advantage.
+One bill per aws account
+Easy to track charges and allocate costs
+Volume pricing discount
+
+AWS DataSync
+Sync file copy from and to AWS 
+Use to move large amount of data
+Use NFS and SMB compatible file systems 
+Replication can be done hourly daily weekly
+Install the DataSync agent to start the replication
+Can be used to replicate EFS to EFS
+
+EFS
+Shared File Storage
+Hierarchical
+Can be accessed through NFSv4
+Free to be accessed by instances
+Not supported on Windows instances
+EC2 can't access EFS Shares.
+Scalable, high-available POSIX compliant shared file system.
+Multiple instances can access.
+
+FSx
+ Simple and Fully-managed third-party file system such as windows.
+Automatically does the preparation of work, including building the server and joining AD
+Windows and Lustre (high performance file system)
+Implements SMB
+Cost optimized
+Native Compatibility
+AWS Integrations
+Can be deployed in one or more AZ
+Can be self-managed or managed by AWS
+Cognito
+User pool is user based. It handles things like user registration, authentication, and account recovery.
+Identity pool authorizes access to your AWS resources.
+Federations allows users to authenticate with a Web Identity Provider (Google, Facebook, Amazon)
+The user authenticates first with the Web ID Provider and receives an authentication token, which is exchanged for temporary AWS credentials allowing them to assume an IAM role.
+Identity Broker which handles interaction between your applications and the Web ID provider (you don't need to write your code to do this.)
+
+
+Event Processing Pattern
+Event-Driven Architecture
+Dead-Letter queue
+Fanout Pattern
+S3 Event Notifications
+
+Snowball
+50TB and 80TB
+Snowball Edge
+100TB data transfer device with onboard compute and storage (mini aws)
+SnowMobile
+Exabyte-scale data transfer service used to move extremely large amount of data 
+You can transfer upto 100PB per snowmobile, a 45-foot long ruggedized shipping container, pulled by a semi-trailer truck. 
+
+
+
+
+
+Storage Gateway
+A storage as if using a local file system connected to S3 bucket via VPN. Connects on-premises software appliances with cloud-based storage.
+
+Types
+File Gateway
+( NFS & SMB )
+Files are stored ad objects in your s3.
+Access to object storage or S3
+File system mounted to S3.
+Volume Gateway
+Stored Volumes 1 - 16TB
+Use periodic point-in-time backups
+
+Cached Volumes 1 - 32TB
+Store data in aws
+Small portion of frequently accessed data in the cache on-premises.
+Access to EBS
+Tape Gateway (VTL)
+access to Amazon Glacier (can be public or within vpc).
+ library of backup tapes that are actually stored in s3 buckets
+
+
+Athena
+Query s3 using standard SQL
+Macie
+Security service using machine learning to protect PII.
+Can analyze Cloudtrail logs for suspicious API activity.
+Includes dashboard reports and alerting.
+Great for PCI-DSS compliance and preventing ID theft
+
+Lambda
+Scales out (not up) automatically
+Independent, 1 event = 1 function
+Serverless
+Know what services is serverless
+Can trigger another lambda functions, 1 event can = x functions if functions trigger other functions.
+Can do things globally.
+Know your triggers. I.e. RDS cannot trigger lambda 
+AWS X-Ray debug lambda.
+
+
+Lambda Edge
+Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency. With Lambda@Edge, you don't have to provision or manage infrastructure in multiple locations around the world. You pay only for the compute time you consume - there is no charge when your code is not running.
+
+With Lambda@Edge, you can enrich your web applications by making them globally distributed and improving their performance — all with zero server administration. Lambda@Edge runs your code in response to events generated by the Amazon CloudFront content delivery network (CDN). Just upload your code to AWS Lambda, which takes care of everything required to run and scale your code with high availability at an AWS location closest to your end user.
+
+
+
+ECS
+Managed Container Orchestration Service.
+Create clusters to manage fleet of container deployments.
+ECS manages EC2 or Fargate instances.
+Schedules containers for optimal placement.
+Defines rules for CPU and memory requirements.
+Monitor resources utilization.
+Deploy update, rollback
+Free for real.
+Integration with CloudTrail and CloudWatch.
+Cluster a logical collection of ECS resources either ECS EC2 instances or Fargate instances.
+Task Definition defines your application. Similar to Dockerfile but for running containers in ECS. Can contain multiple containers.
+Container Definition inside a task definition, it defines the individual containers and tasks users. Controls CPU and memory allocation and port mappings.
+Task single running copy of any containers defined by a task definition. One working copy of an application. 
+Service Allows task definition to be scaled by adding tasks. Defines minimum and maximum values.
+Registry Storage for container images.
+
+
+
+Fargate
+Serverless container engine.
+Eliminates need to provision and manage servers.
+Specify and pay for resources per application.
+Works with both ECS and EKS.
+Each workload runs in its own kernel.
+Isolation and Security. 
+
+
+EKS
+Elastic Kubernetes Service.
+Open source software that lets you deploy and manage containerized applications at scale.
+Same toolset on-premises and in cloud.
+Containers are grouped in pods.
+Like ECS, supports both EC2 and Fargate 
+Why use EKS ?
+Already using k8s
+Want to migrate to AWS. 
+
+ECR
+Managed Container Registry
+Store, manage and deploy images. 
+Integrated with ECS and EKS.
+Works with on-premises deployments 
+Highly available. 
+Integrated with IAM.
+
+
+SAM
+CloudFormation extension optimized for serverless application.
+New Types; functions, API, tables
+Supports anything CloudFormations supports.
+Run serverless applications locally.
+
+
+EC2
+Good for unpredictable usage.
+Termination Protection is off by default.
+You can now encrypt the root device.
+EC2 - Virtual Machine in Cloud
+Select AMI
+Select Network and Security Groups
+Select Instance Types
+Select AZ
+Attached Volume
+Review and Start Instance
+PAYG - Pay as you Go
+Integrates with Storage, Networking
+Can run 2003 R2 - 2016 machines
+Benefits
+Time to market
+Scalability
+Reliability
+Security
+Control
+Services Integration
+
+General Purpose T2, M3-M5
+Provides a balance of memory and network resources
+T2 Provides burst performance
+Credits accrue during idle times
+Credits used to burst performance
+M class no burs option and good for staging, dev
+Compute Optimized
+C3-C5 useful for CPU intensive applications
+media coding
+intensive batch jobs 
+many concurrent users 
+gaming servers 
+anything compute intensive
+Memory Optimize
+X1, X1, R4, R3
+useful for high memory requirements
+processing large data sets 
+In-memory databases
+Big data processing
+Storage Optimized
+H1, I3, D2
+useful for high sequential read/writes to local storage
+relational databases
+data warehousing
+image storage and processing
+Advance Computing
+P3, P2, G3, F1
+useful for specialty hardware compute requirements 
+GPU
+FGPA
+
+EC2 Pricing
+- On-Demand 
+based on usage in a monthly basis
+Billed in 60 seconds
+Reserved
+Calculate how much is needed.
+Reserved usage minimum 1 year
+Categories
+All upfront
+Partial 
+No-upfront
+All-upfront in 3 years is cheaper
+Spot
+Bid on unused compute time
+Upto a 90% discount over on-demand
+
+
+
+EC2 Types
+On-Demand
+Per Hour
+No Commitment
+Low cost and Flexible
+Unpredictable workloads
+Reserved
+1-3years
+Predictable usage
+Types
+Standard - 75% off
+Convertible - 54% off
+Scheduled RI
+
+Spot Instances
+Can save upto 90% of the cost of on-demand instances.
+Useful for any type of computing where you don't need persistent storage..
+You can block spot instances from terminating by using Spot Block.
+Can launch spot instances if max price exceeds spot price.
+Takes advantage of unused instances in the cloud. 
+Available upto 90% discount compared to on-demand prices.
+You can use spot instances for various stateless, fault-tolerant, or flexible applications, such as bit data, containerized workloads, CI/CD, web servers, high-performance computing(HPS) and other test and dev workloads. To use you must first decide on your max spot price. 
+Spot block - stop your spot instances from being terminated.
+Not good for databases Critical workloads.
+Enable you to bid whatever price you want
+
+Dedicated Hosts
+Physical EC2
+Regulatory requirements not support multi-tenant
+Licensing requirement
+Can be purchased on-demand
+Security Groups
+Native Firewall of AWS instance
+Change takes effect immediately
+Outbound allow all traffic
+Stateful - Outbound rule automatically allowed
+Stateless - When you create inbound you have to create outbound rules also.
+Upto 8 SG for each instance.
+All inbound is blocked by default
+All Outbound is allowed by default.
+Can have multiple instances for each security group
+You cannot block specific IP addresses, you do this using Network Access Control List (NACLs).
+Can allow rules, but not deny rules.
+Egress - Outbound traffic
+Ingress - Inbound traffic
+Deny rule is implicit
+Stateful processing is used.
+Applied at instance level not subnet level.
+Virtual firewall
+
+NACLs
+Applied on subnets 
+Stateless processing
+Supports both allow and deny rules
+Rule number defines precedence.
+
+NAT
+Translate between 
+Private
+public IP
+NAT can be implemented using Instancs or NAT Gateway.
+
+Elastic Block Store - EBS
+Provides persistent block storage volumes
+Able to create encrypted volume upon creation of instance.
+EBS are like hard disk
+Gateways (VPG and CGW)
+VPG - Connect local networks to VPC
+		- Is VPN Concentrator
+	CGW - Physical device or software application
+		- Anchor on the customer side
+		- Connects to the VPG
+
+	AWS Hardware VPN
+	AWS Direct Connect
+	VPN CloudHub
+	Software VPN (ex. L2TP, IPSec)
+
+
+VPN Configuration Options
+Split-tunnel gives flexibility for routing traffic across the virtual private network (vpn), specifically for traffic going directly out to the internet.
+AWS has now enabled certificates for authentication to the VPN.
+Direct connect bypasses traditional internet Service provider(ISP)
+Internet connection and connects straight into AWS
+Snapshot
+Snapshots exist on S3
+Point-in-time copies of volume
+Are incremental - means that only the blocks that have changed since your last snapshot are moved to s3
+You can create an AMI from a snapshot.
+To create a snapshot for EBS that serves as root devices, you should stop the instance before taking the snapshot.
+You can take a snap while the instance is running.
+You can change EBS volume size on the fly including storage type.
+Volumes will always be in the same AZ as the EC2
+
+EBS Types
+
+Blocked-level storage for EC2
+		Magnetic
+		Solid-State Drive (SSD)
+			- General Purpose (100-3000 IOPS)
+			- Provisioned IOPS (PIOPS) >= 10,000 IOPS
+			- Should use EBS-optimized Instance types 
+	Protecting Data
+		Snapshots
+		Volume Recovery - Attaching volume from one instance to another
+		Encryption methods
+	Dedicated to Instances
+
+General Purpose
+Most Workloads
+Provisioned IOPS
+Database
+Throughput Optimized
+
+
+Cold HDD
+File Servers
+EBS Magnetic
+
+
+
+
+Migrate
+To migrate an ec2 volume from one AZ to another, take a snapshot of it, create an AMI from the snapshot and then use the AMI to launch the EC2 instance in a new AZ.
+To move an EC2 volume from one region to another, take a snapshot of it, create an AMI from the snapshot and then copy the AMI from one region to the other. Then use the copied AMI to launch the new EC2 instance in the new region.
+
+AMI Types
+Can select by Region, OS, Arch, Launch permissions Storage of the Root Device
+Instance Store / Ephemeral Storage
+Cannot be stopped. If the host fails you will lose data.
+You can reboot both, you will not lose data.
+By default, both ROOT volumes will be deleted on termination. However, with EBS volumes, you can tell AWS to keep the root device volume.
+The root for device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.
+Restrict most of the instances.
+EBS
+The root device for an instance launched from the AMI is an Amazon EBS volume created from an Amazon EBS snapshot.
+EBS Backed instances can be stopped. You will not lose data.
+
+ENIS vs ENA vs EFA
+	ENI - Elastic Network Interface - essentially a virtual network card.
+		Primary IPV4
+		For basic networking.
+		Use to create management network
+		Create a low budget high availability solution.
+	EN - Enhance Networking
+Use single root I/O virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types.
+10Gbps and 100Gbps
+Higher bandwidth higher Packers per Second (PPS)
+	EFA - Elastic Fabric Adapter
+A network device that you can attach to your Amazon EC2 instance to accelerate High Performance Computing(HPC) and Machine learning apps.
+Consistent latency and higher throughput than TCP 
+For linux only.
+OS by-pass.
+
+Encrypted Root Device
+Snapshots of encrypted volumes are encrypted automatically.
+Volumes restored from encrypted snapshots are encrypted automatically.
+You can share snapshots, but only if they are unencrypted.
+These snapshots can be shared with other AWS accounts or made public.
+You can now encrypt root device volumes upon creation of the EC2 instance.
+			
+HOW TO ENCRYPT Volume
+Create a snapshot of volume.
+Copy and click Encrypt this Snapshot
+Create AMI 
+Launch instance
+Spot Fleet
+Attempts to launch the number of Spot instances and on-demand instances
+Collection of Spot Instances, Optionally, On-demand Instances.
+Strategies
+Capacity Optimized
+Diversified
+Lowest Price
+InstancePoolsToUseCound
+Hibernate
+Good for servers which take a lot to start.
+Preserves the in-memory RAM on persistent Storages (EBS)
+Much faster to boot up because you do not need to reload the Operating System
+Instance RAM must be less than 150GB
+instance families include C3-5, M3-5, R3-5
+Available for windows, Amazon Linux 2 AMI, and Ubuntu
+Instances cant be hibernated for more than 60days
+Available for on-demand instances and Reserved Instances
+
+CloudWatch
+Monitor Performance of your AWS resources as well as the applications.
+Can monitor most resources.
+Monitor every 5 minutes  by default.
+You can have a 1 min interval by turning on detailed monitoring.
+You can create cloudwatch alarms which trigger notifications.
+You can create dashboard
+	Alarms - Allows you to set alarms that notify you when particular thresholds are hit.
+	Events - Helps you to respond to state changes in your AWS resources.
+	Logs - Helps you to aggregate, monitor, and store logs.
+CloudTrail
+Increase visibility into your user and resource activity by recording actions and API Calls.
+Auditing.
+Monitor performance.
+
+API Gateway
+Has caching capabilities to increase performance.
+Low costs and scales automatically. 
+You can throttle API Gateway to prevent attacks.
+You can log results to Cloudwatch.
+If you are using JS/AJAX that uses multiple domains with API Gateway, ensure that you have enabled CORS on API Gateway. 
+CORS is enforced by the client browser.
+
+
+Kinesis
+Use for Streaming Data - generated continuously by thousands of resources, which typically send in the data records simultaneously, and in small sizes (order of kilobytes)  
+Kinesis Stream
+Use shards
+24hours to 7 days retention period.
+5 tr / sec for read 
+2MB read per second
+1000 records per second for writes
+The total capacity of a stream is the sum of the capacities of its shards.
+Kinesis Firehose
+Use lambda to process data.
+
+
+Kinesis Analytics
+Real-time analysis
+
+
+Elastic Transcoder
+Media transcoder in the cloud. It converts media files from their original source format into different formats that will play on smartphones, tablets, PCs. etc.
+SQS 
+Simple Queue Service
+Is pull based, not push based.
+Messages are 256 KB in size.
+Message oriented API.
+You need to implement your own application-level tracking especially if your application is using multiple queues. 
+Messages can be kept in the queue for 1 minute to 14 days; the default retention period is 4days.
+Visibility Timeout -  amount of time that the message is invisible in the SQS queue after a reader picks up a message. If the provided job is processed before the visibility timeout expires, the message will then be deleted from the queue. Otherwise, if the job is not processed within that period of time, the message will become visible again and another reader will 	process it. This could result in the same message being delivered twice.
+Visibility timeout is 12 hours.
+SQS long polling is a way to retrieve the messages from your Amazon SQS queue. While the regular short polling returns immediately. Long polling does not return a response until a message arrives in the message queue, or the long poll timeout.
+
+
+SNS 
+Simple Notification Service
+Instantaneous, push-based delivery
+No polling
+Simple API and easy integration
+Inexpensive, pay-as-you-go model with no upfront costs.
+Web-based AWS Management Console offers the simplicity of a point and click interface.
+
+SWF
+Simple Workflow Service
+A web service that makes it easy to coordinate work across distributed application components. It enables applications for a range of use cases, including media processing, web application back-ends, business process workflows, and analytics pipelines, to be designed as coordination of tasks. 
+Workflow executions can last up to 1 year. 
+Presents task-oriented API
+Ensures tasks are assigned only once and are never duplicated. 
+Keeps track of all the tasks and events in an application. 
+Workflow Starter
+An application that can initiate a workflow. Could be your e-commerce website following the placement of an order, or a mobile app searching for bus times.
+Deciders
+Control the flow of activity tasks in a workflow execution. If something has finished (or failed) in a workflow. A Decider decides what to do next. 
+Activity Workers
+Carry out the activity tasks.
+	
+AWS Command Line
+Interact in AWS Platform
+
+Inspector
+is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector security assessments help you check for unintended network accessibility of your Amazon EC2 instances and for vulnerabilities on those EC2 instances.
+
+IAM Roles
+Roles can be assigned to EC2 instance after it is created using both console and CLI
+Roles are UNIVERSAL which means you can use them in any region.
+
+Bootstrap Scripts
+Are startup scripts run when an instance is launched or started.
+
+Instance Metadata
+Get Bootstrap Scripts - curl http://169.254.169.254/latest/user-data
+Get instance metadata - curl http://169.254.169.254/latest/meta-data/[param]
+
+Aurora
+Self-healing for disk error.
+Mysql and Postgre
+Starts in 10GB and scales in 10GB increments TO 64TB (Storage autoscaling)
+Compute resources can scale up to 32vCPUs and 244 GB memory
+2 Copies of your data are contained in each availability zone, with a minimum of 3 availability zones. 6 copies of your data.
+Aurora Serverless
+Provides a relatively simple, cost-effective option for infrequent, intermittent, or unpredictable workloads.
+RDS
+Multi AZ - For Disaster Recovery
+Read Replica - For Performance, 5 copies
+
+	[RDS BACKUPS MULTI AZ AND READ-REPLICA]
+		- Turn on backup to enable Read-Replica
+
+DynamoDB
+	- NOSQL database 
+	- Key-Value model 
+	- Stored in SSD
+	- Spread across 3 data centres
+	- Eventual consistent reads (Default)
+		Consistency across all copies of data is usually reached within a second. 
+	- Strongly Consistent Reads
+		Read/Update in 1 seconds or less
+
+DynamoDB Accelerator - DAX
+Fully Managed, highly available, in-memory cache
+10x performance improvement
+Reduces request time from milliseconds to microseconds - even under load
+No need for developers to manage caching logic.
+Compatible with DynamoDB API calls
+
+Transactions
+Multiple all or nothing operations
+Financial transactions
+Fulfilling orders
+Two underlying reads or write 
+4MB of data
+
+On-Demand Capacity
+Pay per request pricing
+No minimum capacity
+No charge for read/write 
+Pay more per request 
+Backup and Restore
+Backup anytime
+Zero impact
+Consistent within seconds and retained until deleted
+Operates within same region as the source table
+Restorable 5mins in the past
+Streams
+Time-ordered sequence of item-level changes in a table
+Stored for 24 hours
+Inserts, updates, and delete
+Global Tables
+Globally distributed applications
+Based on DynamoDB streams
+Multi-region redundancy for DR and HA 
+No application rewrites
+Replication latency under on second
+To create, streams must be enabled
+
+Data Migration Service - DMS
+Encryption at rest using KMS
+Direct Connect
+IAM Policies and roles
+Fine-grained access
+Cloudwatch and Cloudtrail
+VPC endpoints
+RedShift
+Fully managed PTB data warehouse 
+OLAP Online Analytical Processing
+OLTP - transactional
+Can be configured in 
+		Single Node
+		Multi-Node
+		Leader Node
+Advance Compression
+Columnar data stores can be compressed much more than row-based data stores because similar data is stored sequentially on disk. Employs multiple compression techniques and can often achieve significant compression relative to traditional relational data stores. 
+Does Not require indexes on materialized views, and so uses less space than traditional RDBMS. 
+When loading data, it automatically samples your data and selects the most appropriate compression scheme.
+
+Redshift Spectrum
+A feature of Amazon Redshift that enables you to query and analyze all of your data in Amazon S3 using the open data formats you already use, with no data loading or transformations needed.
+Massive Parallel Processing - MPP
+automatically distributes data and query load across all nodes. Makes it easy to add nodes to your data warehouse and enables you to maintain fast query performance as your data warehouse grows.
+Backups
+Enable by default with a 1 day retention period. 
+Max retention period is 35 days.
+Always attempts to maintain at least 3 copies of your data 
+Availability
+Currently only available in 1 AZ.
+Can restore snapshots to new AZ in the event of an outage.
+Elasticache
+	-	Redis
+	-	MemCache
+
+
+
+
+
+EMR
+Elastic Map Reduce
+Big Data Platform for processing vast amounts of data 
+Central component is Cluster or a collection of EC2 instances.
+Each instance is called Node. 
+Each Node has a role within the cluster, referred to as the Node Type.
+Node Type
+Master Node 
+manages the cluster. It tracks the status of tasks and monitors the health of the cluster.
+Log data is stored in the master node.
+Core Node
+A node with software components that run tasks and stores data in the Hadoop Distributed File System (HDFS)
+Multi-node clusters have at least one core node.
+Task Node
+Node with software components that only runs tasks and does not store data in HDFS. 
+Tasks nodes are optional.
+You can configure replication to s3 on a 5 mins interval for all log data from the master node.However, this can only be configured when creating the cluster for the first time.
+Store logs in S3
+
+
+ELB
+Elastic Load Balancer
+
+- Balance the load across web servers.	
+- Instances monitored by ELB are reported as; Inservice, or OutofService
+- Health checks check the instance's health by talking to it.
+- Load Balances have their own DNS name. You are never given an IP address. 
+- Read the ELB FAQ for Classic Load Balancers.
+
+
+Types of Load Balancer
+Application Load Balancer
+	- Best suited for load balancing of HTTP and HTTPS traffic
+	- Operate at layer 7 and are application aware. 
+	- Intelligent 
+	- Can create advanced request routing
+	- Sending specified requests to specific web servers.
+Network Load Balancer
+	- Load balancing of TCP traffic where extreme performance is required.
+	- Operating at the Connection level (Layer 4)
+	- Capable of handling Millions of requests/sec while maintaining low latencies.
+Classic Load Balancer
+	- Legacy Elastic Load Balancer
+	- Can load balance HTTP/HTTPS and use L7 such as XForwarded, sticky sessions.
+	- Can use strict L4 load balancing for applications that rely purely on the TCP Protocol.
+	- Respond with 504 Error.
+
+
+
+
+Advanced Load Balancer Theory
+
+Sticky Sessions
+Classic Load Balancer routes each request independently to the registered EC2 instance with the smallest load.
+Sticky sessions allow you to bind a user's session to a specific EC2 instance. 
+This ensures that all requests from the user during the session are sent to the same instance.
+You can enable Sticky Sessions for Application Load Balancers as well. but the traffic will be sent at the Target Group level.
+
+Cross Zone Load Balancing
+Enables you to load balance across multiple availability zones.
+
+Path Pattern 
+Allows you to direct traffic to different EC2 instances based on the URL contained in the request.
+Listeners with rules. 
+
+Autoscaling
+3 Components
+Groups
+Logical component. Web Server group or application group or databases group etc.
+
+Configuration Templates
+Group uses a launch template or a launch configuration as a configuration template for its EC2 instances.
+You can specify information such as the AMI ID, instance type, key pair, security group, and block device mapping for your instances.
+Scaling Options
+Provides several ways for you to scale your Auto Scaling Groups. For example, you can configure a group to scale based on the occurrence of specified conditions (dynamic scaling) or on a schedule.
+
+1. Maintain current instance levels at all times.
+	2. Scale manually.
+	3. Scale based on a schedule
+	4. Scale based on demand.
+	5. Use predictive scaling.
+
+AutoScaling Group
+Launch Configurations
