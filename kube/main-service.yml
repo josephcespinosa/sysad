@@ -17,6 +17,10 @@ spec:
       containers:
       - name: myapp
         image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: <Port>
 #       env: 
@@ -25,5 +29,23 @@ spec:
 #       - name: MONGO_INITDB_ROOT_PASSWORD
 #         value:
 
+# Autoscaling configuration
 
-
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoScaler
+metadata:
+  name: myapp
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: myapp
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Pods
+      pods:
+        metricName: avge_request_time_ms
+        targetAverageValue: 1000
+        
