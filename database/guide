@@ -1,0 +1,59 @@
+mysqldump --single-transaction --skip-lock-tables  --databases rubyv2 > rubyv2.tar.gz;
+
+
+mysqldump -u root --single-transaction --skip-lock-tables  --databases rubyv2 > /home/joseph/rubyv2.tar.gz;
+
+
+
+distribution_child_settlements
+distribution_parent_settlements
+distributors
+distributors_settlement
+user_transactions
+user_wallet
+transaction_group
+transaction_types
+
+
+ mysqldump rvtwo distribution_child_settlements --single-transaction --quick --lock-tables=false --routines --triggers > distribution_child_settlements.sql
+ mysqldump rvtwo distribution_parent_settlements --single-transaction --quick --lock-tables=false --routines --triggers > distribution_parent_settlements.sql
+ mysqldump rvtwo distributors --single-transaction --quick --lock-tables=false --routines --triggers > distributors.sql
+ mysqldump rvtwo user_transactions --single-transaction --quick --lock-tables=false --routines --triggers > user_transactions.sql
+ mysqldump rvtwo user_wallet --single-transaction --quick --lock-tables=false --routines --triggers > user_wallet.sql
+
+ mysqldump rvtwo transaction_group --single-transaction --quick --lock-tables=false --routines --triggers > transaction_group.sql
+ mysqldump rvtwo transaction_types --single-transaction --quick --lock-tables=false --routines --triggers > transaction_types.sql
+
+
+
+ select * from user_info where user_id='12986'; 
+
+
+
+
+
+
+ mysqldump rvtwo admin --single-transaction --quick --lock-tables=false --routines --triggers > admin.sql
+
+
+
+
+ CONNECT TO DB CONTAINER
+docker-compose exec mysql sh -c 'mysql -u root -p${MYSQL_ROOT_PASSWORD}'
+
+CREATE USER 'dev'@'%' IDENTIFIED BY 'dev@2019';
+GRANT ALL PRIVILEGES ON * . * TO 'dev'@'%';
+GRANT ALL ON *.* TO 'dev'@'%' IDENTIFIED BY 'dev@2019'; FLUSH PRIVILEGES; 
+
+
+
+
+[BACK UP DATABASE SCHEMA ONLY]
+mysqldump -u rvtwo --no-data rubyv2> schema.sql
+mysqldump -u root -p --single-transaction -d -R -B -r rubyv2 > rcml_schema_backup.sql
+
+
+
+
+mysqldump rvtwo --single-transaction -d -R -B -r rubyv2 > rcml_schema_backup.sql
+mysqldump rvtwo distribution_child_settlements --single-transaction --quick --lock-tables=false --routines --triggers > distribution_child_settlements.sql

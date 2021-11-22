@@ -1,0 +1,11 @@
+[ Fargate ]
+
+Task Definition - Define application container, image, url, cpu, mem etc.
+    - Can contain 10 container definition.
+    - All containers are co-located on the same host.
+
+Create Cluster - Infrastructure Isolation, IAM permission boundary
+Service - Maintain running copies, Intregated with EBL, unhealthy task automatically replaced.
+
+
+Layer Storage - 10GB per task, across all containers.

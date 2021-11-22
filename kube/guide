@@ -1,0 +1,69 @@
+Kubernetes 
+
+[YML composition]
+- apiVersion
+- kind (Pod, Deployment, Service (type: LoadBalancer))
+- metadata
+- spec
+
+
+[Deployment of application]
+
+Cluster
+	Nodes - Virtual Machines
+		Pods
+			Container/s
+
+
+1. Create Project
+2. Enable Kubernetes Engine API
+3. Create Kubernetes Cluster. It creates 1 master node and 3 worker nodes.
+	gcloud container clusters create [my-cluster-name] --num-nodes=1
+4. Login to Cloud Shell
+5. Connect to the Kubernetes Cluster and get the command in console.
+	get project id in console
+	gcloud config set project [PROJECT-ID]
+	get connect command in console.
+	gcloud container clusters get-credentials my-cluster-name --zone us-central1-a --project mygcpprojectname
+
+6. Deploy Microservice application to kubernetes.
+	Create Deployment and Service
+	kubectl create deployment hello-world-rest-api --image=in28min/hello-wolrd-api:0.0.1.RELEASE
+	kubectl create deployment hello-world-rest-api --image=us.gcr.io/myapp/imagename:tagname
+
+
+7. List down all deployments to kubernetes	
+	kubectl get deployment
+
+8. Expose deployment to public to access it. Passing in the --type=LoadBalancer creates compute engine load balancer.  
+	kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
+
+
+
+Scaling 
+
+	kubectl scale deployment hello-world-rest-api --replicas=3
+
+Scale Nodes
+	gloud container clusteres resize [my-cluster-name] --node-pool [my-node-pool-name] --num-nodes 5
+Decrease Nodes
+	gloud container clusteres resize [my-cluster-name] --node-pool [my-node-pool-name] --num-nodes=2
+Autoscale Nodes
+	kubectl autoscale deployment hello-world-rest-api --max=10 --cpu-percent=70
+Autoscale Cluster
+	gcloud container clusters update [cluster-name] --enable-autoscaling --min-nodes=1 --max-nodes=10
+
+Create Secret
+	kubectl create secret generic [todo-web-application-secret] --from-literal-=RDS_PASSWORD=dummytodos
+
+Get number of pods running
+	kubectl get pods
+
+Inspect service 
+	kubectl get service hello-server-service
+
+
+
+
+
+https://youtu.be/4nhoMGCX3vM

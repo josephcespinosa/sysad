@@ -1,0 +1,568 @@
+PRACTICE EXAM
+
+Is it possible to change an instance type after it has been created?
+A. Type can be changed if it has an EBS store volume root device
+B. Type can be changed if it has an instance store volume root device
+C. Instance type can not be changed
+D. This question doesn't make sense
+Answer : A
+
+An instance is launched in private VPC subnet. All security, NACL and routing definition configured as expected. A custom NAT instance is launched. Which of the following answer is right for configuring custom NAT instance?
+A. NAT instance should be launched in public subnet
+B. NAT instance should have public ip address configured
+C. Source/Destination check should be disabled
+D. NAT instance should have elastic ip address configured
+Answer : C
+
+Can you create IAM security credentials for existing users?
+A. Yes, existing users can have security credentials associated with their account
+B. Yes, but only IAM credentials, not ordinary security credentials.
+C. No, security credentials are created within GROUPS, and then users are associated to GROUPS at a later time.
+D. No, IAM requires that all users who have credentials set up are not existing users
+Answer : A
+
+What about is EC2 Role is true ?
+A. Setup an IAM group with restricted AWS API access and put the instance in the group at launch.
+B. Launch an instance with an AWS Identity and Aceess Management (IAM) role to restrict AWS API access for the instance.
+C. Pass access AWS credentials in the User Data field when the instance is launched.
+D. Setup an IAM user for the instance to restrict access to AWS API and assign it at launch.
+Answer : B
+
+You have an Amazon Elastic Cloud Compute (EC2) security group with several running EC2 instances. You change the security group rules to allow inbound traffic on a new port and protocol, and launch several new instances in the same security group. The new rules apply:
+A. Immediately to all instances in the security group
+B. Immediately to the new instances only.
+C. To all instances, but it may take several minutes for old instances to see the changes.
+D. Immediately to the new instances, but old instances must be stopped and restarted before the new rules apply.
+Answer : A
+
+The user just started an instance at 3 PM. Between 3 PM to 5 PM, he stopped and started the instance twice. During the same period, he has run the linux reboot command by ssh once and triggered reboot from AWS console once. For how many instance hours will AWS charge this user
+A. 4
+B. 5
+C. 2
+D. 3
+Answer : C
+
+You have assigned one Elastic IP to your EC2 instance. Now we need to restart the VM without EIP changed. Which of below you should not do?
+A. Reboot the instance.
+B. When the instance is in VPC private subnet, stop/start works.
+C. When the instance is in VPC public subnets, stop/start works.
+D. Reboot and stop/start both works.
+Answer : D
+
+A startup company hired you to help them build a mobile application, that will ultimately store billions of images and videos in Amazon Simple Storage Service (S3). The company is lean on funding, and wants to minimize operational costs, however, they have an aggressive marketing plan, and expect to double their current installation base every six months. Due to the nature of their business, they are expecting sudden and large increases in the traffic to and from S3, and need to ensure that it can handle the performance needs of their application. What other information must you gather from this customer in order to determine whether S3 is the right option?
+A. You must know how many customers the company has today, because this is critical in understanding what their customer base will be in two years.
+B. In order to build the key namespace correctly, you must understand the total amount of storage needs for each S3 bucket .
+C. You must find out the total number of requests per second at peak usage.
+D. You must know the size of individual objects being written to S3, in order to properly design the key namespace.
+Answer : C
+
+If any change is made to a security group rule, when are these changes effective?
+A. Changes are automatically applied after a short period
+B. Changes will be effective after 5 minutes
+C. Security group rules can not be changed. You have to create a new security group and assign it to instances
+D. Changes will be effective after rebooting the instances in that security group
+Answer : A
+
+A new instance is launched in public VPC subnet. There is an internet gateway and a route entry as 0.0.0.0/0 but instance can not reach internet. Other instances in this subnet have no issue. How can this problem be solved?
+A. A new security group should be created and allow outbound for any. Then instance should be attached to this security group
+B. NACL should be configured for outbound rule allowing for any protocol and ports
+C. Instance should have either public IP or elastic IP
+D. instance should be terminated and relaunched again.
+Answer : C
+
+What is the most secure option to connect to instances without Internet connectivity in private subnet VPC?
+A. Configure IAM policy to restrict access to the instances
+B. Enable internet connectivity and configure security group to connect to the instances
+C. Using a bastion host server to connect to the instances
+D. Enable internet connectivity and configure NACL and security group to connect to the instances
+Answer : C
+
+We run a database on a m1.small instance and customers have performance issues. After investigation, database administrators asks you to improve iops performance. Which options can be used to improve iops?
+A. Configuring Elastic load balancing and adding additional database servers
+B. Using a compute optimized instance
+C. Using a GPU instance
+D. Using Provisioned IOPS
+Answer : D
+
+Which of the following requires a custom CloudWatch metric to monitor?
+Network in
+A. Estimated charges
+B. CPU use
+C. Disk read operations
+D. Memory use
+Answer : D
+
+Which of the below mentioned steps will not be performed while creating the AMI of instance stored-backend?
+A. Bundle the volume.
+B. Register the AMI.
+C. Upload the bundled volume.
+D. Define the AMI launch permissions.
+Answer : D
+
+About the charge of Elastic IP Address, which of the following is true?
+A. You are charged for each Elastic IP addressed.
+B. You can have one Elastic IP (EIP) address associated with a running instance at no charge.
+C. You can have 5 Elastic IP addresses per region with no charge.
+D. Elastic IP addresses can always be used with no charge.
+Answer : B
+
+When you run a DB Instance as a Multi-AZ deployment, the “______” serves database writes and reads
+A. Stand by
+B. Primary
+C. Secondary
+D. Backup
+Answer : B
+
+Which DNS name can only be resolved within Amazon EC2?
+A. Internal DNS name
+B. Global DNS name
+C. External DNS name
+D. Private DNS name
+Answer : D
+
+Which record type queries are free when using Route 53?
+A. MX
+B. TXT
+C. Alias
+D. AAAA
+Answer : C
+
+What action is required to establish an Amazon Virtual Private Cloud (VPC) VPN connection between an on-premises data center and an Amazon VPC virtual private gateway?
+A. Assign a static Internet-routable IP address to an Amazon VPC customer gateway.
+B. Modify the main route table to allow traffic to a network address translation instance.
+C. Use a dedicated network address translation instance in the public subnet
+D. Establish a dedicated networking connection using AWS Direct Connect.
+Answer : A
+
+You are setting up a VPC and you need to set up a public subnet within that VPC. What following requirement must be met for this subnet to be considered a public subnet?
+A. Subnet's traffic is routed to an Internet gateway
+B. Subnet's traffic is not routed to an Internet gateway
+C. Subnet's traffic is not routed to an Internet gateway but has its traffic routed to a virtual private gateway.
+D. None of these answers can be considered a public subnet
+Answer : A
+
+You are developing a highly available web application using stateless web servers. Which services are suitable for storing session state data? Choose 3 answers
+A. AWS Storage Gateway
+B. Amazon CloudWatch
+C. Amazon ElasticCache
+D. Amazon DynamoDB
+E. Amazon Relational Database Service (RDS)
+F. Elastic Loab Balancing
+Answer : C,D,E
+
+You are configuring a new VPC for one of your client for a cloud migration project. Only a public VPN will be in place. After you created your VPC, you created a new subnet, a new internet gateway and attached your internet gateway with your VPC. As you created your first instance in to your VPC, you realized that you can not connect the instance even it is configured with elastic IP. What should be done to access the instance?
+A. A route should be created as 0.0.0.0/0 and your internet gateway as target
+B. A NAT instance should be created and all traffic should be forwarded to NAT instance
+C. A NACL should be created and allow all outbound traffic
+D. Attach another ENI to instance and connect via new ENI
+Answer : A
+
+You have a business-critical two-tier web app currently deployed in two AZ in a single region, using Elastic Load Balancing and Auto Scaling. The app depends on synchronous replication (very low latency connectivity) at the database layer. The application needs to remain fully available even if one application AZs goes off-line, and Auto Scaling cannot launch new instances in the remaining AZs. How can the current architecture be enhanced to ensure this?
+A. Deploy in two regions using Weighted Round Robin (WRR), with Auto Scaling minimums set for 100 percent peak load per region
+B. Deploy in two regions using Weighted Round Robin (WRR), with Auto Scaling minimums set for 50 percent peak load per Region.
+C. Deploy in three Availability Zones, with Auto Scaling minimum set to handle 33 percent peak load per zone.
+D. Deploy in three Availability Zones, with Auto Scaling minimum set to handle 50 percent peak load per zone.
+Answer : D
+
+Which of the following is a durable key-value store?
+A. Amazon Simple Storage Service
+B. Amazon Simple Notification Service
+C. Amazon Simple Queue Service
+D. Amazon Simple Workflow Service
+Answer : A
+
+Which service alias record is not free when using with Route 53?
+A. S3
+B. AS
+C. ELB
+D. CloudFront
+Answer : B
+
+In “Detailed” monitoring data available for your EBS volumes, Provisioned IOPS volumes automatically send _________ minute metrics to Amazon CloudWatch
+A. 2
+B. 1
+C. 4
+D. 3
+Answer : B
+
+A customer’s nightly EMR job processes a single 2TB data file stored on Amazon Simple Storage Service (S3). The Amazon Elastic Map Reduce (EMR) job runs on two On-Demand core nodes and three On-Demand task nodes. Which of the following may help reduce the EMR job completion time? Choose 2 answers
+A. Use a bootstrap action the present the S3 bucket as a local filesystem.
+B. Change the input split size in the MapReduce job configuration
+C. Enable termination protection for the job flow.
+D. Adjust the number of simultaneous mapper tasks
+E. Use three Spot Instances rather than three On-Demand instances for the taks nodes.
+F. Launch the core nodes and task nodes within an Amazon Virtual Cloud
+Answer : B,D
+
+Will my standby RDS instance be in the same AZ as my primary?
+A. Only for Oracle RDS types
+B. No
+C. Yes
+D. Only if configured at launch
+Answer : B
+
+Can we attach an EBS volume to more than one EC2 instance at the same time?
+A. Yes
+B. No
+C. Only EC2-optimized EBS volumes.
+D. Only in read mode
+Answer : B
+
+How can we attach our instance store volume to another instance?
+A. We can use "detach volume" and then attach to another instance.
+B. We can not detach or attach instance store volume
+C. We can stop the instance. Detach the volume. And attach to other instance
+D. We can use "force detach" and then attach to another instance
+Answer : B
+
+You have an application running in us-west-2 that requires six Amazon Elastic Compute Cloud (EC2) instances running at all times. With three AZs available in that region (us-west-2a, us-west-2b, and us-west-2c), which of the following deployments provides 100 percent fault tolerance if any single AZ in us-west-2 becomes unavailable? Choose 2 answers
+A. Us-west-2a with six EC2 instances, us-west-2b with six EC2 instances, and us-west-2c with no EC2 instances
+B. Us-west-2a with four EC2 instances, us-west-2b with two EC2 instances, and us-west-2c with two EC2-instances
+C. Us-west-2a with three EC2 instances, us-west-2b with three EC2 instances, and us-west-2c with three EC2 instances.
+D. Us-west-2a with three EC2 instances, us-west-2b with three EC2 instances, and us-west-2c with no EC2 instances
+E. Us-west-2a with two EC2 instances, us-west-2b with two EC2 instances, and us-west-2c with two EC2 instances
+Answer : A,C
+
+Which protocol is not supported when using with Route 53 health check?
+A. UDP
+B. TCP
+C. HTTP
+D. HTTPS
+Answer : A
+
+You can use _______ and ________ to help secure the instances in your VPC.
+A. Security groups and multi-factor authentication
+B. Security groups and biometric authentication
+C. Security groups and 2-factor authentication
+D. Security groups and network ACLs
+Answer : D
+
+You are deploying an application an Amazon Elastic Cloud Compute (EC2) that must call AWS APIs. What method of securely passing credentials to the application should you use?
+A. Store API credentials as an object in Amazon Simple Storage Service.
+B. Embed the API credentials into your JAR files.
+C. Pass API credentials to the instance using instance userdata.
+D. Use AWS Identity and Access Management roles for EC2 instances.
+Answer : D
+
+After creating a new AWS account, you use the API to request 40 on-demand Amazon Elastic Compute Cloud (EC2) instances in a single Availability Zone. After 20 successful requests, subsequent requests failed. What could be a reason for this issue, and how would you resolve it?
+A. You encountered a soft limit of 20 instances per region. Submit the limit increase form and retry the failed requests once approved
+B. You encountered an API throttling situation and should try the failed requests using an exponential decay retry algorithm.
+C. You need to use Amazon Virtual Private Cloud (VPC) in order to provision more than 20 instances in a single AZ. Simply terminate the resources already provisioned and re-launch them all in a VPC.
+D. AWS allows you to provision no more than 20 instances per AZ. Select a different AZ and retry the failed request.
+Answer : A
+
+An instance running a webserver is launched in a VPC subnet. A security group and a NACL are configured to allow inbound port 80. What should be done to make web server accessible by everyone?
+All ports both inbound and outbound should be enabled on security group and NACL
+Outbound Port 80 rule should be enabled on both security group and NACL
+Outbound Ports 49152-65535 should be enabled on NACL
+Outbound Port 80 rule should be enabled on security group
+Answer : C
+
+How can software determine the public and private IP addresses of the Amazon Elastic Cloud Compute instance that it is running on?
+A. Use an ipconfig or ifconfig command
+B. Query the appropriate Amazon CloudWatch metric.
+C. Query the local instance metadata.
+D. Query the local instance userdata.
+Answer : C
+
+To protect accidental overwrites or deletions of your objects in your S3 bucket you configured versioning. Because of changes in your environment, you don’t want to use versioning anymore and want to enable lifecycle rules. How can versioning be disabled?
+A. When Lifecycle rules are enabled, versioning is automatically disabled
+B. Once enabled, Versioning cannot be disabled. You can also add Lifecycle Rules for this bucket
+C. After manually disabling versioning , lifecycle rules can be enabled
+D. There is no need to disable versioning. Both lifecycle rules and versioning can work simultaneously
+Answer : D
+
+What does Amazon CloudFormation provide?
+A. A template resource creation for Amazon Web Services.
+B. None of these
+C. The ability to setup Auto Scaling for Amazon EC2 Instances
+D. A template to map network resources for Amazon Web Services
+Answer : A
+
+You want to implement a HPC ( High performance computing ) system with low-latency network performance. In order to establish this, which AWS feature can be used?
+A. Placement groups
+B. ELB and Auto scaling
+C. ElasticMapReduce
+D. EC2 and DynamoDB
+Answer : A
+
+Placement Groups: enables applications to participate in a low-latency, 10 Gbps network. Which of below statements is false.
+A. A placement group can span peered VPCs.
+B. Not all of the instance types that can be launched into a placement group.
+C. You can move an existing instance into a placement group by specify parameter of placement group.
+D. A placement group can't span multiple Availability Zones.
+Answer : C
+
+Which route must be added to your routing table in order to allow connections to the Internet from your subnet?
+A. Destination: 10.0.0.0/32 --> Target: your virtual private gateway
+B. Destination: 192.168.1.257/0 --> Target: your Internet gateway
+C. Destination: 0.0.0.0/0 --> Target: your Internet gateway
+D. Destination: 0.0.0.0/0 --> Target: 0.0.0.0/32
+E. Destination: 0.0.0.0/32 --> Target: your virtual private gateway
+Answer : C
+
+You have been tasked with creating a VPC network topology for your company. The VPC network must support both Internet-facing applications and internally-facing applications accessed only over VPN. Both Internet-facing and internally-facing applications must be able to leverage at least three AZs for high availability. At a minimum, how many subnets must you create within your VPC to accommodate these requirements?
+A. 6
+B. 4
+C. 2
+D. 3
+Answer : A
+
+What does the “Server Side Encryption” option an Amazon S3 provide?
+A. It allows to upload files using an SSL endpoint, for a secure transfer.
+B. It doesn’t exist for Amazon S3, but only for Amazon EC2
+C. It provides an encrypted virtual disk in the cloud
+D. It encrypts the files that you send to Amazon S3, on the server side.
+Answer : D
+
+How can we protect accidental termination of our instances?
+A. By using security group and disabling remote access to instances.
+B. By using &amp;quot;Change shutdown behavior&amp;quot; option.
+C. By using &amp;quot;Enable termination protection&amp;quot; option
+D. We can not prevent accidental termination.
+Answer : C
+
+What happens to data on ephemeral volume of an EBS-backed instance if instance is stopped and started?
+A. Data is automatically copied to another volume
+B. Data is deleted
+C. Volume snapshot is saved in S3
+D. Data persists
+Answer : B
+
+A VPC public subnet is one that:
+A. Has at least one route in its associated routing table that uses an Internet Gateway (IGW).
+B. Has the Public Subnet option selected in its configuration.
+C. Has a Network Access Control List (NACL) permitting outbound traffic to 0.0.0.0/0
+D. Includes a route in its associated routing table via a Network Address Translation (NAT) instance.
+Answer : A
+
+What combination of the following options will protect Amazon Simple Storage (S3) objects from both accidental deletion and accidental overwriting? Choose 2 answers
+A. Enable S3 Reduced Redundancy Storage.
+B. Enable multi-factor authentication (MFA) protected access.
+C. Access S3 data using only signer URLs.
+D. Disable S3 delete using an IAM bucket policy.
+E. Enable S3 versioning on the bucket.
+Answer : B
+
+In reviewing the Auto Scaling events for your application you notice that your application is scaling up and down multiple times in the same hour. What design choice could you make to optimize for cost while preserving elasticity? Choose 2 answers
+A. Modify the Auto Scaling group cool-down timers.
+B. Modify the Auto Scaling group termination policy to terminate the oldest instance first.
+C. Modify the Auto Scaling policy to use scheduled scaling actions.
+D. Modify the Amazon CloudWatch alarm period that triggers your Auto Scaling scale down policy.
+E. Modify the Auto Scaling group termination policy to terminate the newest instance first
+Answer : A
+
+Select the correct set of options. These are the initial settings for the default security group
+A. Allow all inbound traffic, Allow no outbound traffic and Allow instances associated with this security group to talk to each other.
+B. Allow no inbound traffic, Allow all outbound traffic and Allow instances associated with this security group to talk to each other.
+C. Allow all inbound traffic, Allow all outbound traffic and Does NOT allow instances associated with this security group to talk to each other.
+D. Allow no inbound traffic, Allow all outbound traffic and Does NOT allow instances associated with this security group to talk to each other.
+Answer : B
+
+An IAM user is trying to perform an action on an object belonging to some other root account’s bucket. Which of the below mentioned options will AWS S3 not verify?
+A. Permission provided by the parent of the IAM user on the bucket
+B. The object owner has provided access to the IAM user
+C. Permission provided by the parent of the IAM user
+D. Permission provided by the bucket owner to the IAM user
+Answer : A
+
+What about below is false for AWS SLA?
+A. EC2 availability is guarantee to 99.95%.
+B. S3 availability is guarantee to 99.95%.
+C. EBS availability is guarantee to 99.95%.
+D. RDS multi-AZ is guarantee to 99.95%.
+Answer : B
+
+What is the Reduced Redundancy option in Amazon S3?
+A. It allows you to destroy any copy of your files outside
+B. It doesn’t exist at all
+C. It doesn’t exist in Amazon S3, but in Amazon EBS
+D. Less redundancy for a lower cost
+Answer : D
+
+Is it possible to create an AMI while an instance is running?
+A. Yes, only if it is Linux instance
+B. Yes, if only "no reboot" option is checked
+C. Yes, AMI can be created without any change
+D. No, instance should be stopped and rebooted
+Answer : B
+
+How can an instance be copied to another region?
+A. There is no way to copy an instance to another region
+B. By stopping instance and using copy option
+C. First instance's root volume is detached. Then a new instance is created in another region. Finally detached volume can be attached to new instance as root device
+D. By creating an AMI and copy it to another region
+Answer : D
+
+Which type of volume is suited for use as boot volume?
+A. Provisioned IOPS volume
+B. None of them
+C. Standard volume
+D. Ephemeral instance store volume
+Answer : C
+
+Does Route 53 support MX Records?
+A. Only Primary MX records, Secondary MX records are not supported.
+B. No
+C. Yes
+D. It supports CNAME records, but not MX records.
+Answer : C
+
+How can you change the instance type used in Auto Scaling Group?
+A. AS Group should be deleted and recreated
+B. Instances should be stopped and then type can be changed
+C. A new launch configuration with a new instance type should be created and attached to AS group
+D. It is not possible to change the instance type
+Answer : C
+
+You receive a Spot Instance at a bid of $0.05/hr. After 30 minutes, the Spot Price increases to $0.06/hr and your Spot Instance is terminated by AWS. What was the total EC2 compute cost of running your Spot Instance?
+A. $0.025
+B. $0.00
+C. $0.02
+D. $0.06
+E. $0.05
+Answer : B
+
+You have an Amazon Virtual Private Cloud (VPC) with a public subnet. Three Amazon Elastic Compute Cloud (EC2) instances currently running inside the subnet can successfully communicate with other hosts on the Internet. You launch a fourth instance in the same subnet, using the same Amazon Machine Image (AMI) and security group configuration you used for the others, but find that this instance cannot be accessed from the Internet. What should you do to enable Internet access?
+A. Configure a publically routable IP address in the host OS of the fourth instance.
+B. Assign an elastic IP address to the fourth instance
+C. Modify the routing table for the public subnet
+D. Deploy a NAT instance into the public subnet
+Answer : B
+
+A company is storing an access key (access key ID and secret access key) in a text file on a custom
+AMI. The company uses the access key to access DynamoDB tables from instances created from the
+AMI. The security team has mandated a more secure solution.
+Which solution will meet the security team’s mandate?
+A. Put the access key in an S3 bucket, and retrieve the access key on boot from the instance.
+B. Pass the access key to the instances through instance user data.
+C. Obtain the access key from a key server launched in a private subnet.
+D. Create an IAM role with permissions to access the table, and launch all instances with the new role
+Answer : D
+Explanation : IAM roles for EC2 instances allow applications running on the instance to access AWS resources
+without having to create and store any access keys. Any solution involving the creation of an access key
+then introduces the complexity of managing that secret. 
+
+A company is developing a highly available web application using stateless web servers. Which
+services are suitable for storing session state data? (Select TWO.)
+A. CloudWatch
+B. DynamoDB
+C. Elastic Load Balancing
+D. ElastiCache
+E. Storage Gateway
+Answer : B,D
+Explanation : Both DynamoDB and ElastiCache provide high performance storage of key-value pairs.
+CloudWatch and ELB are not storage services. Storage Gateway is a storage service, but it is a hybrid
+storage service that enables on-premises applications to use cloud storage.
+
+Company salespeople upload their sales figures daily. A Solutions Architect needs a durable storage
+solution for these documents that also protects against users accidentally deleting important
+documents.
+Which action will protect against unintended user actions?
+A. Store data in an EBS volume and create snapshots once a week.
+B. Store data in an S3 bucket and enable versioning.
+C. Store data in two S3 buckets in different AWS regions.
+D. Store data on EC2 instance storage.
+Answer : B
+Explanation : – If a versioned object is deleted, then it can still be recovered by retrieving the final version. Response
+A would lose any changes committed since the previous snapshot. Storing the data in 2 S3 buckets
+would provide slightly more protection, but a user could still delete the object from both buckets. EC2
+instance storage is ephemeral and should never be used for data requiring durability.
+
+An application requires a highly available relational database with an initial storage capacity of 8 TB.
+The database will grow by 8 GB every day. To support expected traffic, at least eight read replicas will
+be required to handle database reads.
+Which option will meet these requirements?
+A. DynamoDB
+B. Amazon S3
+C. Amazon Aurora
+D. Amazon Redshift
+Answer : C
+Explanation : Amazon Aurora is a relational database that will automatically scale to accommodate data growth.
+Amazon Redshift does not support read replicas and will not automatically scale. DynamoDB is a NoSQL
+service, not a relational database. Amazon S3 is object storage, not a relational database. 
+
+A Solutions Architect is designing a critical business application with a relational database that runs
+on an EC2 instance. It requires a single EBS volume that can support up to 16,000 IOPS.
+Which Amazon EBS volume type can meet the performance requirements of this application?
+A. EBS Provisioned IOPS SSD
+B. EBS Throughput Optimized HDD
+C. EBS General Purpose SSD
+D. EBS Cold HDD
+Answer : A
+Explanation : EBS Provisioned IOPS SSD provides sustained performance for mission-critical low-latency
+workloads. EBS General Purpose SSD can provide bursts of performance up to 3,000 IOPS and have a
+maximum baseline performance of 10,000 IOPS for volume sizes greater than 3.3 TB. The 2 HDD options
+are lower cost, high throughput volumes.
+
+A web application allows customers to upload orders to an S3 bucket. The resulting Amazon S3
+events trigger a Lambda function that inserts a message to an SQS queue. A single EC2 instance
+reads messages from the queue, processes them, and stores them in an DynamoDB table partitioned
+by unique order ID. Next month traffic is expected to increase by a factor of 10 and a Solutions
+Architect is reviewing the architecture for possible scaling problems.
+Which component is MOST likely to need re-architecting to be able to scale to accommodate the new
+traffic?
+A. Lambda function
+B. SQS queue
+C. EC2 instance
+D. DynamoDB table
+Answer : C
+Explanation : A single EC2 instance will not scale and is a single point of failure in the architecture. A much better
+solution would be to have EC2 instances in an Auto Scaling group across 2 availability zones read
+messages from the queue. The other responses are all managed services that can be configured to scale
+or will scale automatically. 
+
+An application saves the logs to an S3 bucket. A user wants to keep the logs for one month for
+troubleshooting purposes, and then purge the logs.
+What feature will enable this?
+A. Adding a bucket policy on the S3 bucket.
+B. Configuring lifecycle configuration rules on the S3 bucket.
+C. Creating an IAM policy for the S3 bucket.
+D. Enabling CORS on the S3 bucket. 
+Answer : B
+Explanation : Lifecycle configuration allows lifecycle management of objects in a bucket. The configuration is a set
+of one or more rules, where each rule defines an action for Amazon S3 to apply to a group of objects.
+Bucket policies and IAM define access to objects in an S3 bucket. CORS enables clients in one domain
+to interact with resources in a different domain. 
+
+An application running on EC2 instances processes sensitive information stored on Amazon S3. The
+information is accessed over the Internet. The security team is concerned that the Internet
+connectivity to Amazon S3 is a security risk.
+Which solution will resolve the security concern?
+A. Access the data through an Internet Gateway.
+B. Access the data through a VPN connection.
+C. Access the data through a NAT Gateway.
+D. Access the data through a VPC endpoint for Amazon S3.
+Answer : D
+Explanation : VPC endpoints for Amazon S3 provide secure connections to S3 buckets that do not require a
+gateway or NAT instances. NAT Gateways and Internet Gateways still route traffic over the Internet to the
+public endpoint for Amazon S3. There is no way to connect to Amazon S3 via VPN.
+
+An organization is building an Amazon Redshift cluster in their shared services VPC. The cluster will
+host sensitive data.
+How can the organization control which networks can access the cluster?
+A. Run the cluster in a different VPC and connect through VPC peering.
+B. Create a database user inside the Amazon Redshift cluster only for users on the network.
+C. Define a cluster security group for the cluster that allows access from the allowed networks.
+D. Only allow access to networks that connect with the shared services network via VPN.
+Answer : C
+Explanation : A security group can grant access to traffic from the allowed networks via the CIDR range for each
+network. VPC peering and VPN are connectivity services and cannot control traffic for security. Amazon
+Redshift user accounts address authentication and authorization at the user level and have no control
+over network traffic.
+
+A Solutions Architect is designing an online shopping application running in a VPC on EC2 instances
+behind an ELB Application Load Balancer. The instances run in an Auto Scaling group across
+multiple Availability Zones. The application tier must read and write data to a customer managed
+database cluster. There should be no access to the database from the Internet, but the cluster must
+be able to obtain software patches from the Internet.
+Which VPC design meets these requirements?
+A. Public subnets for both the application tier and the database cluster
+B. Public subnets for the application tier, and private subnets for the database cluster
+C. Public subnets for the application tier and NAT Gateway, and private subnets for the database cluster
+D. Public subnets for the application tier, and private subnets for the database cluster and NAT Gateway.
+Answer : C
+Explanation : The online application must be in public subnets to allow access from clients' browsers. The database
+cluster must be in private subnets to meet the requirement that there be no access from the Internet. A NAT 
+Gateway is required to give the database cluster the ability to download patches from the Internet.
+NAT Gateways must be deployed in public subnets.

@@ -1,0 +1,361 @@
+REDHAT
+
+https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives
+
+
+Study points for the exam
+RHCSA exam candidates should be able to accomplish the tasks below without assistance. These have been grouped into several categories.
+
+Understand and use essential tools
+Access a shell prompt and issue commands with correct syntax
+Use input-output redirection (>, >>, |, 2>, etc.)
+Use grep and regular expressions to analyze text
+Access remote systems using SSH
+Log in and switch users in multiuser targets
+Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
+Create and edit text files
+Create, delete, copy, and move files and directories
+Create hard and soft links
+List, set, and change standard ugo/rwx permissions
+Locate, read, and use system documentation including man, info, and files in /usr/share/doc
+Create simple shell scripts
+Conditionally execute code (use of: if, test, [], etc.)
+Use Looping constructs (for, etc.) to process file, command line input
+Process script inputs ($1, $2, etc.)
+Processing output of shell commands within a script
+Processing shell command exit codes
+Operate running systems
+Boot, reboot, and shut down a system normally
+Boot systems into different targets manually
+Interrupt the boot process in order to gain access to a system
+Identify CPU/memory intensive processes and kill processes
+Adjust process scheduling
+Manage tuning profiles
+Locate and interpret system log files and journals
+Preserve system journals
+Start, stop, and check the status of network services
+Securely transfer files between systems
+Configure local storage
+List, create, delete partitions on MBR and GPT disks
+Create and remove physical volumes
+Assign physical volumes to volume groups
+Create and delete logical volumes
+Configure systems to mount file systems at boot by universally unique ID (UUID) or label
+Add new partitions and logical volumes, and swap to a system non-destructively
+Create and configure file systems
+Create, mount, unmount, and use vfat, ext4, and xfs file systems
+Mount and unmount network file systems using NFS
+Extend existing logical volumes
+Create and configure set-GID directories for collaboration
+Configure disk compression
+Manage layered storage
+Diagnose and correct file permission problems
+Deploy, configure, and maintain systems
+Schedule tasks using at and cron
+Start and stop services and configure services to start automatically at boot
+Configure systems to boot into a specific target automatically
+Configure time service clients
+Install and update software packages from Red Hat Network, a remote repository, or from the local file system
+Work with package module streams
+Modify the system bootloader
+Manage basic networking
+Configure IPv4 and IPv6 addresses
+Configure hostname resolution
+Configure network services to start automatically at boot
+Restrict network access using firewall-cmd/firewall
+Manage users and groups
+Create, delete, and modify local user accounts
+Change passwords and adjust password aging for local user accounts
+Create, delete, and modify local groups and group memberships
+Configure superuser access
+Manage security
+Configure firewall settings using firewall-cmd/firewalld
+Create and use file access control lists
+Configure key-based authentication for SSH
+Set enforcing and permissive modes for SELinux
+List and identify SELinux file and process context
+Restore default file contexts
+Use boolean settings to modify system SELinux settings
+Diagnose and address routine SELinux policy violations
+Manage containers
+Find and retrieve container images from a remote registry
+Inspect container images
+Perform container management using commands such as podman and skopeo
+Perform basic container management such as running, starting, stopping, and listing running containers
+Run a service inside a container
+Configure a container to start automatically as a systemd service
+Attach persistent storage to a container
+As with all Red Hat performance-based exams, configurations must persist after reboot without intervention.
+
+============================================================================================
+
+
+
+
+Video 1. What are Linux, open source software, and a distribution?
+Video 2. Introduction to the shell
+Video 3. Kernel and user spaces
+Video 4. Orientation to the graphical user interface
+Video 5. File management in Linux
+Video 6. The file system hierarchy
+Video 7. Editing files using Vim
+Video 8. Organizing users and groups
+Video 9. File permissions
+Video 10. Managing software
+Video 11. Configuring networking
+Video 12. Controlling system startup processes
+Video 13. Introduction to containers
+Video 14. Overview of cockpit
+Video 15. Learning more about Red Hat Enterprise Linux 8
+
+
+
+============================================================================================
+
+[Red Hat System Administration I]
+
+OK - Introduction to the command line
+Managing physical storage
+Install and configure software components and services
+Establish network connections and control firewall restrictions
+Monitor and manage running processes
+Manage and secure files and file systems
+Administer users and groups
+Review the system log files and journal for issues
+Troubleshoot problems and analyze systems with Red Hat Insights
+Remotely manage systems with SSH and the Web Console
+
+
+Get started with Red Hat Enterprise Linux
+Describe and define open source, Linux distributions, and Red Hat Enterprise Linux.
+Access the command line
+Log into a Linux system and run simple commands using the shell.
+Manage files from the command line
+Copy, move, create, delete, and organize files while working from the bash shell.
+Get help in Red Hat Enterprise Linux
+Resolve problems by using local help systems.
+Create, view, and edit text files
+Manage text files from command output or in a text editor.
+Manage local users and groups
+Create, manage, and delete local users and groups, as well as administer local password policies.
+Control access to files
+Set Linux file system permissions on files and interpret the security effects of different permission settings.
+Monitor and manage Linux processes
+Evaluate and control processes running on a Red Hat Enterprise Linux system.
+Control services and daemons
+Control and monitor network services and system daemons using systemd.
+Configure and secure SSH
+Configure secure command line service on remote systems, using OpenSSH.
+Analyze and store logs
+Locate and accurately interpret logs of system events for troubleshooting purposes.
+Manage networking
+Configure network interfaces and settings on Red Hat Enterprise Linux servers.
+Archive and transfer files
+Archive and copy files from one system to another.
+Install and update software
+Download, install, update, and manage software packages from Red Hat and yum package repositories.
+Access Linux files systems
+Access, inspect, and use existing file systems on storage attached to a Linux server.
+Analyze servers and get support
+Investigate and resolve issues in the web-based management interface, getting support from Red Hat to help solve problems.
+Comprehensive review
+Review the content covered in this course by completing hands-on exercises. 
+
+
+You should be able to demonstrate these skills:
+
+Access the command line
+Manage files from command line
+Create, view, and edit text files
+Manage local users and groups
+Monitor and manage Linux processes
+Control services and daemons
+Control access to files with file system permissions
+Analyze and store log files
+Configure and secure the OpenSSH service
+Install and update software packages
+Access Linux file systems
+Manage Linux networking
+
+
+
+
+============================================================================================
+RCHSA 8.2 EXAM
+============================================================================================
+
+
+Study points for the exam
+RHCSA exam candidates should be able to accomplish the tasks below without assistance. These have been grouped into several categories.
+
+Understand and use essential tools
+Access a shell prompt and issue commands with correct syntax
+Use input-output redirection (>, >>, |, 2>, etc.)
+Use grep and regular expressions to analyze text
+Access remote systems using SSH
+Log in and switch users in multiuser targets
+Archive, compress, unpack, and uncompress files using tar, star, gzip, and bzip2
+Create and edit text files
+Create, delete, copy, and move files and directories
+Create hard and soft links
+List, set, and change standard ugo/rwx permissions
+Locate, read, and use system documentation including man, info, and files in /usr/share/doc
+Create simple shell scripts
+Conditionally execute code (use of: if, test, [], etc.)
+Use Looping constructs (for, etc.) to process file, command line input
+Process script inputs ($1, $2, etc.)
+Processing output of shell commands within a script
+Processing shell command exit codes
+Operate running systems
+Boot, reboot, and shut down a system normally
+Boot systems into different targets manually
+Interrupt the boot process in order to gain access to a system
+Identify CPU/memory intensive processes and kill processes
+Adjust process scheduling
+Manage tuning profiles
+Locate and interpret system log files and journals
+Preserve system journals
+Start, stop, and check the status of network services
+Securely transfer files between systems
+Configure local storage
+List, create, delete partitions on MBR and GPT disks
+Create and remove physical volumes
+Assign physical volumes to volume groups
+Create and delete logical volumes
+Configure systems to mount file systems at boot by universally unique ID (UUID) or label
+Add new partitions and logical volumes, and swap to a system non-destructively
+Create and configure file systems
+Create, mount, unmount, and use vfat, ext4, and xfs file systems
+Mount and unmount network file systems using NFS
+Extend existing logical volumes
+Create and configure set-GID directories for collaboration
+Configure disk compression
+Manage layered storage
+Diagnose and correct file permission problems
+Deploy, configure, and maintain systems
+Schedule tasks using at and cron
+Start and stop services and configure services to start automatically at boot
+Configure systems to boot into a specific target automatically
+Configure time service clients
+Install and update software packages from Red Hat Network, a remote repository, or from the local file system
+Work with package module streams
+Modify the system bootloader
+Manage basic networking
+Configure IPv4 and IPv6 addresses
+Configure hostname resolution
+Configure network services to start automatically at boot
+Restrict network access using firewall-cmd/firewall
+Manage users and groups
+Create, delete, and modify local user accounts
+Change passwords and adjust password aging for local user accounts
+Create, delete, and modify local groups and group memberships
+Configure superuser access
+Manage security
+Configure firewall settings using firewall-cmd/firewalld
+Create and use file access control lists
+Configure key-based authentication for SSH
+Set enforcing and permissive modes for SELinux
+List and identify SELinux file and process context
+Restore default file contexts
+Use boolean settings to modify system SELinux settings
+Diagnose and address routine SELinux policy violations
+Manage containers
+Find and retrieve container images from a remote registry
+Inspect container images
+Perform container management using commands such as podman and skopeo
+Perform basic container management such as running, starting, stopping, and listing running containers
+Run a service inside a container
+Configure a container to start automatically as a systemd service
+Attach persistent storage to a container
+As with all Red Hat performance-based exams, configurations must persist after reboot without intervention.
+
+
+Preparation
+Red Hat encourages you to consider taking Red Hat System Administration I (RH124) and Red Hat System Administration II (RH134) to help prepare. Attendance in these classes is not required; you can choose to take just the exam.
+
+While attending Red Hat classes can be an important part of your preparation, attending class does not guarantee success on the exam. Previous experience, practice, and native aptitude are also important determinants of success.
+
+Many books and other resources on system administration for Red Hat products are available. Red Hat does not endorse any of these materials as preparation guides for exams. Nevertheless, you may find additional reading helpful to deepen your understanding.
+
+Exam format
+The Red Hat Certified System Administrator (RHCSA) exam is a hands-on, practical exam that requires you to undertake real-world tasks. Internet access is not provided during the in-person exam, and you will not be permitted to bring any hard copy or electronic documentation into the exam. This prohibition includes notes, books, or any other materials. For most exams, the documentation that ships with the product is available during the exam.
+
+This exam can also be taken virtually as part of our remote testing format. Find out more about remote exams to see if this is the right choice for you.
+
+Scores and reporting
+Official scores for exams come exclusively from Red Hat Certification Central. Red Hat does not authorize examiners or training partners to report results to candidates directly. Scores on the exam are usually reported within 3 U.S. business days.
+
+Exam results are reported as section scores. Red Hat does not report performance on individual items, nor will it provide additional information upon request.
+
+
+
+========================================================================================================
+
+
+Outline for this course
+Video 1. What are Linux, open source software, and a distribution?
+Video 2. Introduction to the shell
+Video 3. Kernel and user spaces
+Video 4. Orientation to the graphical user interface
+Video 5. File management in Linux
+Video 6. The file system hierarchy
+Video 7. Editing files using Vim
+Video 8. Organizing users and groups
+Video 9. File permissions
+Video 10. Managing software
+Video 11. Configuring networking
+Video 12. Controlling system startup processes
+Video 13. Introduction to containers
+Video 14. Overview of cockpit
+Video 15. Learning more about Red Hat Enterprise Linux 8
+
+
+========================================================================================================
+
+1. RH124  or  RedHat System Administration part I:
+
+this includes introductory part of Linux Administration, the important module of part-I are:
+
+Introduction.
+Accessing the command line.
+Managing files from the command line.
+Getting help in Red Hat Enterprise Linux.
+Creating, viewing and editing text files.
+Managing Local Linux users and groups.
+Controlling access to files with Linux file system permissions.
+Monitoring and managing Linux file processes.
+Controlling services and daemons.
+Configuring and securing OpenSSH Services.
+Analyzing and storing logs.
+Managing Red Hat Enterprise Linux networking.
+Archiving and copying files between systems.
+ Installing and updating software packages.
+Accessing Linux file system.
+Using virtulization system.
+Review.
+
+
+2. Red Hat system Administration part –II or RH-134 include following topics:
+
+Introduction.
+Automating installation with kickstart.
+Using regular expression with grep.
+Creating and editing text files with vim.
+Scheduling future Linux tasks.
+Managing priority of Linux processes.
+Controlling access to files with Access Control Lists (ACL).
+Managing SELinux Security.
+Connecting to network-defined users and groups.
+Adding disks, Partitions, and file systems to a Linux System.
+Managing Logical Volume Management storage.
+Accessing network storage with Network File System (NFS).
+Accessing Network Storage with SMB.
+Controlling and troubleshooting the Red Hat Enterprise Linux Boot process.
+Limiting network communication with firewalld.
+Comprehensive review.
+
+========================================================================================================
+
+[TIPS]
+
+https://www.linkedin.com/pulse/how-pass-rhcsa-good-score-sabir-moglad

@@ -1,0 +1,228 @@
+EXAM - PRACTICE
+PRACTICE QUESTIONS
+
+A Solutions Architect has deployed an application on several Amazon EC2 instances across three private subnets. The application must be made accessible to internet-based clients with the least amount of administrative effort.
+
+How can the Solutions Architect make the application available on the internet?
+
+ Create an Amazon Machine Image (AMI) of the instances in the private subnet and launch new instances from the AMI in public subnets. Create an Application Load Balancer and add the public instances to the ALB.
+ Create an Application Load Balancer and associate three public subnets from the same Availability Zones as the private instances. Add the private instances to the ALB.
+ Create a NAT gateway in a public subnet. Add a route to the NAT gateway to the route tables of the three private subnets.
+ Create an Application Load Balancer and associate three private subnets from the same Availability Zones as the private instances. Add the private instances to the ALB.
+
+ -----------------------------------
+
+A company runs an application in a factory that has a small rack of physical compute resources. The application stores data on a network attached storage (NAS) device using the NFS protocol. The company requires a daily offsite backup of the application data.
+
+Which solution can a Solutions Architect recommend to meet this requirement?
+
+ Use an AWS Storage Gateway volume gateway with cached volumes on premises to replicate the data to Amazon S3.
+ Use an AWS Storage Gateway volume gateway with stored volumes on premises to replicate the data to Amazon S3.
+ Use an AWS Storage Gateway file gateway hardware appliance on premises to replicate the data to Amazon S3.
+ Create an IPSec VPN to AWS and configure the application to mount the Amazon EFS file system. Run a copy job to backup the data to EFS.
+
+
+ -----------------------------------
+
+A company is planning to upload a large quantity of sensitive data to Amazon S3. The company’s security department require that the data is encrypted before it is uploaded.
+
+Which option meets these requirements?
+
+ Use server-side encryption with keys stored in KMS.
+ Use client-side encryption with a master key stored in AWS KMS.
+ Use client-side encryption with Amazon S3 managed encryption keys.
+ Use server-side encryption with customer-provided encryption keys.
+
+ -----------------------------------
+
+
+A company provides a REST-based interface to an application that allows a partner company to send data in near-real time. The application then processes the data that is received and stores it for later analysis. The application runs on Amazon EC2 instances.
+
+The partner company has received many 503 Service Unavailable Errors when sending data to the application and the compute capacity reaches its limits and is unable to process requests when spikes in data volume occur.
+
+Which design should a Solutions Architect implement to improve scalability?
+
+ Use Amazon SNS to ingest the data and trigger AWS Lambda functions to process the data in near-real time.
+ Use Amazon SQS to ingest the data. Configure the EC2 instances to process messages from the SQS queue.
+ Use Amazon Kinesis Data Streams to ingest the data. Process the data using AWS Lambda functions.
+ Use Amazon API Gateway in front of the existing application. Create a usage plan with a quota limit for the partner company.
+
+ -----------------------------------
+
+A company requires that all AWS IAM user accounts have specific complexity requirements and minimum password length.
+
+How should a Solutions Architect accomplish this?
+
+ Create an IAM policy that enforces the requirements and apply it to all users.
+ Set a password policy for the entire AWS account.
+ Set a password policy for each IAM user in the AWS account.
+ Use an AWS Config rule to enforce the requirements when creating user accounts.
+
+
+
+ -----------------------------------
+
+A company is migrating a decoupled application to AWS. The application uses a message broker based on the MQTT protocol. The application will be migrated to Amazon EC2 instances and the solution for the message broker must not require rewriting application code.
+
+Which AWS service can be used for the migrated message broker?
+
+ Amazon SQS
+ Amazon MQ
+ AWS Step Functions
+ Amazon SNS
+
+ -----------------------------------
+
+To increase performance and redundancy for an application a company has decided to run multiple implementations in different AWS Regions behind network load balancers. The company currently advertise the application using two public IP addresses from separate /24 address ranges and would prefer not to change these. Users should be directed to the closest available application endpoint.
+
+Which actions should a solutions architect take? (Select TWO.)
+
+ Create PTR records to map existing public IP addresses to an Alias
+ Migrate both public IP addresses to the AWS Global Accelerator
+ Create an Amazon Route 53 geolocation based routing policy
+ Create an AWS Global Accelerator and attach endpoints in each AWS Region
+ Assign new static anycast IP addresses and modify any existing pointers
+
+ -----------------------------------
+
+A company has several AWS accounts each with multiple Amazon VPCs. The company must establish routing between all private subnets. The architecture should be simple and allow transitive routing to occur.
+
+How should the network connectivity be configured?
+
+ Create a hub-and-spoke topology with AWS App Mesh and use AWS Resource Access Manager to share route tables
+ Create a transitive VPC peering connection between each Amazon VPC and configure route tables
+ Create an AWS Transit Gateway and share it with each account using AWS Resource Access Manager
+ Create an AWS Managed VPN between each Amazon VPC and configure route tables
+
+ -----------------------------------
+
+
+An on-premises server runs a MySQL database and will be migrated to the AWS Cloud. The company require a managed solution that supports high availability and automatic failover in the event of the outage of an Availability Zone (AZ).
+
+Which solution is the BEST fit for these requirements?
+
+ Use the AWS Database Migration Service (DMS) to directly migrate the database to Amazon RDS MySQL. Use the Schema Conversion Tool (SCT) to enable conversion from MySQL to Amazon RDS
+ Create a snapshot of the MySQL database server and use AWS DataSync to migrate the data Amazon S3. Launch a new Amazon RDS MySQL Multi-AZ deployment from the snapshot
+ Use the AWS Database Migration Service (DMS) to directly migrate the database to an Amazon EC2 MySQL Multi-AZ deployment
+ Use the AWS Database Migration Service (DMS) to directly migrate the database to an Amazon RDS MySQL Multi-AZ deployment
+
+ -----------------------------------
+
+A company has deployed a new website on Amazon EC2 instances behind an Application Load Balancer (ALB). Amazon Route 53 is used for the DNS service. The company has asked a Solutions Architect to create a backup website with support contact details that users will be directed to automatically if the primary website is down.
+
+How should the Solutions Architect deploy this solution cost-effectively?
+
+ Configure a static website using Amazon S3 and create a Route 53 weighted routing policy.
+ Deploy the backup website on EC2 and ALB in another Region and use Route 53 health checks for failover routing.
+ Create the backup website on EC2 and ALB in another Region and create an AWS Global Accelerator endpoint.
+ Configure a static website using Amazon S3 and create a Route 53 failover routing policy.
+
+ -----------------------------------
+
+
+A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions.
+
+What is the SIMPLEST method of achieving the requirements?
+
+ Create an IAM policy in the root account and attach it to users and groups in each account
+ Create a service control policy in the root organizational unit to deny access to the services or actions
+ Create a Network ACL that limits access to the services or actions and attach it to all relevant subnets
+ Create cross-account roles in each account to limit access to the services and actions that are allowed
+
+ -----------------------------------
+
+An application in a private subnet needs to query data in an Amazon DynamoDB table. Use of the DynamoDB public endpoints must be avoided. What is the most EFFICIENT and secure method of enabling access to the table?
+
+ Create a software VPN between DynamoDB and the application in the private subnet
+ Create an interface VPC endpoint in the VPC with an Elastic Network Interface (ENI)
+ Create a gateway VPC endpoint and add an entry to the route table
+ Create a private Amazon DynamoDB endpoint and connect to it using an AWS VPN
+
+ -----------------------------------
+
+A company is working with a strategic partner that has an application that must be able to send messages to one of the company’s Amazon SQS queues. The partner company has its own AWS account.
+
+How can a Solutions Architect provide least privilege access to the partner?
+
+ Create a user account that and grant the sqs:SendMessage permission for Amazon SQS. Share the credentials with the partner company.
+ Create a cross-account role with access to all SQS queues and use the partner's AWS account in the trust document for the role.
+ Update the permission policy on the SQS queue to grant all permissions to the partner’s AWS account.
+ Update the permission policy on the SQS queue to grant the sqs:SendMessage permission to the partner’s AWS account.
+
+
+ -----------------------------------
+
+An eCommerce company runs an application on Amazon EC2 instances in public and private subnets. The web application runs in a public subnet and the database runs in a private subnet. Both the public and private subnets are in a single Availability Zone.
+
+Which combination of steps should a solutions architect take to provide high availability for this architecture? (Select TWO.)
+
+ Create new public and private subnets in the same AZ but in a different Amazon VPC.
+ Create an EC2 Auto Scaling group in the public subnet and use an Application Load Balancer.
+ Create new public and private subnets in a different AZ. Migrate the database to an Amazon RDS multi-AZ deployment.
+ Create new public and private subnets in a different AZ. Create a database using Amazon EC2 in one AZ.
+ Create an EC2 Auto Scaling group and Application Load Balancer that spans across multiple AZs.
+
+ -----------------------------------
+
+A company needs to ensure that they can failover between AWS Regions in the event of a disaster seamlessly with minimal downtime and data loss. The applications will run in an active-active configuration.
+
+Which DR strategy should a Solutions Architect recommend?
+
+ Pilot light
+ Warm standby
+ Backup and restore
+ Multi-site
+
+ -----------------------------------
+
+A retail organization sends coupons out twice a week and this results in a predictable surge in sales traffic. The application runs on Amazon EC2 instances behind an Elastic Load Balancer. The organization is looking for ways to reduce cost without impacting performance or reliability. How can they achieve this goal?
+
+ Purchase scheduled reserved instances
+ Use a mixture of spot instances and on demand instances
+ Increase the instance size of the existing EC2 instances
+ Purchase Amazon EC2 dedicated hosts
+
+ -----------------------------------
+
+An application makes calls to a REST API running on Amazon EC2 instances behind an Application Load Balancer (ALB). Most API calls complete quickly. However, a single endpoint is making API calls that require much longer to complete and this is introducing overall latency into the system. What steps can a Solutions Architect take to minimize the effects of the long-running API calls?
+
+ Change the EC2 instance to one with enhanced networking to reduce latency
+ Create an Amazon SQS queue and decouple the long-running API calls
+ Increase the ALB idle timeout to allow the long-running requests to complete
+ Change the ALB to a Network Load Balancer (NLB) and use SSL/TLS termination
+
+ -----------------------------------
+
+A large quantity of data is stored on a NAS device on-premises and accessed using the SMB protocol. The company require a managed service for hosting the filesystem and a tool to automate the migration.
+
+Which actions should a Solutions Architect take?
+
+ Migrate the data to Amazon EFS using the AWS Server Migration Service (SMS)
+ Migrate the data to Amazon FSx for Windows File Server using AWS DataSync
+ Migrate the data to Amazon S3 using and AWS Snowball Edge device
+ Migrate the data to Amazon FSx for Lustre using AWS DataSync
+
+ -----------------------------------
+
+A Solutions Architect is designing an application that will run on an Amazon EC2 instance. The application must asynchronously invoke an AWS Lambda function to analyze thousands of .CSV files. The services should be decoupled.
+
+Which service can be used to decouple the compute services?
+
+ Amazon Kinesis
+ Amazon OpsWorks
+ Amazon SNS
+ Amazon SWF
+
+ -----------------------------------
+
+
+A highly sensitive application runs on Amazon EC2 instances using EBS volumes. The application stores data temporarily on Amazon EBS volumes during processing before saving results to an Amazon RDS database. The company’s security team mandate that the sensitive data must be encrypted at rest.
+
+Which solution should a Solutions Srchitect recommend to meet this requirement?
+
+ Use Amazon Data Lifecycle Manager to encrypt all data as it is stored to the EBS volumes and RDS database.
+ Configure SSL/TLS encryption using AWS KMS customer master keys (CMKs) to encrypt database volumes.
+ Use AWS Certificate Manager to generate certificates that can be used to encrypt the connections between the EC2 instances and RDS.
+ Configure encryption for the Amazon EBS volumes and Amazon RDS database with AWS KMS keys.
+ 
+ -----------------------------------

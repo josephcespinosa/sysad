@@ -1,0 +1,458 @@
+PRACTICE EXAM 2
+https://www.knowledgehut.com/
+
+How do you achieve single sign on with AWS (choose 1 correct answers)
+By Using Multi-factor authentication
+It is configurable in the IAM policies for the user
+It is currently not possible in AWS
+By Configuring SAML 2.0
+By Using active directory and LDAP integration
+Explanation
+Which procedure for backing up a relational database on EC2 that is using a set of RAIDed EBS volumes for storage minimizes the time during which the database cannot be written to and results in a consistent backup?
+Suspend disk I/O, 2. Start EBS snapshot of volumes, 3. Resume disk I/O
+Stop the EC2 Instance. 2. Snapshot the EBS volumes
+Detach EBS volumes, 2. Start EBS snapshot of volumes, 3. Re-attach EBS volumes
+Suspend disk I/O, 2. Start EBS snapshot of volumes, 3. Wait for snapshots to complete, 4. Resume disk I/O
+Suspend disk I/O, 2. Create an image of the EC2 Instance, 3. Resume disk I/O
+Explanation
+You are running an ERP application on EC2 for your company that runs 24×7 and the load is predictable and constant throughout the year. Which is the most cost-efficient option for the EC2 purchase model in this case ? (choose 1 correct answers)
+EC2 is not the right choice here
+Dedicated
+Reserved
+Spot Instance
+On-Demand
+Explanation
+BCJC has a legacy application with licensing that is attached to a single MAC address. Since an EC2 instance can receive a new MAC address when launching new instances, how can you ensure that your EC2 instance can maintain a single MAC address for licensing?
+AWS cannot have a fixed MAC address; the best solution is to create a dedicated VPN/VGW gateway to serve data from the legacy application.
+Private subnets have static MAC addresses. Launch the EC2 instance in a private subnet and, if required, use a NAT to serve data over the internet.
+Configure a manual MAC address for each EC2 instance and report that to the licensing company.
+Create an ENI and assign it to the EC2 instance. The ENI will have a static MAC address and can be detached and reattached to a new instance if the current instance becomes unavailable.
+Explanation
+A benefits enrollment company is hosting a 3-tier web application running in a VPC on AWS, which includes a NAT (Network Address Translation) instance in the public Web tier. There is enough provisioned capacity for the expected workload tor the new fiscal year benefit enrollment period plus some extra overhead Enrollment proceeds nicely for two days and then the web tier becomes unresponsive, upon investigation using CloudWatch and other monitoring tools it is discovered that there is an extremely large and unanticipated amount of inbound traffic coming from a set of 15 specific IP addresses over port 80 from a country where the benefits company has no customers. The web tier instances are so overloaded that benefit enrollment administrators cannot even SSH into them. Which activity would be useful in defending against this attack?
+Create an inbound NACL (Network Access control list) associated with the web tier subnet with deny rules to block the attacking IP addresses
+Create 15 Security Group rules to block the attacking IP addresses over port 80
+Change the EIP (Elastic IP Address) of the NAT instance in the web tier subnet and update the Main Route Table with the new EIP
+Create a custom route table associated with the web tier and block the attacking IP addresses from the IGW (internet Gateway)
+Explanation
+You are building an automated transcription service in which Amazon EC2 worker instances process an uploaded audio file and generate a text file. You must store both of these files in the same durable storage until the text file is retrieved. You do not know what the storage capacity requirements are. Which storage option is both cost-efficient and scalable?
+Multiple Amazon EBS volume with snapshots
+A single Amazon Glacier vault
+Multiple instance stores
+A single Amazon S3 bucket
+Explanation
+What kind of data should not be stored in S3 ? (choose 2 correct answers)
+Notifications from a computer program
+Static files for your websites
+Images and videos
+Your website database
+Explanation
+You receive a bill from AWS but are confused as the exact same storage size you have in different regions on Amazon S3 are incurring different costs. You enquire to AWS as to why this is so. What response would you expect to receive from AWS ?
+We charge less in different time zones.
+It must be a mistake.
+We charge less where our costs are less .
+This will balance out next bill .
+Explanation
+BCJC has many employees who need to run internal applications that access the company’s AWS resources. These employees already have user credentials in the company’s current identity authentication system, which does not support SAML 2.0. The company does not want to create a separate IAM user for each company employee. How should the SSO setup be designed? Choose the 2 correct answers:
+Configure an AD server which synchronizes from the company's current Identity Provide and configures SAML-based single sign-on which will then use the AssumeRoleWithSAML API calls to generate credentials for the employees.
+Create a custom identity broker application which authenticates the employees using the existing system, uses the GetFederationToken API call and passes a permission policy to gain temporary access credentials from STS.
+Create a custom identity broker application which authenticates employees using the existing system and uses the AssumeRole API call to gain temporary, role-based access to AWS.
+Create an IAM user to share based off of employee roles in the company.
+Explanation
+Choose the correct statements. (Choose 3 correct answers)
+You can use Reduced Redundancy storage for lower cost option
+You can serve your static website from S3
+You can have unlimited number of objects in S3 bucket
+Data stored in S3 is encrypted
+An S3 object can be of unlimited size
+Explanation
+You’re consulting for a new customer, who is attempting to create a hybrid network between AWS and their on-premise data centers. Currently, they have internal databases running on-premise that, due to licensing reasons, cannot be migrated to AWS. The front end of the application has been migrated to AWS and uses the DB hostname “”db.internalapp.local”” to communicate with the on-premise database servers. Hostnames provide an easy method for updating IP addresses in event of failover instead of having to update the IP address in the code. Given the current architecture what is the best way to configure internal DNS for this hybrid application? (Choose Two)
+Configure the database to have a public-facing IP address and use Route 53 to create a domain name
+Create an EC2 instance DNS server to configure hostnames for internal DNS records, Create a new Amazon VPC DHCP option set with the internal DNS server's IP address.
+Use an existing on-premise DNS server to configure hostnames for internal DNS records. Create a new Amazon VPC route table with the internal DNS server's IP address
+Use an existing on-premise DNS server to configure hostnames for internal DNS records. Create a new Amazon VPC DHCP Option Set with the internal DNS server's IP address.
+Explanation
+Which of the following can be used as an origin server in CloudFront? ( Choose 3 correct answers )
+An Amazon S3 bucket
+A Glacier storage
+A webserver running in your own datacenter
+A webserver running on EC2
+A RDS instance
+Explanation
+What are the characteristics of a reserved instance ? (choose 3 correct answers)
+You pay a fixed amount of money irrespective of the number of hours you used the instance for
+It can be applied across regions
+It saves you significant money over on-demand instance
+If your AMI changes the Reserved instance is still valid if it’s the same instance type
+You can shut down the reserved instance any time you want and the hourly charge won’t incur for the shutdown hours
+Explanation
+You are building infrastructure for a data warehousing solution and an extra request has come through that there will be a lot of business reporting queries running all the time and you are not sure if your current DB instance will be able to handle it. What would be the best solution for this?
+DB Parameter Groups
+Database Snapshots
+Read Replicas
+Multi-AZ DB Instance deployment
+Explanation
+You are setting up a website for a small startup company. You have built them what you believe to be a great solution on AWS for the money they wanted to spend. It is a very image intensive site, so you have utilized CloudFront to help with the serving of images. The client complains to you, however, that he requires a custom domain name when serving up this content that should work with https from CloudFront, so rather than being provided with a xxxx.cloudfront.net domain he wants a custom domain such as ssuc.com. What would you need to do to accomplish what the customer is asking?
+You must provision and configure your own SSL certificate in IAM and associate it to your CloudFront distribution.
+You must create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket where the images are stored.
+You must provision and configure an ALIAS in Route 53 and associate it to your CloudFront distribution
+You must provision and configure your own SSL certificate in Route 53 and associate it to your CloudFront distribution.
+Explanation
+What is true about EBS ? (chose 3 correct answers)
+You can share the snapshot with other AWS accounts
+Snapshots are automatically encrypted
+Snapshots are incremental in nature and only
+The snapshots are stored in S3
+The snapshots are just stored as another EBS volume
+Explanation
+A company has configured and peered two VPCs: VPC-1 and VPC-2. VPC-1 contains only private subnets, and VPC-2 contains only public subnets. The company uses a single AWS Direct Connect connection and private virtual interface to connect their on-premises network with VPC-1. Which two methods increase the fault tolerance of the connection to VPC-1? Choose 2 answers
+Establish a hardware VPN over the internet between VPC-2 and the on-premises network.
+Establish a hardware VPN over the internet between VPC-1 and the on-premises network
+Establish a new AWS Direct Connect connection and private virtual interface in a different AWS region than VPC-1
+Establish a new AWS Direct Connect connection and private virtual interface in the same region as VPC-2
+Establish a new AWS Direct Connect connection and private virtual interface in the same AWS region as VPC-1
+Explanation
+An instance is launched into a VPC subnet with the network ACL configured to allow all inbound traffic and deny all outbound traffic. The instance’s security group is configured to allow SSH from any IP address and deny all outbound traffic. What changes need to be made to allow SSH access to the instance?
+The outbound security group needs to be modified to allow outbound traffic.
+The outbound network ACL needs to be modified to allow outbound traffic.
+Both the outbound security group and outbound network ACL need to be modified to allow outbound traffic.
+Nothing, it can be accessed from any IP address using SSH.
+Explanation
+You are currently hosting multiple applications in a VPC and have logged numerous port scans coming in from a specific IP address block. Your security team has requested that all access from the offending IP address block be denied for the next 24 hours. Which of the following is the best method to quickly and temporarily deny access from the specified IP address block?
+Add a rule to all of the VPC 5 Security Groups to deny access from the IP address block
+Create an AD policy to modify Windows Firewall settings on all hosts in the VPC to deny access from the IP address block
+Modify the Network ACLs associated with all public subnets in the VPC to deny access from the IP address block
+Modify the Windows Firewall settings on all Amazon Machine Images (AMIs) that your organization uses in that VPC to deny access from the IP address block
+Explanation
+An instance is connected to an ENI (Elastic Network Interface) in one subnet. What happens when you attach an ENI of a different subnet to this instance? (choose 1 correct answers)
+The instance follows the rules of the newer subnet
+The instance follows the rules of both the subnets
+The instance follows the rules of the older subnet
+Not possible cannot be connected to 2 ENIs
+Explanation
+What is the difference between a security group in VPC and a network ACL in VPC ? (choose 3 correct answers)
+Network ACL performs stateless filtering and Security group provides stateful filtering
+Security group can work outside the VPC also while ACL only works within a VPC
+Security group restricts access to EC2 while ACL restricts traffic to a subnet
+Security group restricts access to a Subnet while ACL restricts traffic to EC2
+Security group can only set Allow rule, while ACL can set Deny rule also
+Explanation
+You are doing a large data analysis which requires high computing power and many instances to be launched simultaneously and then to be retired after the analysis. If the instance is retired during the analysis, the program automatically shifts the analysis to the other instance. Which is the most cost-efficient option for launching the EC2 in this case? (Choose 1 correct answers)
+Dedicated
+EC2 is not the right choice here
+Reserved
+Spot
+On-Demand
+Explanation
+Instance A and instance B are running in two different subnets A and B of a VPC. Instance A is not able to ping instance B. What are two possible reasons for this? (Pick 2 correct answers)
+The security group attached to instance B does not allow inbound ICMP traffic
+The NACL on subnet B does not allow outbound ICMP traffic
+The routing table of subnet A has no target route to subnet B
+The policy linked to the IAM role on instance A is not configured correctly
+Explanation
+You have been given a new brief from your supervisor for a client who needs a web application set up on AWS. The most important requirement is that MySQL must be used as the database, and this database must not be hosted in the public cloud, but rather at the client’s data center due to security risks. Which of the following solutions would be the best to assure that the client’s requirements are met?
+Build the application server on a public subnet and the database at the client’s data center. Connect them with a VPN connection which uses IPsec.
+Build the application server on a public subnet and build the database in a private subnet with a secure ssh connection to the private subnet from the client's data center.
+Use the public subnet for the application server and use RDS with a storage gateway to access and synchronize the data securely from the local data center.
+Build the application server on a public subnet and the database on a private subnet with a NAT instance between them.
+Explanation
+A company is preparing to give AWS Management Console access to developers. Company policy mandates identity federation and role-based access control. Roles are currently assigned using groups in the corporate Active Directory. What combination of the following will give developers access to the AWS console? (Select 2) Choose 2 answers
+AWS identity and Access Management users
+AWS Directory Service Simple AD
+AWS Directory Service AD Connector
+AWS identity and Access Management roles
+AWS Identity and Access Management groups
+Explanation
+A user has created a VPC with public and private subnets. The VPC has CIDR 20.0.0.0/16. The private subnet uses CIDR 20.0.1.0/24 and the public subnet uses CIDR 20.0.0.0/24. The user is planning to host a web server in the public subnet (port 80. and a DB server in the private subnet (port 3306.. The user is configuring a security group of the NAT instance. Which of the below mentioned entries is not required for the NAT security group?
+For Outbound allow Destination: 0.0.0.0/0 on port 80
+For Outbound allow Destination: 0.0.0.0/0 on port 443
+For Inbound allow Source: 20.0.1.0/24 on port 80
+For Inbound allow Source: 20.0.0.0/24 on port 80
+Explanation
+You manually launch a NAT AMI in a public subnet. The network is properly configured. Security groups and network access control lists are property configured. Instances in a private subnet can access the NAT. The NAT can access the Internet. However, private instances cannot access the Internet. What additional step is required to allow access from the private instances?
+Enable Source/Destination Check on the private Instances.
+Disable Source/Destination Check on the NAT instance
+Enable Source/Destination Check on the NAT instance.
+Disable Source/Destination Check on the private instances
+Explanation
+What is true about VPC ? (chose 3 correct answers)
+You may use a third party software VPN to create a site to site or remote access VPN connection with your VPC via the Internet Gateway
+A VPC is always across multiple availability zones within a region
+There will always be atleast 1 default VPC
+You can either have a VPC with public subnet or private subnet
+You can have one EC2 in more than 1 VPC
+Explanation
+What is true about RDS ? (choose 3 correct answers)
+You can enable Multi-AZ option to have automatic failover in a different region
+You can create multiple read replicas for read heavy applications
+You can have provisioned IOPS for your RDS database
+Daily backups are automatically taken
+You can have a read replicas of a read replicas
+Explanation
+You’ve recently migrated an application from a customer’s on-premise data center to the AWS cloud. Currently, you’re using the ELB to serve traffic to the legacy application. The ELP is also using HTTP port 80 as the health check ping port. The application is currently responding by returning a website on port 80 when you test the IP address directly. However, the instance is not registering as healthy even though the appropriate amount of time has passed for the health check to register as healthy. How might the issue be resolved?
+Change the ELB listener port from HTTP port 80 toTCP port 80 for the instance to register as healthy
+Change the ELB listener port from ping port 80 to HTTPS port 80 for the instance to register as healthy
+Change the ELB listener port from HTTP port 80 to HTTPS port 80 for the instance to register as healthy
+Change the ELB listener port from HTTP port 80 to TCP port 443 for the instance to register as healthy
+Explanation
+In which case do you have full authority of the underlying host ? (Choose 2 correct answers)
+Dynamo DB
+EC2
+RDS
+EMR (Elastic Map Reduce)
+Simple DB
+Explanation
+A few weeks into your dream job with the large scientific institution, a group of EC2 instances that you set up in a Placement Group doesn’t seem to run as efficiently as you expected it to and seems to be suffering from low performance of packets, high latency and lots of jitter. Consequently, you have started to look at ways to fix this. Which of the following solutions would create enhanced networking capabilities on instances that would result in higher instances of packets per second, lower latency, and reduced jitter?
+Splitting the instances across two Placement Groups in the same Availability Zone.
+Adding more instances to the Placement Group. Making sure you stop and restart all the other instances at the same time.
+Increasing the size of all the instances
+Using Single Root I/O Virtualization (SR-IOV) on all the instances.
+Explanation
+For which of the following use cases are Simple Workflow Service (SWF) and Amazon EC2 an appropriate solution? Choose 2 answers
+Orchestrating the execution of distributed and auditable business processes
+Using as a distributed session store for your web application
+Using as an SNS (Simple Notification Service) endpoint to trigger execution of video transcoding jobs
+Managing a multi-step and multi-decision checkout process of an e-commerce website
+Using as an endpoint to collect thousands of data points per hour from a distributed fleet of sensors
+Explanation
+When you put objects in Amazon S3, what is the indication that an object was successfully stored?
+A HTTP 200 result code and MD5 checksum, taken together, indicate that the operation was successful.
+Amazon S3 is engineered for 99.999999999% durability. Therefore there is no need to confirm that data was inserted.
+A success code is inserted into the S3 object metadata.
+Each S3 account has a special bucket named_s3_logs. Success codes are written to this bucket with a timestamp and checksum.
+Explanation
+Once again your security officer is on your case and this time is asking you to make sure the AWS Key Management Service (AWS KMS) is working as it is supposed to. You are initially not too sure how KMS even works, however after some intense late night reading you think you have come up with a reasonable definition. Which of the following best describes how the AWS Key Management Service works?
+AWS KMS supports two kinds of keys — master keys and data keys. Master keys can be used to directly encrypt and decrypt up to 4 kilobytes of data and can also be used to protect data keys. The data keys are then used to encrypt and decrypt customer data.
+AWS KMS supports two kinds of keys — master keys and data keys. Master keys can be used to directly encrypt and decrypt up to 4 kilobytes of data and can also be used to protect data keys. The data keys are then used to decrypt the customer data, and the master keys are used to encrypt the customer data.
+AWS KMS supports two kinds of keys — master keys and data keys. Master keys can be used to directly encrypt and decrypt up to 4 kilobytes of data and can also be used to protect data keys. The data keys are then used to encrypt the customer data and the master keys are used to decrypt the customer data.
+AWS KMS supports two kinds of keys — master keys and data keys. Master keys can be used to directly encrypt and decrypt up to 4 kilobytes of data and can also be used to protect data keys. The master keys are then used to encrypt and decrypt customer data.
+Explanation
+What are the characteristics of Elastic Beanstalk ? (choose 2 correct answers)
+You can use it to replace an instance in the ELB when it fails its health check
+You don’t need to worry about the infrastructure required to run your applications
+It creates a template for your EC2 instance
+Helps you quickly deploy and manage applications in the AWS cloud
+Explanation
+When an EC2 instance that is backed by an S3-based AMI Is terminated, what happens to the data on the root volume?
+Data is unavailable until the instance is restarted
+Data is automatically deleted
+Data is automatically saved as an EBS volume.
+Data is automatically saved as an EBS snapshot.
+Explanation
+A user has created a VPC with CIDR 20.0.0.0/16 with only a private subnet and VPN connection using the VPC wizard. The user wants to connect to the instance in a private subnet over SSH. How should the user define the security rule for SSH?
+Allow Inbound traffic on port 22 from the user’s network
+The user can connect to a instance in a private subnet using the NAT instance
+The user has to create an instance in EC2 Classic with an elastic IP and configure the security group of a private subnet to allow SSH from that elastic IP
+Allow Inbound traffic on port 80 and 22 to allow the user to connect to a private subnet over the Internet
+Explanation
+After launching an instance that you intend to serve as a NAT (Network Address Translation) device in a public subnet you modify your route tables to have the NAT device be the target of internet bound traffic of your private subnet. When you try and make an outbound connection to the Internet from an instance in the private subnet, you are not successful. Which of the following steps could resolve the issue?
+Attaching a second Elastic Network Interface (ENI) to the instance in the private subnet, and placing it in the public subnet
+Attaching a second Elastic Network interface (ENI) to the NAT instance, and placing it in the private subnet
+Attaching an Elastic IP address to the instance in the private subnet
+Disabling the Source/Destination Check attribute on the NAT instance
+Explanation
+What are the characteristics of Subnet ? (Choose 2 correct answers)
+Default subnets are assigned a /16 netblocks
+A subnet can be across multiple availability zones
+Default subnets are assigned a /20 netblocks
+Network traffic entering and exiting each subnet can be allowed or denied via network Access Control Lists (ACLs)
+A subnet can be across multiple regions
+Explanation
+Which of the following statements is true for S3 Buckets
+Bucket names can contain alpha numeric characters
+Bucket are associated with a region, and all data in a bucket resides in that region
+Bucket namespace is shared and is global among all AWS users.
+Buckets can be transferred from one account to another through API
+You can have unlimited number of buckets in each AWS account
+Explanation
+What are the characteristics of CloudFormation ? (Choose 2 correct answers)
+It creates a template for your EC2 instance
+You don’t need to worry about the infrastructure required to run your applications
+Helps you quickly deploy and manage applications in the AWS cloud
+You can use it to replace an instance in the ELB when it fails its health check
+Explanation
+Which of the following Auto scaling cannot perform ? (choose 3 correct answers)
+Release EC2 instances when CPU utilization is below threshold
+Add more Relational Database Service (RDS) read replicas when utilization is above threshold
+Reboots an instance if the health check is failed for that instance
+Increase the instance size when utilization is above threshold
+Start up EC2 instances when CPU utilization is above threshold
+Explanation
+A web company is looking to implement an external payment service into their highly available application deployed in a VPC. Their application EC2 instances are behind a public facing ELB. Auto scaling is used to add additional instances as traffic increases. Under normal load the application runs 2 instances in the Auto Scaling group but at peak it can scale 3x in size. The application instances need to communicate with the payment service over the Internet, which requires whitelisting of all public IP addresses used to communicate with it. A maximum of 4 whitelisting IP addresses are allowed at a time and can be added through an API. How should they architect their solution?
+Whitelist the VPC Internet Gateway Public IP and route payment requests through the Internet Gateway. (Internet gateway is only to route traffic)
+Automatically assign public IP addresses to the application instances in the Auto Scaling group and run a script on boot that adds each instances public IP address to the payment validation whitelist API. (would exceed the allowed 4 IP addresses)
+Whitelist the ELB IP addresses and route payment requests from the Application servers through the ELB. (ELB does not have a fixed IP address)
+Route payment requests through two NAT instances setup for High Availability and whitelist the Elastic IP addresses attached to the NAT instances
+Explanation
+Which of the following will provide the maximum IOPS for your EC2 ? (Choose 1 correct answer)
+EBS with provisioned IOPS
+Stripe data across Multiple EBS volumes with Raid 5
+Stripe data across Multiple EBS volumes with Raid 0
+EBS with SSD storage
+Instance based SSD storage
+Explanation
+A user has recently started using EC2. The user launched one EC2 instance in the default subnet in EC2-VPC Which of the below mentioned options is not attached or available with the EC2 instance when it is launched?
+Internet gateway
+Elastic IP
+Private IP address
+Public IP address
+Explanation
+You have two Elastic Compute Cloud (EC2) instances inside a Virtual Private Cloud (VPC) in the same Availability Zone (AZ) but in different subnets. One instance is running a database and the other instance an application that will interface with the database. You want to confirm that they can talk to each other for your application to work properly. Which two things do we need to confirm in the VPC settings so that these EC2 instances can communicate inside the VPC? Choose 2 answers
+Security groups are set to allow the application host to talk to the database on the right port/protocol
+A network ACL that allows communication between the two subnets.
+That the default route is set to a NAT instance or Internet Gateway (IGW) for them to communicate.
+Both instances are the same instance class and using the same Key-pair.
+Explanation
+What is true about AMI ? (choose 4 correct answers)
+You can share your AMI with other AWS account owners
+For EBS stored-backed AMIs, the root volume is stored in S3
+You can create an EBS-backed AMI
+You can create an instance store-backed AMI
+For Instance stored-backed AMIs, the root volume is stored in S3
+Explanation
+A user has created a VPC with CIDR 20.0.0.0/24. The user has created a public subnet with CIDR 20.0.0.0/25. The user is trying to create the private subnet with CIDR 20.0.0.128/25. Which of the below mentioned statements is true in this scenario?
+It will allow the user to create a private subnet with CIDR as 20.0.0.128/25
+It will not allow the user to create a private subnet due to a wrong CIDR range
+This statement is wrong as AWS does not allow CIDR 20.0.0.0/25
+It will not allow the user to create the private subnet due to a CIDR overlap
+Explanation
+What are the characteristics of EBS ? (Choose 3 correct answers)
+Data in EBS is stored across multiple AZ for redundancy
+You can have provisioned IOPS with your EBS volumes
+Maximum size of an EBS can be 1 TB
+You can attach one EBS volume to multiple EC2 instance
+EBS behaves like raw unformatted block device
+Explanation
+From what services can I block incoming/outgoing IPs?
+ELB
+IGW
+NACL
+VPC subnet
+DNS
+Security Groups
+Explanation
+If you want to launch Amazon Elastic Compute Cloud (EC2) Instances and assign each Instance a predetermined private IP address you should:
+Assign a group or sequential Elastic IP address to the instances
+Launch the instances in a Placement Group
+Use standard EC2 instances since each instance gets a private Domain Name Service (DNS) already
+Launch the instances in the Amazon virtual Private Cloud (VPC)
+Launch the Instance from a private Amazon Machine image (AMI)
+Explanation
+A customer is hosting their company website on a cluster of web servers that are behind a public-facing load balancer. The customer also uses Amazon Route 53 to manage their public DNS. How should the customer configure the DNS zone apex record to point to the load balancer?
+Create an A record aliased to the load balancer DNS name
+Create a CNAME record aliased to the load balancer DNS name.
+Create an A record pointing to the IP address of the load balancer
+Create a CNAME record pointing to the load balancer DNS name.
+Explanation
+A company is storing data on Amazon Simple Storage Service (S3). The company’s security policy mandates that data is encrypted at rest. Which of the following methods can achieve this? Choose 3 answers
+Use Amazon S3 server-side encryption with AWS Key Management Service managed keys
+Use Amazon S3 server-side encryption with customer-provided keys
+Use Amazon S3 bucket policies to restrict access to the data at rest.
+Use Amazon S3 server-side encryption with EC2 key pair.
+Use SSL to encrypt the data while in transit to Amazon S3
+Encrypt the data on the client-side before ingesting to Amazon S3 using their own master key
+Explanation
+What is the difference between a security group in VPC and a network ACL in VPC (chose 2 correct answers)
+Security group can work outside the VPC also while ACL only works within a VPC
+Network ACL performs stateless filtering and Security group provides stateful filtering
+Security group restricts access to a Subnet while ACL restricts traffic to EC2
+Security group restricts access to EC2 while ACL restricts traffic to a subnet
+Security group can only set Allow rule, while ACL can set Deny rule also
+Explanation
+In AWS, which security aspects are the customer’s responsibility? Choose 3 answers
+Security Group and ACL (Access Control List) settings
+Patch management on the EC2 instances operating system
+Encryption of EBS (Elastic Block Storage) volumes
+Life-cycle management of IAM credentials
+Decommissioning storage devices (AWS responsibility)
+Controlling physical access to compute resources (AWS responsibility)
+Explanation
+In CloudFront what happens when content is NOT present at an Edge location and a request is made to it? (Choose 1 correct answer)
+CloudFront delivers the content directly from the origin server and stores it in the cache of the edge location
+The request is routed to the next closest edge location
+The request is kept on hold till content is delivered to the edge location
+An Error 404 not found is returned
+Explanation
+You are setting up some EBS volumes for a customer who has requested a setup which includes a RAID (redundant array of inexpensive disks). AWS has certain recommendations for RAID setup. Which RAID setup is not recommended for Amazon EBS ?
+RAID 5 and Raid 6
+RAID 1 and Raid 6
+RAID 0 only
+RAID 5 only
+Explanation
+DDoS attacks that happen at the application layer commonly target web applications with lower volumes of traffic compared to infrastructure attacks. To mitigate these types of attacks, you should probably want to include a WAF (Web Application Firewall) as part of your infrastructure. To inspect all HTTP requests, WAFs sit in-line with your application traffic. Unfortunately, this creates a scenario where WAFs can become a point of failure or bottleneck. To mitigate this problem, you need the ability to run multiple WAFs on demand during traffic spikes. This type of scaling for WAF is done via a “WAF sandwich.” Which of the following statements best describes what a “WAF sandwich” is?
+The EC2 instance running your WAF software is included in an Auto Scaling group and placed in between two Elastic load balancers.
+The EC2 instance running your WAF software is placed between your public subnets and your Internet Gateway.
+The EC2 instance running your WAF software is placed between your public subnets and your private subnets.
+The EC2 instance running your WAF software is placed between your private subnets and any NATed connections to the Internet.
+Explanation
+What are characteristics of Amazon S3? Choose 2 answers
+S3 offers Provisioned IOPS
+S3 should be used to host a relational database
+S3 allows you to store objects or virtually unlimited size
+Objects are directly accessible via a URL
+S3 allows you to store virtually unlimited amounts of data
+Explanation
+Related Tests
+AWS Solutions Architect Associate Practice Test
+Questions: 60
+Total time: 45 mins
+AWS Solutions Architect Associate Practice Test
+Questions: 60
+Total time: 45 mins
+AWS Solutions Architect Associate Practice Test
+Questions: 60
+Total time: 45 mins
+AWS Solutions Architect Associate Practice Test
+Questions: 60
+Total time: 45 mins
+Connect with us
+Get Our Weekly Newsletter
+josephcespinosa@gmail.com
+SUBSCRIBE
+We Accept
+USA : +1-469-442-0620, +1-832-684-0080
+India : +91-84484-45027
+Toll Free: 1800-121-9232
+UK: +44-2080890434
+Singapore: +65-315-83941
+Malaysia: +601548770914
+Canada: +1-613-707-0763
+New Zealand: +64-36694791
+Ireland: +353-14402544
+Australia: +61-290995641
+UAE: Toll Free 8000180860
+Company
+About Us
+Careers
+Accreditation
+Customer Speak
+Media
+Contact Us
+Offerings
+Live virtual (online)
+Classroom
+E-learning
+Agile Services
+Refer & Earn
+Corporate Training
+Resources
+Tutorials
+Blog
+Interview Questions
+Practice Tests
+Webinars
+Meetups
+Conferences
+Partner with us
+Become an Instructor
+Support
+Course Info
+FAQs
+Terms & Conditions
+Privacy Policy & Disclaimer
+Cancellation & Refund Policy
+Site map
+Disclaimer: KnowledgeHut reserves the right to cancel or reschedule events in case of insufficient registrations, or if presenters cannot attend due to unforeseen circumstances. You are therefore advised to consult a KnowledgeHut agent prior to making any travel arrangements for a workshop. For more details, please refer Cancellation & Refund Policy.
+CSM®, CSPO®, CSD®, CSP®, A-CSPO®, A-CSM® are registered trademarks of Scrum All READ MORE
+
+© 2011-21 KnowledgeHut. All Rights Reserved
+Privacy policyTerms of service

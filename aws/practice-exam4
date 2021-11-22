@@ -1,0 +1,495 @@
+EXAM - EC2
+CLOUDGURU - EC2
+
+ Which EC2 feature uses SR-IOV?
+
+
+CloudWatch Agent
+
+
+IAM Roles
+
+
+Bootstrap Scripts (User Data)
+
+
+Enhanced networking
+
+A : D 
+E : Enhanced networking uses single root I/O virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types. SR-IOV is a method of device virtualization that provides higher I/O performance and lower CPU utilization when compared to traditional virtualized network interfaces. Enhanced networking provides higher bandwidth, higher packet per second (PPS) performance, and consistently lower inter-instance latencies
+
+
+----------------------------
+
+
+
+The use of a cluster placement group is ideal ___
+
+
+When you need to deploy EC2 instances that require high disk IO.
+
+
+Your fleet of EC2 instances requires high network throughput and low latency within a single availability zone.
+
+
+When you need to distribute content on a CDN network.
+
+
+Your fleet of EC2 Instances requires low latency and high network throughput across multiple availability zones.
+
+
+A : B 
+Explanation : Cluster Placement Groups are primarily about keeping you compute resources within one network hop of each other on high speed rack switches. This is only helpful when you have compute loads with network loads that are either very high or very sensitive to latency.
+
+
+----------------------------
+
+You need to know both the private IP address and public IP address of your EC2 instance. You should ____.
+
+
+Run IPCONFIG (Windows) or IFCONFIG (Linux).
+
+
+Retrieve the instance Metadata from http://169.254.169.254/latest/meta-data/local-ipv4 and http://169.254.169.254/latest/meta-data/public-ipv4.
+
+
+Use the following command: AWS EC2 DisplayIP.
+
+
+Retrieve the instance User Data from http://169.254.169.254/latest/user-data/.
+
+A : B 
+
+Instance Metadata and User Data can be retrieved from within the instance via a special URL. Similar information can be extracted by using the API via the CLI or an SDK. The ipconfig and ifconfig tools don't have the ability to see the Public IP Address directly, since it's attached dynamically inside the AWS Software Defined Network which has to be queried by the API
+
+
+
+----------------------------
+
+
+If an Amazon EBS volume is attached as an additional disk (not the root volume), can I detach it without stopping the instance?
+
+
+Yes, although it may take some time.
+
+
+No, you will need to stop the instance.
+
+A : A 
+Since the additional disk does not contain the operating system, you can detach it in the EC2 Console while the instance is running. However, any data on that drive would become inaccessible, and possibly cause problems for the EC2 instance
+
+
+
+
+----------------------------
+
+Can I delete a snapshot of the root device of an EBS volume used by a registered AMI?
+
+
+Only using the AWS API.
+
+
+Only via the Command-Line.
+
+
+No.
+
+
+Yes.
+
+A : C 
+If the original snapshot was deleted, then the AMI would not be able to use it as the basis to create new instances. For this reason, AWS protects you from accidentally deleting the EBS Snapshot, since it could be critical to your systems. To delete an EBS Snapshot attached to a registered AMI, first remove the AMI, then the snapshot can be deleted.
+
+
+
+
+
+----------------------------
+
+Which of the following provide the least expensive EBS options?
+
+Choose 2
+
+
+Cold (sc1)
+
+
+Throughput Optimized (st1)
+
+
+Provisioned IOPS (io1)
+
+
+General Purpose (gp2)
+
+A : A,B 
+Explanation : Of all the EBS types, both current and of the previous generation, HDD based volumes will always be less expensive than SSD types. Therefore, of the options available in the question, the Cold (sc1) and Throughout Optimized (st1) types are HDD based and will be the least expensive options.
+
+
+----------------------------
+
+When creating a new security group, all inbound traffic is allowed by default.
+
+
+False
+True
+
+A : A 
+There are slight differences between a normal 'new' Security Group and a 'default' security group in the default VPC. For a 'new' security group nothing is allowed in by default.
+
+----------------------------
+
+When can you attach/replace an IAM role on an EC2 instance?
+
+
+Anytime, but the instance must be stopped
+
+
+Only during launch and cannot be changed once the instance is launched
+
+
+Anytime, but only if there isn't already an attached IAM Role
+
+
+To attach an IAM role to an instance that has no role, the instance can be in the stopped or running state. To replace the IAM role on an instance that already has an attached IAM role, the instance must be in the running state.
+
+A : D 
+Explanation : IAM Roles can be attached to instances in the stopped or running state, or replaced for instances in the running state. Prior to early 2017, you would only be able to attach an IAM role at launch, and if you wanted to attach a role, you would have to terminate and re-launch the instance. Reference:
+
+----------------------------
+
+
+To retrieve instance metadata or user data you will need to use the following IP Address:
+
+
+http://192.168.0.254
+
+
+http://169.254.169.254
+
+
+http://127.0.0.1
+
+
+http://10.0.0.1
+
+Good work!
+This IP Address is specific to AWS, where you can use it on any instance to acquire information about that instance. It is a specific type of address called a 'link-local address', and is only accessible from that particular instance. You can also disable the metadata service to prevent it's misuse
+
+B 
+
+----------------------------
+
+What are the valid underlying hypervisors for EC2?
+
+Choose 2
+
+
+Nitro
+
+
+Xen
+
+
+OVM
+
+
+Hyper-V
+
+
+ESX
+
+
+A : A,B 
+AWS originally used a modified version of the Xen Hypervisor to host EC2. In 2017, AWS began rolling out their own Hypervisor called Nitro.
+
+
+
+----------------------------
+
+Which service would you use to run a general Windows File Server with minimal overhead?
+
+
+EBS Multi Attach
+
+
+FSx for Windows
+
+
+EFS
+
+
+S3
+
+A : B 
+Amazon FSx for Windows File Server provides a fully managed native Microsoft Windows file system so you can easily move your Windows-based applications that require shared file storage to AWS. EBS Multi Attach allows you to attach a volume to up to 16 instances, but would have issues across multiple availability zones, and could not use NTFS natively. EFS uses the NFS protocol, and is explicitly not supported on Windows. S3 is object-based storage, and would not be suitable as the backend for a file server
+
+
+
+
+----------------------------
+
+Can Spread Placement Groups be deployed across multiple Availability Zones?
+
+
+Only in Us-East-1.
+
+
+No.
+
+
+Yes, but only using the AWS API.
+
+
+Yes.
+
+Sorry!
+Correct Answer
+Spread Placement Groups can be deployed across availability zones since they spread the instances further apart. Cluster Placement Groups can only exist in one Availability Zone since they are focused on keeping instances together, which you cannot do across Availability Zones
+
+D 
+
+
+----------------------------
+
+Is it possible to perform API actions on an existing Amazon EBS Snapshot?
+
+
+It depends on the region.
+
+
+Yes, through the AWS APIs, CLI, and AWS Console.
+
+
+EBS does not have snapshot functionality.
+
+
+No
+
+A : B
+You can use AWS APIs, CLI or the AWS Console to copy snapshots, share snapshots, and create volumes from snapshots.
+
+----------------------------
+
+When updating the policy used by an IAM Role attached to an EC2 instance, what needs to happen for the changes to take effect?
+
+
+Nothing - It will take effect almost immediately
+
+
+Wait up to 15 minutes for the change to take effect
+
+
+Reattach the IAM Role to the EC2 instance
+
+
+Reboot the instance to force the change
+
+
+A : A 
+Changes to IAM Policies take effect almost immediately (with maybe a few seconds delay). No substantial waiting time is required, nor changes to the system. This is because the IAM Policy exists in the AWS API, rather than on the instance itself. As a way to remember it in a scenario, if you think about a compromised system, you would need to revoke the access immediately, without waiting for changes to take effect. 
+
+
+----------------------------
+
+
+In order to enable encryption at rest using EC2 and Elastic Block Store, you must ____.
+
+
+Mount the EBS volume in to S3 and then encrypt the bucket using a bucket policy.
+
+
+Configure encryption using the appropriate Operating Systems file system
+
+
+Configure encryption using X.509 certificates
+
+
+Configure encryption when creating the EBS volume
+
+A : D 
+The use of encryption at rest is default requirement for many industry compliance certifications. Using AWS managed keys to provide EBS encryption at rest is a relatively painless and reliable way to protect assets and demonstrate your professionalism in any commercial situation.
+
+
+
+----------------------------
+
+To help you manage your Amazon EC2 instances, you can assign your own metadata in the form of ____.
+
+
+Tags
+
+
+Certificates
+
+
+Wildcards
+
+
+Notes
+
+A : A 
+Explanation : Tagging is a key part of managing an environment. Even in a lab, it is easy to lose track of the purpose of resources, and tricky determine why it was created and if it is still needed. This can rapidly translate into lost time and lost money.
+
+
+----------------------------
+
+Standard Reserved Instances can be moved between regions
+
+
+True
+
+
+False
+
+Sorry!
+Correct Answer
+Standard Reserved Instances cannot be moved between regions. You can choose if a Reserved Instance applies to either a specific Availability Zone, or an Entire Region, but you cannot change the region
+
+b 
+
+----------------------------
+
+What type of storage are Amazon's EBS volumes based on?
+
+
+File-based
+
+
+Block-based
+
+
+Database-based
+
+
+Object-based
+
+Sorry!
+Correct Answer
+EBS uses Block-based storage, where the data is stored on a virtual disk managed by the Operating System. EFS uses File-based storage, where the underlying filesystem is managed by AWS. S3 uses Object-based storage, where files are kept in a flat structure
+
+
+b 
+
+----------------------------
+
+Specifically, where in the AWS Global Infrastructure are EC2 instances provisioned?
+
+
+In Availability Zones
+
+
+Globally
+
+
+In Regions
+
+Good work!
+When you're setting up an EC2 instance, you select which subnet you'd like to place your EC2 instance in. Each subnet is tied to a specific availability zone. You cannot move an instance between Availability Zones, without setting up a copied version of the instance. Whilst they exist in Regions, they are not portable across the whole region, nor across the whole globe
+
+a 
+
+----------------------------
+
+Spread Placement Groups can be deployed across multiple Availability Zones
+
+
+False
+
+
+True
+
+Sorry!
+Correct Answer
+Spread Placement Groups can be deployed across availability zones since they spread the instances further apart. Cluster Placement Groups can only exist in one Availability Zone since they are focused on keeping instances together, which you cannot do across Availability Zones
+
+
+b 
+
+----------------------------
+
+Will an Amazon EBS root volume persist independently from the life of the terminated EC2 instance to which it was previously attached? In other words, if I terminated an EC2 instance, would that EBS root volume persist?
+
+
+Yes - It will always persist until deleted manually
+
+
+Yes - But only for certain instance types
+
+
+No - Unless 'Delete on Termination' is unchecked for the root volume
+
+
+No - It will always be deleted immediately on termination
+
+Good work!
+You can control whether an EBS root volume is deleted when its associated instance is terminated. The default delete-on-termination behaviour depends on whether the volume is a root volume, or an additional volume. By default, the DeleteOnTermination attribute for root volumes is set to 'true.' However, this attribute may be changed at launch by using either the AWS Console or the command line. For an instance that is already running, the DeleteOnTermination attribute must be changed using the CLI.
+
+
+
+C 
+
+
+----------------------------
+
+Which AWS CLI command should I use to create a snapshot of an EBS volume?
+
+
+aws ec2 new-snapshot
+
+
+aws ec2 create-snapshot
+
+
+aws ec2 deploy-snapshot
+
+
+aws ec2 fresh-snapshot
+
+Sorry!
+When looking at the AWS CLI, remember the verbs, like 'create', which are used as part of commands. This helps you build the necessary command in your head, without referring to the documentation. For example, we might create a new image along with this snapshot. From this, we could understand that the command would likely be 'aws ec2 create-image'.
+
+Correct Answer
+When looking at the AWS CLI, remember the verbs, like 'create', which are used as part of commands. This helps you build the necessary command in your head, without referring to the documentation. For example, we might create a new image along with this snapshot. From this, we could understand that the command would likely be 'aws ec2 create-image'.
+
+
+B
+
+----------------------------
+
+EBS Snapshots are backed up to S3 in what manner?
+
+
+Exponentially
+
+
+Incrementally
+
+
+Differentially
+
+
+EBS snapshots are NOT stored on S3.
+
+Sorry!
+EBS snapshots use incremental backups and are stored in S3. Restores can be done from any of the snapshots. The original full snapshot can be safely deleted without impacting the ability to use the other related incremental backups.
+
+Correct Answer
+EBS snapshots use incremental backups and are stored in S3. Restores can be done from any of the snapshots. The original full snapshot can be safely deleted without impacting the ability to use the other related incremental backups.
+
+
+b 
+
+----------------------------
+
+
+
+
+
+
+
+
+VPCs are not a joke. Learn that material well. Build VPCs, add subnets, NACLs, SGs, webservers, NAT Gateways, NAT instances and play around with all their different configurations. One day of experimentation will not cost that much.
+Master Security Groups and NACLs all their little quirks and use cases and what they do and don't
+Master all the Gateways and their use cases: NAT, Internet, Storage, Transit
+Master Route53 CNAMES, aliases, A, AAAA records and when you use them

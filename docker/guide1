@@ -1,0 +1,34 @@
+sudo docker image build -t axesk/default-app .
+
+RUN IMAGE
+docker run -dp 3000:3000 getting-started
+
+run web server
+ docker run -it --rm -d -p 8080:80 --name web nginx
+
+
+
+
+BUILD
+docker image build -t axesk/default-app .
+RUN
+docker run --name app -dit -p 9000:80 axesk/app
+docker run --hostname web.tsnet.net --name app -dit -p 9000:80 axesk/app
+
+
+RUN WITH CAPABILITY
+docker run --name app cap-add=SYS_ADMIN -dit -p 9000:80 axesk/app
+RUN COMMAND INSIDE CONTAINER
+docker exec -it [container-name] command i.e service nginx status
+DUPLICATE RUNNING IMAGE
+docker run --name customer01 -dit -p 9010:80 axesk/app 
+docker run --name customer-app1 -dit -p 9000:80  [image-id]
+
+
+jce-repo.jfrog.com
+[ADD TAG TO IMAGE]
+docker tag [imageid] jcerepo.jfrog.io/axesk-docker/axesk-docker:[tag-name]
+[PUSH]
+docker push jcerepo.jfrog.io/axesk-docker/axesk-docker:[tag-name]
+[PULL]
+docker pull jcerepo.jfrog.io/axesk-docker/axesk-docker:[tag-name]

@@ -1,0 +1,738 @@
+AWS PRACTICE EXAMS
+
+A characteristic of edge locations is that they:
+A. host Amazon EC2 instances closer to users.
+B. help lower latency and improve performance for users.
+C. cache frequently changing data without reaching the origin server.
+D. refresh data changes daily.
+Answer : B
+
+Which of the following can limit Amazon Storage Service (Amazon S3) bucket access to specific users?
+A. A public and private key-pair
+B. Amazon Inspector
+C. AWS Identity and Access Management (IAM) policies
+D. Security Groups
+Answer : C
+
+Which of the following security-related actions are available at no cost?
+A. Calling AWS Support
+B. Contacting AWS Professional Services to request a workshop
+C. Accessing forums, blogs, and whitepapers
+D. Attending AWS classes at a local university
+Answer : C
+
+Which of the Reserved Instance (RI) pricing models can change the attributes of the RI as long as the exchange results in the creation of RIs of equal or greater value?
+A. Dedicated RIs
+B. Scheduled RIs
+C. Convertible RIs
+D. Standard RIs
+Answer : C
+
+Which AWS feature will reduce the customer's total cost of ownership (TCO)?
+A. Shared responsibility security model
+B. Single tenancy
+C. Elastic computing
+D. Encryption
+Answer : C
+
+Which of the following services will automatically scale with an expected increase in web traffic?	
+A. AWS CodePipeline
+B. Elastic Load Balancing
+C. Amazon EBS
+D. AWS Direct Connect
+Answer : B
+
+Where are AWS compliance documents, such as an SOC 1 report, located?
+A. Amazon Inspector
+B. AWS CloudTrail
+C. AWS Artifact
+D. AWS Certificate Manager
+Answer : C
+
+Under the AWS shared responsibility model, which of the following activities are the customerג€™s responsibility? (Choose two.)
+A. Patching operating system components for Amazon Relational Database Server (Amazon RDS)
+B. Encrypting data on the client-side
+C. Training the data center staff
+D. Configuring Network Access Control Lists (ACL)
+E. Maintaining environmental controls within a data center
+Answer : B,D
+
+AWS supports which of the following methods to add security to Identity and Access Management (IAM) users? (Choose two.)
+A. Implementing Amazon Rekognition
+B. Using AWS Shield-protected resources
+C. Blocking access with Security Groups
+D. Using Multi-Factor Authentication (MFA)
+E. Enforcing password strength and expiration
+Answer : D,E
+
+Which AWS services should be used for read/write of constantly changing data? (Choose two.)
+A. Amazon Glacier
+B. Amazon RDS
+C. AWS Snowball
+D. Amazon Redshift
+E. Amazon EFS
+Answer : B,E
+
+What is one of the advantages of the Amazon Relational Database Service (Amazon RDS)?
+A. It simplifies relational database administration tasks.
+B. It provides 99.99999999999% reliability and durability.
+C. It automatically scales databases for loads.
+D. It enables users to dynamically adjust CPU and RAM resources.
+Answer : B,E
+
+What is one of the advantages of the Amazon Relational Database Service (Amazon RDS)?
+A. It simplifies relational database administration tasks.
+B. It provides 99.99999999999% reliability and durability.
+C. It automatically scales databases for loads.
+D. It enables users to dynamically adjust CPU and RAM resources.
+Answer : A
+
+A customer needs to run a MySQL database that easily scales.
+Which AWS service should they use?
+A. Amazon Aurora
+B. Amazon Redshift
+C. Amazon DynamoDB
+D. Amazon ElastiCache
+Answer : A
+
+Which of the following components of the AWS Global Infrastructure consists of one or more discrete data centers interconnected through low latency links?
+A. Availability Zone
+B. Edge location
+C. Region
+D. Private networking
+Answer : A
+
+Which of the following is a shared control between the customer and AWS?
+A. Providing a key for Amazon S3 client-side encryption
+B. Configuration of an Amazon EC2 instance
+C. Environmental controls of physical AWS data centers
+D. Awareness and training
+Answer : D
+
+ow many Availability Zones should compute resources be provisioned across to achieve high availability?
+A. A minimum of one
+B. A minimum of two
+C. A minimum of three
+D. A minimum of four or more
+Answer : B
+
+One of the advantages to moving infrastructure from an on-premises data center to the AWS Cloud is:
+A. it allows the business to eliminate IT bills.
+B. it allows the business to put a server in each customerג€™s data center.
+C. it allows the business to focus on business activities.
+D. it allows the business to leave servers unpatched.
+Answer : B
+
+One of the advantages to moving infrastructure from an on-premises data center to the AWS Cloud is:
+A. it allows the business to eliminate IT bills.
+B. it allows the business to put a server in each customerג€™s data center.
+C. it allows the business to focus on business activities.
+D. it allows the business to leave servers unpatched.
+Answer : C
+
+What is the lowest-cost, durable storage option for retaining database backups for immediate retrieval?
+A. Amazon S3
+B. Amazon Glacier
+C. Amazon EBS
+D. Amazon EC2 Instance Store
+Answer : A
+
+Which AWS IAM feature allows developers to access AWS services through the AWS CLI?
+A. API keys
+B. Access keys
+C. User names/Passwords
+D. SSH keys
+Answer : B
+
+Which of the following is a fast and reliable NoSQL database service?
+A. Amazon Redshift
+B. Amazon RDS
+C. Amazon DynamoDB
+D. Amazon S3
+Answer : C
+
+What is an example of agility in the AWS Cloud?
+A. Access to multiple instance types
+B. Access to managed services
+C. Using Consolidated Billing to produce one bill
+D. Decreased acquisition time for new compute resources
+Answer : D
+
+Which service should a customer use to consolidate and centrally manage multiple AWS accounts?
+A. AWS IAM
+B. AWS Organizations
+C. AWS Schema Conversion Tool
+D. AWS Config
+Answer : B
+
+What approach to transcoding a large number of individual video files adheres to AWS architecture principles?
+A. Using many instances in parallel
+B. Using a single large instance during off-peak hours
+C. Using dedicated hardware
+D. Using a large GPU instance type
+Answer : C
+
+hat approach to transcoding a large number of individual video files adheres to AWS architecture principles?
+A. Using many instances in parallel
+B. Using a single large instance during off-peak hours
+C. Using dedicated hardware
+D. Using a large GPU instance type
+Answer : A
+
+For which auditing process does AWS have sole responsibility?
+A. AWS IAM policies
+B. Physical security
+C. Amazon S3 bucket policies
+D. AWS CloudTrail Logs
+Answer : B
+
+Which feature of the AWS Cloud will support an international companyג€™s requirement for low latency to all of its customers?
+A. Fault tolerance
+B. Global reach
+C. Pay-as-you-go pricing
+D. High availability
+Answer : B
+
+Which of the following is the customerג€™s responsibility under the AWS shared responsibility model?
+A. Patching underlying infrastructure
+B. Physical security
+C. Patching Amazon EC2 instances
+D. Patching network infrastructure
+Answer : C
+
+A customer is using multiple AWS accounts with separate billing.
+How can the customer take advantage of volume discounts with minimal impact to the AWS resources?
+A. Create one global AWS acount and move all AWS resources to tha account.
+B. Sign up for three years of Reserved Instance pricing up front.
+C. Use the consolidated billing feature from AWS Organizations.
+D. Sign up for the AWS Enterprise support plan to get volume discounts.
+Answer : C
+
+Which of the following are features of Amazon CloudWatch Logs? (Choose two.)
+A. Summaries by Amazon Simple Notification Service (Amazon SNS)
+B. Free Amazon Elasticsearch Service analytics
+C. Provided at no charge
+D. Real-time monitoring
+E. Adjustable retention
+Answer : D,E
+
+Which of the following is an AWS managed Domain Name System (DNS) web service?
+A. Amazon Route 53
+B. Amazon Neptune
+C. Amazon SageMaker
+D. Amazon Lightsail
+Answer : A
+
+A customer is deploying a new application and needs to choose an AWS Region.
+Which of the following factors could influence the customer's decision? (Choose two.)
+A. Reduced latency to users
+B. The applicationג€™s presentation in the local language
+C. Data sovereignty compliance
+D. Cooling costs in hotter climates
+E. Proximity to the customerג€™s office for on-site visits
+Answer : A,C
+
+Which storage service can be used as a low-cost option for hosting static websites?
+A. Amazon Glacier
+B. Amazon DynamoDB
+C. Amazon Elastic File System (Amazon EFS)
+D. Amazon Simple Storage Service (Amazon S3)
+Answer : D
+
+Which Amazon EC2 instance pricing model can provide discounts of up to 90%?
+A. Reserved Instances
+B. On-Demand
+C. Dedicated Hosts
+D. Spot Instances
+Answer : D
+
+What is the AWS customer responsible for according to the AWS shared responsibility model?
+A. Physical access controls
+B. Data encryption
+C. Secure disposal of storage devices
+D. Environmental risk management
+Answer : B
+
+Which of the following AWS Cloud services can be used to run a customer-managed relational database?
+A. Amazon EC2
+B. Amazon Route 53
+C. Amazon ElastiCache
+D. Amazon DynamoDB
+Answer : A
+
+A company is looking for a scalable data warehouse solution.
+Which of the following AWS solutions would meet the companyג€™s needs?
+A. Amazon Simple Storage Service (Amazon S3)
+B. Amazon DynamoDB
+C. Amazon Kinesis
+D. Amazon Redshift
+Answer : D
+
+Which statement best describes Elastic Load Balancing?
+A. It translates a domain name into an IP address using DNS.
+B. It distributes incoming application traffic across one or more Amazon EC2 instances.
+C. It collects metrics on connected Amazon EC2 instances.
+D. It automatically adjusts the number of Amazon EC2 instances to support incoming traffic.
+Answer : B
+
+Which of the following are valid ways for a customer to interact with AWS services? (Choose two.)
+A. Command line interface
+B. On-premises
+C. Software Development Kits
+D. Software-as-a-service
+E. Hybrid
+Answer : A,C
+
+The AWS Cloud's multiple Regions are an example of:
+A. agility.
+B. global infrastructure.
+C. elasticity.
+D. pay-as-you-go pricing.
+Answer : B
+
+Which of the following AWS services can be used to serve large amounts of online video content with the lowest possible latency? (Choose two.)
+A. AWS Storage Gateway
+B. Amazon S3
+C. Amazon Elastic File System (EFS)
+D. Amazon Glacier
+E. Amazom CloudFront
+Answer : B,E
+
+Web servers running on Amazon EC2 access a legacy application running in a corporate data center.
+What term would describe this model?
+A. Cloud-native
+B. Partner network
+C. Hybrid architecture
+D. Infrastructure as a service
+Answer : C
+
+What is the benefit of using AWS managed services, such as Amazon ElastiCache and Amazon Relational Database Service (Amazon RDS)?
+A. They require the customer to monitor and replace failing instances.
+B. They have better performance than customer-managed services.
+C. They simplify patching and updating underlying OSs.
+D. They do not require the customer to optimize instance type or size selections.
+Answer : C
+
+Which service provides a virtually unlimited amount of online highly durable object storage?
+A. Amazon Redshift
+B. Amazon Elastic File System (Amazon EFS)
+C. Amazon Elastic Container Service (Amazon ECS)
+D. Amazon S3
+Answer : D
+
+Which of the following Identity and Access Management (IAM) entities is associated with an access key ID and secret access key when using AWS Command
+Line Interface (AWS CLI)?
+A. IAM group
+B. IAM user
+C. IAM role
+D. IAM policy
+Answer : B
+
+Which of the following security-related services does AWS offer? (Choose two.)
+A. Multi-factor authentication physical tokens
+B. AWS Trusted Advisor security checks
+C. Data encryption
+D. Automated penetration testing
+E. Amazon S3 copyrighted content detection
+Answer : B,C
+
+Which AWS managed service is used to host databases?
+A. AWS Batch
+B. AWS Artifact
+C. AWS Data Pipeline
+D. Amazon RDS
+Answer : D
+
+Which AWS service provides a simple and scalable shared file storage solution for use with Linux-based AWS and on-premises servers?
+A. Amazon S3
+B. Amazon Glacier
+C. Amazon Elastic Block Store (Amazon EBS)
+D. Amazon Elastic File System (Amazon EFS)
+Answer : D
+
+When architecting cloud applications, which of the following are a key design principle?
+A. Use the largest instance possible
+B. Provision capacity for peak load
+C. Use the Scrum development process
+D. Implement elasticity
+Answer : D
+Explanation : Cloud services main proposition is to provide elasticity through horizontal scaling. Itג€™s already there. As for using largest instance possible, it is not a design principle that helps cloud applications in anyway. Scrum development process is not related to architecting. Therefore, a key principle is to provision your application for on-demand capacity. Peak loads is something that cloud applications experience everyday. Peak load management should be a necessary part of cloud application design principle.
+Reference:
+https://d1.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf
+
+Which AWS service should be used for long-term, low-cost storage of data backups?
+A. Amazon RDS
+B. Amazon Glacier
+C. AWS Snowball
+D. AWS EBS
+Answer : B
+Explanation : Amazon S3 Glacier is a secure, durable, and low-cost storage class of S3 for data archiving and long-term backup. Customers can store large or small amounts of data for as little as $0.004 per gigabyte per month. The S3 Glacier storage class is ideal for archives where data is regularly retrieved and some of the data may be needed in minutes.
+Amazon RDS is a relational database service that hosts databases. It helps you create and manage databases. Amazon Snowball is a petabyte-scale data transfer service that provides cost efficient data transfer to AWS from tamper proof physical devices. Similarly, Elastic block storage offers persistent block storage volumes for EC2 instances.
+Reference:
+https://aws.amazon.com/backup-restore/services/
+
+Under the shared responsibility model, which of the following is a shared control between a customer and AWS?
+A. Physical controls
+B. Patch management
+C. Zone security
+D. Data center auditing
+Answer : B
+
+Which AWS service allows companies to connect an Amazon VPC to an on-premises data center?
+A. AWS VPN
+B. Amazon Redshift
+C. API Gateway
+D. Amazon Direct Connect
+Answer : D
+Explanation : AWS Direct Connect enables you to securely connect your AWS environment to your on-premises data center or office location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic connection. AWS Direct Connect offers dedicated high speed, low latency connection, which bypasses internet service providers in your network path. An AWS Direct Connect location provides access to Amazon Web Services in the region it is associated with, as well as access to other US regions. AWS Direct Connect allows you to logically partition the fiber-optic connections into multiple logical connections called Virtual Local Area Networks
+(VLAN). You can take advantage of these logical connections to improve security, differentiate traffic, and achieve compliance requirements.
+Reference:
+https://aws.amazon.com/getting-started/projects/connect-data-center-to-aws/
+
+
+A company wants to reduce the physical compute footprint that developers use to run code.
+Which service would meet that need by enabling serverless architectures?
+A. Amazon Elastic Compute Cloud (Amazon EC2)
+B. AWS Lambda
+C. Amazon DynamoDB
+D. AWS CodeCommit
+Answer : B
+Explanation : AWS Lambda is an integral part of coding on AWS. It reduces physical compute footprint by utilizing aws cloud services to run code.
+
+Which AWS service provides alerts when an AWS event may impact a companyג€™s AWS resources?
+A. AWS Personal Health Dashboard
+B. AWS Service Health Dashboard
+C. AWS Trusted Advisor
+D. AWS Infrastructure Event Management
+Answer : A
+Explanation : AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact you. While the Service Health
+Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the performance and availability of the
+AWS services underlying your AWS resources.
+Reference:
+https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/
+
+Which of the following are categories of AWS Trusted Advisor? (Choose two.)
+A. Fault Tolerance
+B. Instance Usage
+C. Infrastructure
+D. Performance
+E. Storage Capacity
+Answer : A,D
+Explanation : Like your customized cloud expert, AWS Trusted Advisor analyzes your AWS environment and provides best practice recommendations in five categories: cost optimization, performance, security, fault tolerance and service limits.
+Reference:
+https://aws.amazon.com/premiumsupport/technology/trusted-advisor/
+
+Which task is AWS responsible for in the shared responsibility model for security and compliance?
+A. Granting access to individuals and services
+B. Encrypting data in transit
+C. Updating Amazon EC2 host firmware
+D. Updating operating systems
+Answer : C
+Explanation : AWS Compliance enables customers to establish and operate in an AWS security control environment
+✑ The shared responsibility model is part of AWS Compliance program
+✑ The Security of the cloud is managed by Amazon AWS provider
+✑ The Security in the cloud is responsibility of the customer
+✑ The customer is responsible for their information and data, their secure transmission, integrity, and encryption
+✑ Also, the customer is responsible for managing, support, patching and control of the guest operating system and AWS services provided like EC2
+✑ AWS customers retain control and ownership of their data
+✑ The AWS network provides significant protection against traditional network security issues and the customer can implement further protection
+Reference:
+https://www.whizlabs.com/blog/aws-security-shared-responsibility/
+
+Where should a company go to search software listings from independent software vendors to find, test, buy and deploy software that runs on AWS?
+A. AWS Marketplace
+B. Amazon Lumberyard
+C. AWS Artifact
+D. Amazon CloudSearch
+Answer : A
+
+Which of the following is a benefit of using the AWS Cloud?
+A. Permissive security removes the administrative burden.
+B. Ability to focus on revenue-generating activities.
+C. Control over cloud network hardware.
+D. Choice of specific cloud hardware vendors.
+Answer : B
+Explanation : Developer and IT staff productivity accounted for nearly 30% of overall financial benefits. The remaining benefits were driven by the flexibility and agility of
+Amazon cloud infrastructure services, which make it easier to trial new business models, support revenue-generating applications, and provide more reliable services to end users.
+Reference:
+https://media.amazonwebservices.com/IDC_Business_Value_of_AWS_Accelerates_Over_time.pdf
+
+When performing a cost analysis that supports physical isolation of a customer workload, which compute hosting model should be accounted for in the Total Cost of Ownership (TCO)?
+A. Dedicated Hosts
+B. Reserved Instances
+C. On-Demand Instances
+D. No Upfront Reserved Instances
+Answer : A
+Explanation : Use Dedicated Hosts to launch Amazon EC2 instances on physical servers that are dedicated for your use. Dedicated Hosts give you additional visibility and control over how instances are placed on a physical server, and you can reliably use the same physical server over time. As a result, Dedicated Hosts enable you to use your existing server-bound software licenses like Windows Server and address corporate compliance and regulatory requirements.
+
+Which AWS service provides the ability to manage infrastructure as code?
+A. AWS CodePipeline
+B. AWS CodeDeploy
+C. AWS Direct Connect
+D. AWS CloudFormation
+Answer : D
+Explanation : AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment. CloudFormation allows you to use a simple text file to model and provision, in an automated and secure manner, all the resources needed for your applications across all regions and accounts. This file serves as the single source of truth for your cloud environment.
+Reference:
+https://aws.amazon.com/cloudformation/
+
+If a customer needs to audit the change management of AWS resources, which of the following AWS services should the customer use?
+A. AWS Config
+B. AWS Trusted Advisor
+C. Amazon CloudWatch
+D. Amazon Inspector
+Answer : A
+Explanation : AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your
+AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations. With Config, you can review changes in configurations and relationships between AWS resources, dive into detailed resource configuration histories, and determine your overall compliance against the configurations specified in your internal guidelines. This enables you to simplify compliance auditing, security analysis, change management, and operational troubleshooting.
+Reference:
+https://aws.amazon.com/config/
+
+
+
+
+Answer : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A Solutions Architect has deployed an application on several Amazon EC2 instances across three private subnets. The application must be made accessible to internet-based clients with the least amount of administrative effort.
+
+How can the Solutions Architect make the application available on the internet?
+
+ Create an Application Load Balancer and associate three public subnets from the same Availability Zones as the private instances. Add the private instances to the ALB.
+ Create an Amazon Machine Image (AMI) of the instances in the private subnet and launch new instances from the AMI in public subnets. Create an Application Load Balancer and add the public instances to the ALB.
+ Create an Application Load Balancer and associate three private subnets from the same Availability Zones as the private instances. Add the private instances to the ALB.
+ Create a NAT gateway in a public subnet. Add a route to the NAT gateway to the route tables of the three private subnets.
+
+------------------------------
+
+
+ A company has deployed a new website on Amazon EC2 instances behind an Application Load Balancer (ALB). Amazon Route 53 is used for the DNS service. The company has asked a Solutions Architect to create a backup website with support contact details that users will be directed to automatically if the primary website is down.
+
+How should the Solutions Architect deploy this solution cost-effectively?
+
+ Deploy the backup website on EC2 and ALB in another Region and use Route 53 health checks for failover routing.
+ Create the backup website on EC2 and ALB in another Region and create an AWS Global Accelerator endpoint.
+ Configure a static website using Amazon S3 and create a Route 53 failover routing policy.
+ Configure a static website using Amazon S3 and create a Route 53 weighted routing policy.
+
+------------------------------
+
+ An on-premises server runs a MySQL database and will be migrated to the AWS Cloud. The company require a managed solution that supports high availability and automatic failover in the event of the outage of an Availability Zone (AZ).
+
+Which solution is the BEST fit for these requirements?
+
+ Use the AWS Database Migration Service (DMS) to directly migrate the database to an Amazon RDS MySQL Multi-AZ deployment
+ Use the AWS Database Migration Service (DMS) to directly migrate the database to an Amazon EC2 MySQL Multi-AZ deployment
+ Create a snapshot of the MySQL database server and use AWS DataSync to migrate the data Amazon S3. Launch a new Amazon RDS MySQL Multi-AZ deployment from the snapshot
+ Use the AWS Database Migration Service (DMS) to directly migrate the database to Amazon RDS MySQL. Use the Schema Conversion Tool (SCT) to enable conversion from MySQL to Amazon RDS
+
+------------------------------
+
+A company runs an application in a factory that has a small rack of physical compute resources. The application stores data on a network attached storage (NAS) device using the NFS protocol. The company requires a daily offsite backup of the application data.
+
+Which solution can a Solutions Architect recommend to meet this requirement?
+
+A. Use an AWS Storage Gateway file gateway hardware appliance on premises to replicate the data to Amazon S3.
+B. Use an AWS Storage Gateway volume gateway with stored volumes on premises to replicate the data to Amazon S3.
+C. Use an AWS Storage Gateway volume gateway with cached volumes on premises to replicate the data to Amazon S3.
+D. Create an IPSec VPN to AWS and configure the application to mount the Amazon EFS file system. Run a copy job to backup the data to EF
+Answer : A
+
+------------------------------
+
+
+A company is planning to upload a large quantity of sensitive data to Amazon S3. The company’s security department require that the data is encrypted before it is uploaded.
+
+Which option meets these requirements?
+
+ Use client-side encryption with Amazon S3 managed encryption keys.
+ Use client-side encryption with a master key stored in AWS KMS.
+ Use server-side encryption with keys stored in KMS.
+ Use server-side encryption with customer-provided encryption keys.
+
+
+------------------------------
+
+A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions.
+
+What is the SIMPLEST method of achieving the requirements?
+
+ Create a service control policy in the root organizational unit to deny access to the services or actions
+ Create an IAM policy in the root account and attach it to users and groups in each account
+ Create a Network ACL that limits access to the services or actions and attach it to all relevant subnets
+ Create cross-account roles in each account to limit access to the services and actions that are allowed
+
+------------------------------
+
+A company needs to ensure that they can failover between AWS Regions in the event of a disaster seamlessly with minimal downtime and data loss. The applications will run in an active-active configuration.
+
+Which DR strategy should a Solutions Architect recommend?
+
+ Backup and restore
+ Pilot light
+ Warm standby
+ Multi-site
+
+------------------------------
+
+An application makes calls to a REST API running on Amazon EC2 instances behind an Application Load Balancer (ALB). Most API calls complete quickly. However, a single endpoint is making API calls that require much longer to complete and this is introducing overall latency into the system. What steps can a Solutions Architect take to minimize the effects of the long-running API calls?
+
+ Increase the ALB idle timeout to allow the long-running requests to complete
+ Create an Amazon SQS queue and decouple the long-running API calls
+ Change the ALB to a Network Load Balancer (NLB) and use SSL/TLS termination
+ Change the EC2 instance to one with enhanced networking to reduce latency
+
+------------------------------
+
+A company has several AWS accounts each with multiple Amazon VPCs. The company must establish routing between all private subnets. The architecture should be simple and allow transitive routing to occur.
+
+How should the network connectivity be configured?
+
+ Create a hub-and-spoke topology with AWS App Mesh and use AWS Resource Access Manager to share route tables
+ Create an AWS Managed VPN between each Amazon VPC and configure route tables
+ Create an AWS Transit Gateway and share it with each account using AWS Resource Access Manager
+ Create a transitive VPC peering connection between each Amazon VPC and configure route tables
+
+------------------------------
+
+A highly sensitive application runs on Amazon EC2 instances using EBS volumes. The application stores data temporarily on Amazon EBS volumes during processing before saving results to an Amazon RDS database. The company’s security team mandate that the sensitive data must be encrypted at rest.
+
+Which solution should a Solutions Srchitect recommend to meet this requirement?
+
+ Use AWS Certificate Manager to generate certificates that can be used to encrypt the connections between the EC2 instances and RDS.
+ Configure encryption for the Amazon EBS volumes and Amazon RDS database with AWS KMS keys.
+ Configure SSL/TLS encryption using AWS KMS customer master keys (CMKs) to encrypt database volumes.
+ Use Amazon Data Lifecycle Manager to encrypt all data as it is stored to the EBS volumes and RDS database.
+
+------------------------------
+
+An application in a private subnet needs to query data in an Amazon DynamoDB table. Use of the DynamoDB public endpoints must be avoided. What is the most EFFICIENT and secure method of enabling access to the table?
+
+ Create a private Amazon DynamoDB endpoint and connect to it using an AWS VPN
+ Create a gateway VPC endpoint and add an entry to the route table
+ Create a software VPN between DynamoDB and the application in the private subnet
+ Create an interface VPC endpoint in the VPC with an Elastic Network Interface (ENI)
+
+------------------------------
+
+A Solutions Architect is designing an application that will run on an Amazon EC2 instance. The application must asynchronously invoke an AWS Lambda function to analyze thousands of .CSV files. The services should be decoupled.
+
+Which service can be used to decouple the compute services?
+
+ Amazon SWF
+ Amazon SNS
+ Amazon OpsWorks
+ Amazon Kinesis
+
+------------------------------
+
+A company requires that all AWS IAM user accounts have specific complexity requirements and minimum password length.
+
+How should a Solutions Architect accomplish this?
+
+ Use an AWS Config rule to enforce the requirements when creating user accounts.
+ Create an IAM policy that enforces the requirements and apply it to all users.
+ Set a password policy for the entire AWS account.
+ Set a password policy for each IAM user in the AWS account.
+
+------------------------------
+
+An application in a private subnet needs to query data in an Amazon DynamoDB table. Use of the DynamoDB public endpoints must be avoided. What is the most EFFICIENT and secure method of enabling access to the table?
+
+ Create a private Amazon DynamoDB endpoint and connect to it using an AWS VPN
+ Create a software VPN between DynamoDB and the application in the private subnet
+ Create a gateway VPC endpoint and add an entry to the route table
+ Create an interface VPC endpoint in the VPC with an Elastic Network Interface (ENI)
+
+------------------------------
+
+To increase performance and redundancy for an application a company has decided to run multiple implementations in different AWS Regions behind network load balancers. The company currently advertise the application using two public IP addresses from separate /24 address ranges and would prefer not to change these. Users should be directed to the closest available application endpoint.
+
+Which actions should a solutions architect take? (Select TWO.)
+
+ Assign new static anycast IP addresses and modify any existing pointers
+ Create an AWS Global Accelerator and attach endpoints in each AWS Region
+ Create an Amazon Route 53 geolocation based routing policy
+ Create PTR records to map existing public IP addresses to an Alias
+ Migrate both public IP addresses to the AWS Global Accelerator
+
+------------------------------
+
+A large quantity of data is stored on a NAS device on-premises and accessed using the SMB protocol. The company require a managed service for hosting the filesystem and a tool to automate the migration.
+
+Which actions should a Solutions Architect take?
+
+ Migrate the data to Amazon EFS using the AWS Server Migration Service (SMS)
+ Migrate the data to Amazon FSx for Windows File Server using AWS DataSync
+ Migrate the data to Amazon FSx for Lustre using AWS DataSync
+ Migrate the data to Amazon S3 using and AWS Snowball Edge device
+
+------------------------------
+
+A company is migrating a decoupled application to AWS. The application uses a message broker based on the MQTT protocol. The application will be migrated to Amazon EC2 instances and the solution for the message broker must not require rewriting application code.
+
+Which AWS service can be used for the migrated message broker?
+
+ Amazon SNS
+ Amazon SQS
+ AWS Step Functions
+ Amazon MQ
+
+------------------------------
+
+An eCommerce company runs an application on Amazon EC2 instances in public and private subnets. The web application runs in a public subnet and the database runs in a private subnet. Both the public and private subnets are in a single Availability Zone.
+
+Which combination of steps should a solutions architect take to provide high availability for this architecture? (Select TWO.)
+
+ Create new public and private subnets in the same AZ but in a different Amazon VPC.
+ Create an EC2 Auto Scaling group in the public subnet and use an Application Load Balancer.
+ Create new public and private subnets in a different AZ. Create a database using Amazon EC2 in one AZ.
+ Create an EC2 Auto Scaling group and Application Load Balancer that spans across multiple AZs.
+ Create new public and private subnets in a different AZ. Migrate the database to an Amazon RDS multi-AZ deployment.
+
+------------------------------
+
+A company is working with a strategic partner that has an application that must be able to send messages to one of the company’s Amazon SQS queues. The partner company has its own AWS account.
+
+How can a Solutions Architect provide least privilege access to the partner?
+
+ Update the permission policy on the SQS queue to grant all permissions to the partner’s AWS account.
+ Create a cross-account role with access to all SQS queues and use the partner's AWS account in the trust document for the role.
+ Update the permission policy on the SQS queue to grant the sqs:SendMessage permission to the partner’s AWS account.
+ Create a user account that and grant the sqs:SendMessage permission for Amazon SQS. Share the credentials with the partner company.
+
+------------------------------
+
+A retail organization sends coupons out twice a week and this results in a predictable surge in sales traffic. The application runs on Amazon EC2 instances behind an Elastic Load Balancer. The organization is looking for ways to reduce cost without impacting performance or reliability. How can they achieve this goal?
+
+ Purchase scheduled reserved instances
+ Use a mixture of spot instances and on demand instances
+ Increase the instance size of the existing EC2 instances
+ Purchase Amazon EC2 dedicated hosts
+
+------------------------------
+
+A company provides a REST-based interface to an application that allows a partner company to send data in near-real time. The application then processes the data that is received and stores it for later analysis. The application runs on Amazon EC2 instances.
+
+The partner company has received many 503 Service Unavailable Errors when sending data to the application and the compute capacity reaches its limits and is unable to process requests when spikes in data volume occur.
+
+Which design should a Solutions Architect implement to improve scalability?
+
+ Use Amazon SNS to ingest the data and trigger AWS Lambda functions to process the data in near-real time.
+ Use Amazon SQS to ingest the data. Configure the EC2 instances to process messages from the SQS queue.
+ Use Amazon Kinesis Data Streams to ingest the data. Process the data using AWS Lambda functions.
+ Use Amazon API Gateway in front of the existing application. Create a usage plan with a quota limit for the partner company.
+
+------------------------------
+
+

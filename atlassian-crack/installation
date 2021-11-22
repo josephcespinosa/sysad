@@ -1,0 +1,75 @@
+SETUP ATLASSIAN CRACK
+
+
+Jira / Bamboo 
+u : administrator 
+p : $Pa$$w0rd.
+
+Jira Database
+d : atldb
+u : atluser
+p : $Pa$$w0rd.
+
+
+Ubuntu20.04LTS
+apt install network-manager
+apt install net-tools
+apt install p7zip-full
+apt install git
+apt install unzip
+apt install rar
+apt intall unrar
+apt install postgresql
+apt install postgresql-client
+
+
+
+1. Install 
+chmod ug+x atlassian-jira-software-8.5.0-x64.bin
+./atlassian-jira-software-8.5.0-x64.bin
+
+2. Open port 8080
+3. apt install fontconfig
+4. apt-get install openjdk-8-jdk
+5. export JAVA_OPTS="-javaagent:/path/to/atlassian-agent.jar ${JAVA_OPTS}"
+	or add in ~/.bashrc or ~/.bash_profile
+6. cp atlassian-universal-plugin-manager-plugin-4.0.4.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins
+7. java -jar /opt/atlassian-agent.jar -p jira -m tech.vavasoft@gmail.com -n VavaSoft -o VavaSoft -s BQ9C-32AZ-B7KK-1P0N
+
+8. Install supported postgre DB 
+	https://www.rosehosting.com/blog/how-to-install-postgresql-9-6-on-ubuntu-20-04/
+
+9. Configure postgresql port.
+	/etc/postgresql/9.3/main/postgresql.conf
+
+
+9. Connect to db 
+	sudo -u postgresql psql postgres
+	psql -h localhost -d dbtest -U usertest -p 5432
+	CREATE ROLE atluser LOGIN PASSWORD '$pa$$w0rd.';
+	CREATE DATABASE atldb WITH OWNER = atluser;
+
+
+10. Installing Plugins, Install plugin then Generate key.
+	java -jar /opt/atlassian-agent.jar -p com.deniz.jira.worklog -m testbednagios@gmail.com -n VavaSoft -o VavaSoft -s BQ9C-32AZ-B7KK-1P0N
+
+
+11. For Bamboo 7.2.1, modify /home/josephcespinosa/atlassian-bamboo-7.2.1/bamboo.init.properties and add home directory.
+12. Generate license key 
+	java -jar /opt/atlassian-agent.jar -p bamboo -m testbednagios@gmail.com -n VavaSoft -o VavaSoft -s B7DK-CQE7-OHXK-44HG
+
+
+# Stop/Start Jira Software
+	/etc/init.d/jira start
+	/etc/init.d/jira stop
+
+# Jira database location
+/var/atlassian/application-data/JIRA (on Linux)
+
+
+
+
+Reference
+https://tech-story.net/free-download-atlassian-suite-2021-01-full/
+
+cp /opt/atlassian/bitbucket/6.8.0/app/WEB-INF/atlassian-bundled-plugins/atlassian-universal-plugin-manager-plugin-4.0.4.jar .

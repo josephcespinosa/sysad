@@ -1,0 +1,73 @@
+version: "3.8"
+services:
+
+	webserver:
+		image: php:7.4-apache
+		container_name: axesk_nginx
+		restart: unless-stopped
+		ports:
+		-	"8100:80"
+		volumes:
+		- ../:/var/www/html
+		- ./apache2/000-default.conf:/etc/apache2/sites-available/000-default.conf
+	mysql:
+		image: mariadb:10.5.12-focal
+		container_name: axesk_mariadb
+		restart: unless-stopped
+		tty: true
+		ports:
+		-	33061:3306"
+		environment: # FROM .env
+			MYSQL_DATABASE: ${DB_DATABASE}
+			MYSQL_USER: ${DB_USERNAME}
+			MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+			SERVICE_TAGS: dev
+			SERVICE_NAME: mysql
+		volume:
+		-	./mariadb/mydata:/var/lib/mysql
+		-	./mariadb/mariadb-default.conf:/etc/mysql/conf.d/mysql-custom.cnf 
+		networks:
+		- axesk-rcma-network
+	php:
+		build:
+		context: ../
+		dockerfile: . #Dockerfile
+		container_name: axesk_php
+		volumes:
+		- ../:/var/www/html
+		ports:
+		-	"9000:9000"
+		networks:
+		-	axesk-rcma-network
+	composer: 
+		image: composer:latest
+		container_name:	axesk_composer
+		volumes:
+		-	../:/var/www/html
+		working_dir: /var/www/html
+		depends_on:
+		-	php
+		networks:
+		-	axesk-rcma-network
+	npm:
+		image: node:14.9
+		container_name: lcp_npm
+		volumes:
+		-	.:/var/www/html
+		working_dir: /var/www/html
+		entrypoint: ['npm']
+	artisan:
+		build:
+			context: .
+			dockerfile: ./dockerize/app/php/dockerfile
+		container_name: axesk_artisan
+		volumes:
+		- ../:./var/www/html
+		depends_on:
+		- mysql
+		working_dir: /var/www/html
+		entrypoint: ['php','/var/www/html/artisan']
+
+
+networks:
+	axesk-rcma-network:

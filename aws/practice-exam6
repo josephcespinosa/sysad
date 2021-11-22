@@ -1,0 +1,1018 @@
+PRACTICE EXAM
+
+A small company has nearly 200 users who already have AWS accounts in the company AWS environment. A new S3 bucket has been created which will allow roughly a third of all users access to sensitive information in the bucket. What is the most time efficient way to get these users access to the bucket?
+A. Create a new bucket policy granting the appropriate permissions and attach it to the bucket.
+B. Create a new policy which will grant permissions to the bucket. Create a role and attach the policy to that role. Add the users to this role.
+C. Create a new role which will grant permissions to the bucket. Create a group and attach the role to that group. Add the users to this group.
+D. Create a new policy which will grant permissions to the bucket. Create a group and attach the policy to that group. Add the users to this group.
+Answer : 
+
+
+---------------------
+
+ou are put in charge of your company’s Disaster Recovery planning. As part of this plan, you intend to create all of the company infrastructure with CloudFormation templates. The templates can then be saved in another region and used to launch a new environment in case of disaster. What determines the costs associated with CloudFormation templates?
+
+
+It depends whether the resources in the template are in the free tier.
+
+
+There is a cost per template and discounts for over 100 templates.
+
+
+The distance of the region from the home region.
+
+
+There is no cost for templates, but when deployed, the resources created may accumulate charges.
+
+---------------------
+
+
+You have joined a newly formed software company as a Solutions Architect. It is a small company, and you are the only employee with AWS experience. The owner has asked for your recommendations to ensure that the AWS resources are deployed to proactively remain within budget. Which AWS service can you use to help ensure you don’t have cost overruns for your AWS resources?
+
+
+Inspector
+
+
+Billing and Cost Management
+
+
+Cost Explorer
+
+
+AWS Budgets
+
+---------------------
+
+You have been hired as a Solutions Architect for a company that pairs photos with related story narratives in pdf format. The company needs to be able to store files in several different formats, such as pdf, jpg, png, word, and several others. This storage needs to be highly durable. Which storage type will best meet this requirement?
+
+
+EC2 Instance Store
+
+
+Amazon RDS
+
+
+DynamoDB
+
+
+S3
+
+---------------------
+
+A news media company is using an S3 bucket as a website to serve photos of television personalities within the company. The photos are intended to be served nationwide to local affiliates across the company. But you have found that these photos are being accessed and pirated for other websites not affiliated with the company. What can you do to stop this?
+Set up an RDS database to store the photos. Make users register and login to the site.
+Use CloudFront on the front end to serve the photos.
+Use a Network Access Control List (NACL) to block the IP address of unauthorized users.
+Remove public read access from your bucket, then provide your users with presigned URLs to access the photos.
+
+
+---------------------
+
+
+A software company is developing an online “learn a new language” application. The application will be designed to teach up to 20 different languages for native English and Spanish speakers. It should leverage a service that is capable to keep up with 24,000 read units per second and 3,300 write units per second, and scale for spikes and off-peak. The application will also need to store user progress data. Which AWS service would meet these requirements?
+
+
+DynamoDB
+
+
+S3
+
+
+RDS
+
+
+EBS
+
+---------------------
+
+Your company uses IoT devices installed in businesses to provide those business real-time data for analysis. You have decided to use AWS Kinesis Data Firehose to stream the data to multiple backend storing services for analytics. Which service listed is not a viable solution to stream the real time data to?
+
+
+ElasticSearch
+
+
+Redshift
+
+
+Athena
+
+
+S3
+
+---------------------
+
+
+Recent worldwide events have dictated that you perform your duties as a Solutions Architect from home. You need to be able to manage several EC2 instances while working from home and have been testing the ability to ssh into these instances. One instance in particular has been a problem and you cannot ssh into this instance. What should you check first to troubleshoot this issue?
+
+
+Make sure that your VPC has a connected Virtual Private Gateway.
+
+
+Make sure that the Security Group for the instance has ingress on port 443 from your home IP address.
+
+
+Make sure that the security group for the instance has ingress on port 80 from your home IP address.
+
+
+Make sure that the security group for the instance has ingress on port 22 from your home IP address.
+
+---------------------
+
+After an IT Steering Committee meeting, you have been put in charge of configuring a hybrid environment for the company’s compute resources. You weigh the pros and cons of various technologies based on the requirements you are given. The main requirements to drive this selection are overall cost considerations and the ability to reuse existing internet connections. Which technology best meets these requirements?
+
+
+AWS Direct Connect
+
+
+AWS VPN
+
+
+VPC Peering
+
+
+AWS Direct Gateway
+
+
+---------------------
+
+You have been evaluating the NACLs in your company. Most of the NACLs are configured the same:
+100 All Traffic Allow
+200 All Traffic Deny
+* All Traffic Deny
+What function does the * All Traffic Deny rule perform?
+
+
+Traffic will be denied from specified IP addresses.
+
+
+It is there in case no other rules are defined.
+
+
+This rule ensures that if a packet doesn't match any of the other numbered rules, it's denied.
+
+
+The * specifies that it is an example rule.
+
+---------------------
+
+
+You work for a Defense contracting company. The company develops software applications which perform intensive calculations in the area of Mechanical Engineering related to metals for ship building. You have a 3-year contract and decide to purchase reserved EC2 instances for a 3-year duration. You are informed that the particular program has been cancelled abruptly and negotiations have brought the contract to an amicable conclusion one year early. What can you do to stop incurring charges and save money on the EC2 instances?
+
+
+Write AWS and ask to terminate the contract.
+
+
+Convert the instances to Spot Instances and allow them to go away through attrition.
+
+
+Sell the reserved instances on the Reserved Instance Marketplace.
+
+
+Change the instance states from running to stopped.
+
+
+
+---------------------
+
+
+A small startup company has begun using AWS for all of its IT infrastructure. The company has two AWS Solutions Architects, and they are very proficient with AWS deployments. They want to choose a deployment service that best meets the given requirements. Those requirements include version control of their infrastructure documentation and granular control of all of the services to be deployed. Which AWS service would best meet these requirements?
+
+
+CloudFormation
+
+
+Terraform
+
+
+Elastic Beanstalk
+
+
+OpsWorks
+
+---------------------
+
+
+You have been evaluating the NACLs in your company. Currently, you are looking at the default network ACL. Which statement is true about NACLs?
+A. The default configuration of the default NACL is Allow, and the default configuration of a custom NACL is Deny.
+B. The default configuration of the default NACL is Deny, and the default configuration of a custom NACL is Allow.
+C. The default configuration of the default NACL is Deny, and the default configuration of a custom NACL is Deny.
+D. The default configuration of the default NACL is Allow, and the default configuration of a custom NACL is Allow.
+Answer : A
+---------------------
+
+A company needs to deploy EC2 instances to handle overnight batch processing. This includes media transcoding and some voice to text transcription. This is not high priority work, and it is OK if these batch runs get interrupted. What is the best EC2 instance purchasing option for this work?
+
+
+Dedicated Hosts
+
+
+Reserved
+
+
+Spot
+
+
+On-Demand
+
+
+---------------------
+
+You are working for a large financial institution and preparing for disaster recovery and upcoming DR drills. A key component in the DR plan will be the MySQL database instances and their data. The Recovery Time Objective (RTO) is such that read replicas can be used to offload read traffic from the master database. Which items are key features of read replicas? Choose three answers.
+
+(Choose 3)
+
+You can have up to five read replicas per master, each with its own DNS endpoint.
+
+
+Synchronous replication
+
+
+When a problem is detected in the primary instance, it will automatically failover to the read replica.
+
+
+Read replica can be manually promoted as a standalone database instance.
+
+
+You can create read replicas within AZ, cross-AZ, or cross-Region.
+
+
+---------------------
+
+A company has a great deal of data in S3 buckets for which they want to create a database. Creating the RDS database, normalizing the data, and migrating to the RDS database will take time and is the long-term plan. But there's an immediate need to query this data to retrieve information necessary for an audit. Which AWS service will enable querying data in S3 using standard SQL commands?
+
+
+Amazon Athena
+
+
+DynamoDB
+
+
+Amazon SQL Connector
+
+
+There is no such service, but there are third-party tools.
+
+
+---------------------
+
+Your company is using a hybrid configuration because there are some legacy applications which are not easily converted and migrated to AWS. And with this configuration comes a typical scenario where the legacy apps must maintain the same private ip address and MAC address. You are attempting to convert the application to the Cloud and have configured an EC2 instance to house the application. What you are currently testing is removing the ENI from the legacy instance and attaching it to the EC2 instance. You want to attempt a warm attach. What does this mean?
+
+
+Attach the ENI before the public IP address is assigned.
+
+
+Attach the ENI to an instance when it's running.
+
+
+Attach the ENI to an instance when it is stopped.
+
+
+Attach the ENI when the instance is being launched.
+
+
+---------------------
+
+You have been assigned to create an architecture which uses load balancers to direct traffic to an Auto Scaling Group of EC2 instances across multiple Availability Zones. You were considering using an Application Load Balancer, but some of the requirements you have been given seem to point to a Classic Load Balancer. Which requirement would be better served by an Application Load Balancer?
+
+
+Path-based routing
+
+
+Support for TCP and SSL listeners
+
+
+Support for EC2-Classic
+
+
+Support for sticky sessions using application-generated cookies
+
+---------------------
+
+A software gaming company has produced an online racing game which uses CloudFront for fast delivery to worldwide users. The game also uses DynamoDB for storing in-game and historical user data. The DynamoDB table has a preconfigured read and write capacity. Users have been reporting slow down issues, and an analysis has revealed that the DynamoDB table has begun throttling during peak traffic times. Which step can you take to solve the throttling issue?
+
+
+Add a load balancer in front of the web servers.
+
+
+Add ElastiCache to cache frequently accessed data in memory.
+
+
+Add an SQS Queue to queue requests which could be lost.
+
+
+Make sure DynamoDB Auto Scaling is turned on.
+
+---------------------
+
+A consultant hired by a small company to configure an AWS environment. The consultant begins working with the VPC and launching EC2 instances within the VPC. The initial instances will be placed in a public subnet. The consultant begins to create security groups. What is true of security groups?
+
+
+Security groups are stateless.
+
+
+Security groups act at the VPC level, not the instance level.
+
+
+Security groups act at the subnet level, not the instance level.
+
+
+Security groups act at the instance level, not the subnet level.
+
+---------------------
+
+A new startup is considering the advantages of using DynamoDB versus a traditional relational database in AWS RDS. The NoSQL nature of DynamoDB presents a small learning curve to the team members who all have experience with traditional databases. The company will have multiple databases, and the decision will be made on a case-by-case basis. Which of the following use cases would favor DynamoDB? Select two.
+
+(Choose 2)
+
+Strong referential integrity between tables
+
+
+Storing metadata for S3 objects
+
+
+Managing web session data
+
+
+Storing infrequently accessed data
+
+
+Storing BLOB data
+
+---------------------
+
+You have configured an Auto Scaling Group of EC2 instances. You have begun testing the scaling of the Auto Scaling Group using a stress tool to force the CPU utilization metric being used to force scale out actions. The stress tool is also being manipulated by removing stress to force a scale in. But you notice that these actions are only taking place in five-minute intervals. What is happening?
+
+
+A load balancer is managing the load and limiting the effectiveness of stressing the servers.
+
+
+Auto Scaling Groups can only scale in intervals of five minutes or greater.
+
+
+The stress tool is configured to run for five minutes.
+
+
+The Auto Scaling Group is following the default cooldown procedure.
+
+---------------------
+
+You are working as a Solutions Architect in a large healthcare organization. You have many Auto Scaling Groups that utilize launch configurations. Many of these launch configurations are similar yet have subtle differences. You’d like to use multiple versions of these launch configurations. An ideal approach would be to have a default launch configuration and then have additional versions that add additional features. Which option best meets these requirements?
+
+
+Use launch templates instead.
+
+
+Simply create the needed versions. Launch configurations already have versioning.
+
+
+Create the launch configurations in CloudFormation and version the templates accordingly.
+
+
+Store the launch configurations in S3 and turn on versioning.
+
+
+---------------------
+
+
+After an IT Steering Committee meeting, you have been put in charge of configuring a hybrid environment for the company’s compute resources. You weigh the pros and cons of various technologies, such as VPN and Direct Connect, and based on the requirements you have decided to configure a VPN connection. What features and advantages can a VPN connection provide?
+
+
+It provides a network connection between two VPCs that can route traffic using IPv4 or IPv6.
+
+
+It provides a cost-effective, private network connection that bypasses the internet.
+
+
+It provides a private, dedicated network connection between an on-premises network and the VPC.
+
+
+It provides a connection between an on-premises network and a VPC, using a secure and private connection with IPsec and TLS.
+
+
+---------------------
+
+Your company security team has planned to do penetration testing on EC2 instances. Which policy will provide information on performing penetration testing on your EC2 instances?
+
+
+IAM Policy
+
+
+AWS Terms and Conditions Policy
+
+
+JSON Policy
+
+
+Customer Service Policy for Penetration Testing
+
+---------------------
+
+A gaming company is designing several new games which focus heavily on player-game interaction. The player makes a certain move and the game has to react very quickly to change the environment based on that move and to present the next decision for the player in real-time. A tool is needed to continuously collect data about player-game interactions and feed the data into the gaming platform in real-time. Which AWS service can best meet this need?
+
+
+Kinesis Data Analytics
+
+
+Kinesis Data Streams
+
+
+AWS IoT
+
+
+AWS Lambda
+
+---------------------
+
+
+After an IT Steering Committee meeting, you have been put in charge of configuring a hybrid environment for the company’s compute resources. You weigh the pros and cons of various technologies based on the requirements you are given. The decision you make is to go with Direct Connect. Which option best describes the features Direct Connect provides?
+
+
+A private, dedicated network connection between your facilities and AWS
+
+
+A connection between on-premises and VPC, using secure and private connection with IPsec and TLS
+
+
+A network connection between two VPCs that can route traffic using IPv4 or IPv6
+
+
+A cost-effective, private network connection that bypasses the internet
+
+---------------------
+
+You are designing an architecture for a financial company which provides a day trading application to customers. After viewing the traffic patterns for the existing application you notice that traffic is fairly steady throughout the day, with the exception of large spikes at the opening of the market in the morning and at closing around 3 pm. Your architecture will include an Auto Scaling Group of EC2 instances. How can you configure the Auto Scaling Group to ensure that system performance meets the increased demands at opening and closing of the market?
+
+
+Configure your Auto Scaling Group to have a desired size which will be able to meet the demands of the high-traffic periods.
+
+
+Use a load balancer to ensure that the load is distributed evenly during high-traffic periods.
+
+
+Configure a Dynamic Scaling Policy to scale based on CPU Utilization.
+
+
+Use a predictive scaling policy on the Auto Scaling Group to meet opening and closing spikes.
+
+---------------------
+
+You suspect that one of the AWS services your company is using has gone down. How can you check on the status of this service?
+
+
+AWS Organizations
+
+
+AWS Personal Health Dashboard
+
+
+Amazon Inspector
+
+
+AWS Trusted Advisor
+
+---------------------
+
+
+You work for an oil and gas company as a lead in data analytics. The company is using IoT devices to better understand their assets in the field (for example, pumps, generators, valve assemblies, and so on). Your task is to monitor the IoT devices in real-time to provide valuable insight that can help you maintain the reliability, availability, and performance of your IoT devices. What tool can you use to process streaming data in real time with standard SQL without having to learn new programming languages or processing frameworks?
+
+
+AWS Kinesis Streams
+
+
+AWS Lambda
+
+
+AWS RedShift
+
+
+Kinesis Data Analytics
+
+---------------------
+
+Your company has asked you to look into some latency issues with the company web app. The application is backed by an AWS RDS database. Your analysis has determined that the requests made of the application are very read heavy, and this is where improvements can be made. Which service can you use to store frequently accessed data in-memory?
+
+
+ElastiCache
+
+
+EBS
+
+
+DynamoDB
+
+
+DAX
+
+
+---------------------
+
+An accounting company has big data applications for analyzing actuary data. The company is migrating some of its services to the cloud, and for the foreseeable future, will be operating in a hybrid environment. They need a storage service that provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources. Which AWS service can meet these requirements?
+
+
+Glacier
+
+
+EFS
+
+
+S3
+
+
+EBS
+
+
+---------------------
+
+
+A testing team is using a group of EC2 instances to run batch, automated tests on an application. The tests run overnight, but don’t take all night. The instances sit idle for long periods of time and accrue unnecessary charges. What can you do to stop these instances when they are idle for long periods?
+
+
+Write a cron job which queries the instance status. Also write a Lambda function which can be triggered upon a certain status and stop the instance.
+
+
+Write a cron job which queries the instance status. If a certain status is met, have the cron job kick off CloudFormation to terminate the existing instance, and create a new instance from a template.
+
+
+You can create a CloudWatch alarm that is triggered when the average CPU utilization percentage has been lower than 10 percent for 4 hours, and stops the instance.
+
+
+Write a Python script which queries the instance status. Also write a Lambda function which can be triggered upon a certain status and stop the instance.
+
+
+---------------------
+
+You have been evaluating the NACLs in your company. Currently, you are looking at the default network ACL. Which statement is true regarding subnets and NACLs?
+
+
+Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.
+
+
+The default NACL will always be associated with each subnet.
+
+
+You have to delete the default NACL before creating a custom NACL to associate with a subnet.
+
+
+Only public subnets can use the default NACL.
+
+---------------------
+
+A car insurance company keeps specific details about accidents on file for a year, for quick retrieval, and then archives those files to long-term storage. A recent audit has approved the general steps they are taking, but pointed out many deficiencies in the technologies they are using. You have been hired as a consultant to come up with an automated solution. Your solution will recommend AWS storage options. What storage options could you recommend to meet the lifecycle requirements outlined, provide high availability, and offer the most savings?
+
+
+Store the accident files in EBS volumes for a year, then migrate them to Glacier.
+
+
+Store the accident files in Glacier for maximum cost savings.
+
+
+Configure the lifecycle policy to store the accident files in S3 for a year and then archive them in Glacier.
+
+
+Store the accident files in S3 for a year, then have the lifecycle policy move them to S3 IA
+
+---------------------
+
+An Application Load Balancer is fronting an Auto Scaling Group of EC2 instances, and the instances are backed by an RDS database. The Auto Scaling Group has been configured to use the Default Termination Policy. You are testing the Auto Scaling Group and have triggered a scale-in. Which instance will be terminated first?
+
+
+The longest running instance.
+
+
+The instance launched from the oldest launch configuration.
+
+
+The instance for which the load balancer stops sending traffic.
+
+
+The Auto Scaling Group will randomly select an instance to terminate.
+
+---------------------
+
+A small startup company has begun using AWS for all of its IT infrastructure. The company has one AWS Solutions Architect and the demands for their time are overwhelming. The software team has been given permission to deploy their Python and PHP applications on their own. They would like to deploy these applications without having to worry about the underlying infrastructure. Which AWS service would they use for deployments?
+
+
+Elastic Beanstalk
+
+
+CloudFormation
+
+
+CloudFront
+
+
+CodeDeploy
+
+---------------------
+
+You are evaluating the security setting within the main company VPC. There are several NACLs and security groups to evaluate and possibly edit. What is true regarding NACLs and security groups?
+
+
+Network ACLs and security groups are both stateful.
+
+
+Network ACLs and stateful, and security groups are stateless.
+
+
+Network ACLs are stateless, and security groups are stateful.
+
+
+Network ACLs and security groups are both stateless.
+
+---------------------
+
+A Solutions Architect has been assigned the task of helping the company development optimize the performance of their web application. End users have been complaining about slow response times. The Solutions Architect has determined that improvements can be realized by adding ElastiCache to the solution. What can ElastiCache do to improve performance?
+
+
+Delivers up to 10x performance improvement from milliseconds to microseconds or even at millions of requests per second.
+
+
+Cache frequently accessed data in-memory.
+
+
+Offload some of the write traffic to the database.
+
+
+Queue up requests and allow the processor time to catch-up.
+
+
+---------------------
+
+A new startup company decides to use AWS to host their web application. They configure a VPC as well as two subnets within the VPC. They also attach an internet gateway to the VPC. In the first subnet, they create the EC2 instance which will host their web application. They finish the configuration by making the application accessible from the Internet. The second subnet hosts their database and they don’t want the database accessible from the Internet. Which statement best describes this scenario?
+
+
+The web server is in a private subnet, and the database server is in a private subnet. A third subnet has a route to the Internet Gateway, which allows internet access.
+
+
+The web server is in a public subnet, and the database server is in a private subnet. The public subnet has a route to the internet gateway in the route table.
+
+
+The web server is in a private subnet, and the database server is in a public subnet. The public subnet has a route to the internet gateway in the route table.
+
+
+The web server is in a public subnet, and the database server is in a public subnet. The public subnet has a route to the internet gateway in the route table.
+
+---------------------
+
+You work for an advertising company that has a real-time bidding application. You are also using CloudFront on the front end to accommodate a worldwide user base. Your users begin complaining about response times and pauses in real-time bidding. What is the best service that can be used to reduce DynamoDB response times by an order of magnitude (milliseconds to microseconds)?
+
+
+ElastiCache
+
+
+DAX
+
+
+CloudFront Edge Caches
+
+
+DynamoDB Auto Scaling
+
+---------------------
+
+You work for an online retailer where any downtime at all can cause a significant loss of revenue. You have architected your application to be deployed on an Auto Scaling Group of EC2 instances behind a load balancer. You have configured and deployed these resources using a CloudFormation template. The Auto Scaling Group is configured with default settings, and a simple CPU utilization scaling policy. You have also set up multiple Availability Zones for high availability. The Load Balancer does health checks against an html file generated by script. When you begin performing load testing on your application and notice in CloudWatch that the load balancer is not sending traffic to one of your EC2 instances. What could be the problem?
+
+
+You are load testing at a moderate traffic level and not all instances are needed.
+
+
+The EC2 instance has failed EC2 status checks.
+
+
+The EC2 instance has failed the load balancer health check.
+
+
+The instance has not been registered with CloudWatch.
+
+---------------------
+
+Your company is storing stack traces for application errors in an S3 Bucket. The engineers using these stack traces review them when addressing application issues. It has been decided that the files only need to be kept for four weeks then they can be purged. How can you meet this requirement in S3?
+
+
+Write a cron job to purge the files after one month.
+
+
+Configure the S3 Lifecycle rules to purge the files after a month.
+
+
+Create a bucket policy to purge the rules after one month.
+
+
+Add an S3 Lifecycle rule to archive these files to Glacier after one month.
+
+---------------------
+
+You have been assigned to create an architecture which uses load balancers to direct traffic to an Auto Scaling Group of EC2 instances across multiple Availability Zones. The application to be deployed on these instances is a life insurance application which requires path-based and host-based routing. Which type of load balancer will you need to use?
+
+
+Classic Load Balancer
+
+
+Application Load Balancer
+
+
+Network Load Balancer
+
+
+Any type of load balancer will meet these requirements.
+
+---------------------
+
+You are working as a Solutions Architect for an online travel company. Your application is going to use an Auto Scaling Group of EC2 instances but you need to have some decoupling to store messages because of high volume. Which AWS service can be added to the solution that can meet this requirement?
+
+
+Elasticache
+
+
+RDS Read Replicas
+
+
+AWS SQS
+
+
+AWS Simple Workflow Service
+
+---------------------
+
+You have been assigned to migrate an application and the servers it runs on to the company AWS cloud environment. You have created a checklist of steps necessary to perform this migration. A subsection in the checklist is security considerations. One of the things that you need to consider is the shared responsibility module. Which option does the customer handle under the shared responsibility model?
+
+
+Network infrastructure
+
+
+Identity and Access Management
+
+
+Hardware infrastructure
+
+
+Availability Zones
+
+---------------------
+
+You are managing S3 buckets in your organization. One of the buckets in your organization has gotten some bizarre uploads and you would like to be aware of these types of uploads as soon as possible. Because of that, you configure event notifications for this bucket. Which of the following is NOT a supported destination for event notifications?
+A. Lambda function
+B. SQS
+C. SNS
+D. SES
+Answer : D
+
+---------------------
+
+You work for a large healthcare provider as an AWS lead architect. There is a need to collect data in real-time from devices throughout the organization. The data will include log and event data from sources such as servers, desktops, and mobile devices. The data initially captured will be technical device data, but the goal is to expand the effort to collecting clinical data in real-time from handheld devices used by nurses and doctors. Which AWS service best meets this requirement?
+
+
+Kinesis Data Streams
+
+
+AWS Lambda
+
+
+AWS Redshift
+
+
+Kinesis Video Streams
+
+---------------------
+
+A company has an Auto Scaling Group of EC2 instances hosting their retail sales application. Any significant downtime for this application can result in large losses of profit. Therefore the architecture also includes an Application Load Balancer and an RDS database in a Multi-AZ deployment. What will happen to preserve high availability if the primary database fails?
+
+
+A Lambda function kicks off a CloudFormation template to deploy a backup database.
+
+
+The CNAME is switched from the primary db instance to the secondary.
+
+
+The Elastic IP address for the primary database is moved to the secondary database.
+
+
+Route 53 points the CNAME to the secondary database instance.
+
+---------------------
+
+Your company needs to deploy an application in the company AWS account. The application will reside on EC2 instances in an Auto Scaling Group fronted by an Application Load Balancer. The company has been using Elastic Beanstalk to deploy the application due to limited AWS experience within the organization. The application now needs upgrades and a small team of subcontractors have been hired to perform these upgrades. Which web service can be used to provide users that you authenticate with short-term security credentials that can control access to your AWS resources?
+
+
+AWS SSO
+
+
+IAM user accounts
+
+
+AWS STS
+
+
+IAM Group
+
+---------------------
+
+Several instances you are creating have a specific data requirement. The requirement states that the data on the root device needs to persist independently from the lifetime of the instance. After considering AWS storage options, which is the simplest way to meet these requirements?
+
+
+Store your root device data on Amazon EBS and set the DeleteOnTermination attribute to false using a block device mapping.
+
+
+Send the data to S3 using S3 lifecycle rules.
+
+
+Create a cron job to migrate the data to S3.
+
+
+Store the data on the local instance store.
+
+---------------------
+
+The CFO of your company approaches you and inquires about cutting costs in your AWS account. One area you are able to identify for cost cutting is in S3. There is data in S3 that is very rarely used and has only been retained for audit purposes. You decide to archive this data to a cheaper storage solution. Which AWS solution would meet this requirement?
+
+
+Use a lifecycle policy to archive the data to Glacier.
+
+
+Write a cron job to archive the data to DynamoDB.
+
+
+Use a lifecycle policy to archive the data to Redshift.
+
+
+Use a lifecycle policy to archive the data to Amazon SQS.
+
+---------------------
+
+A software company has created an application to capture service requests from users and also enhancement requests. The application is deployed on an Auto Scaling group of EC2 instances fronted by an Application Load Balancer. The Auto Scaling group has scaled to maximum capacity, but there are still requests being lost. The cost of these instances should remain the same. What step can the company take to ensure requests aren’t lost?
+
+
+Use an SQS queue with the Auto Scaling group to capture all requests.
+
+
+Use a Network Load Balancer instead for faster throughput.
+
+
+Use larger instances in the Auto Scaling group.
+
+
+Use spot instances to save money.
+
+---------------------
+
+A travel company has deployed a website which serves travel updates to users all over the world. The traffic this database serves is very read heavy and can have some latency issues at certain times of the year. What can you do to alleviate these latency issues?
+
+
+Configure RDS Multi-AZ
+
+
+Configure multi-Region RDS
+
+
+Add read replicas
+
+
+Place CloudFront in front of the Database.
+
+---------------------
+
+You have been put in charge of S3 buckets for your company. The buckets are separated based on the type of data they are holding and the level of security required for that data. You have several buckets that have data you want to safeguard from accidental deletion. Which configuration will meet this requirement?
+
+
+Archive sensitive data to Amazon Glacier.
+
+
+Signed URLs to all users to access the bucket.
+
+
+Configure cross-account access with an IAM Role prohibiting object deletion in the bucket.
+
+
+Enable versioning on the bucket and multi-factor authentication delete as well.
+
+---------------------
+
+Your organization uses AWS CodeDeploy for deployments. Now you are starting a project on the AWS Lambda platform. For your deployments, you’ve been given a requirement of performing blue-green deployments. When you perform deployments, you want to split traffic, sending a small percentage of the traffic to the new version of your application. Which deployment configuration will allow this splitting of traffic?
+
+
+Weighted routing
+
+
+Canary
+
+
+All at Once
+
+
+Linear
+
+---------------------
+
+Your company has recently converted to a hybrid cloud environment and will slowly be migrating to a fully AWS cloud environment. The AWS side is in need of some steps to prepare for disaster recovery. A disaster recovery plan needs drawn up and disaster recovery drills need to be performed for compliance reasons. The company wants to establish Recovery Time and Recovery Point Objectives. The RTO and RPO can be pretty relaxed. The main point is to have a plan in place, with as much cost savings as possible. Which AWS disaster recovery pattern will best meet these requirements?
+
+
+Warm Standby
+
+
+Pilot Light
+
+
+Multi Site
+
+
+Backup and restore
+
+---------------------
+
+A team member has been tasked to configure four EC2 instances for four separate applications. These are not high-traffic apps, so there is no need for an Auto Scaling Group. The instances are all in the same public subnet and each instance has an EIP address, and all of the instances have the same Security Group. But none of the instances can send or receive internet traffic. You verify that all the instances have a public IP address. You also verify that an internet gateway has been configured. What is the most likely issue?
+
+
+You are using the default nacl.
+
+
+Each instance needs its own security group.
+
+
+The route table is corrupt.
+
+
+There is no route in the route table to the internet gateway (or it has been deleted).
+
+---------------------
+
+Your architecture consists of an Application Load Balancer front, an Auto Scaling Group of EC2 instances, backed by an RDS database. Your security team has notified you of cross-site scripting attacks and also SQL injection attacks on the application. You have been asked to take steps to quickly mitigate these attacks. What steps should you take?
+
+
+Configure Amazon GuardDuty to prevent these attacks.
+
+
+Use Amazon Inspector to detect these attacks and manually block the IP addresses from which these attacks come.
+
+
+Using the AWS WAF service, set up rules which block SQL injection, and cross-site scripting attacks. Associate the rules to the ALB.
+
+
+Immediately block the offending IP addresses on the NACL.
+
+---------------------
+
+Your company has performed a Disaster Recovery drill which failed to meet the Recovery Time Objective (RTO) desired by executive management. The failure was due in large part by the amount of time taken to restore proper functioning on the database side. You have given management a recommendation of implementing synchronous data replication for the RDS database to help meet the RTO. Which of these options can perform synchronous data replication in RDS?
+
+
+DAX
+
+
+Read Replicas
+
+
+RDS Multi-AZ
+
+
+AWS Database Migration
+
+---------------------
+
+Your application is housed on an Auto Scaling Group of EC2 instances. The application is backed by the Multi-AZ MySQL RDS database and an additional read replica. You need to simulate some failures for disaster recovery drills. Which event will not cause an RDS to perform a failover to the standby replica?
+
+
+Read replica failure
+
+
+Loss of network connectivity to primary
+
+
+Storage failure on primary
+
+
+Compute unit failure on primary
+
+---------------------
+
+A consultant hired by a small company to configure an AWS environment. The consultant begins working with the VPC and launching EC2 instances within the VPC. The initial instances will be placed in a public subnet. The consultant begins to create security groups. What is true of security groups?
+
+
+You can’t specify separate rules for inbound and outbound traffic.
+
+
+You can specify allow rules but not deny rules.
+
+
+By default, a security group includes an inbound rule that allows all inbound traffic.
+
+
+You can specify deny rules, but not allow rules.
+
+
+---------------------
+
+A company has an auto scaling group of EC2 instances hosting their retail sales application. Any significant downtime for this application can result in large losses of profit. Therefore the architecture also includes an Application Load Balancer and an RDS database in a Multi-AZ deployment. The company has a very aggressive Recovery Time Objective (RTO) in case of disaster. How long will a failover of an RDS database typically complete
+
+
+Under 10 minutes
+
+
+Almost instantly
+
+
+one to two minutes
+
+
+Within an hour
+
+---------------------
+

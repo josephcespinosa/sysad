@@ -1,0 +1,90 @@
+KUBERNETES
+
+
+
+
+INSTALL KUBERNETES
+apt update
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt-get install kubeadm kubelet kubectl
+
+
+Building docker swarm
+docker swarm init	- initialize docker manager
+docker swarm join	- join to docker manager
+	docker swarm join --token SWMTKN-1-4amu5atq2g27pz4wd7plw4dps5wjwvdgz2st1bvlnqa2xgk19s-3dkzx6f8uj9abj4h5q88wugyl 10.19.3.216:2377
+
+
+
+
+installing minikube
+
+
+minikube start --driver=none
+sudo apt-get install -y conntrack
+
+
+[ Access Dashboard ]
+1. Enable Proxy
+	kubectl proxy --address='0.0.0.0' --disable-filter=true
+2 Access Link
+	http://10.19.3.200:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/overview?namespace=_all
+3. Revisit Dashboard Link
+	kubectl cluster-info
+
+
+sudo docker image build -t axesk/default-app .
+
+RUN IMAGE
+docker run -dp 3000:3000 getting-started
+
+run web server
+ docker run -it --rm -d -p 8080:80 --name web nginx
+
+
+
+
+BUILD
+docker image build -t axesk/default-app .
+RUN
+docker run --name app -dit -p 9000:80 axesk/app
+docker run --hostname web.tsnet.net --name app -dit -p 9000:80 axesk/app
+r
+
+RUN WITH CAPABILITY
+docker run --name app cap-add=SYS_ADMIN -dit -p 9000:80 axesk/app
+RUN COMMAND INSIDE CONTAINER
+docker exec -it [container-name] command i.e service nginx status
+DUPLICATE RUNNING IMAGE
+docker run --name customer01 -dit -p 9010:80 axesk/app 
+docker run --name customer-app1 -dit -p 9000:80  [image-id]
+
+
+jce-repo.jfrog.com
+[ADD TAG TO IMAGE]
+docker tag [imageid] jcerepo.jfrog.io/axesk-docker/axesk-docker:[tag-name]
+[PUSH]
+docker push jcerepo.jfrog.io/axesk-docker/axesk-docker:[tag-name]
+[PULL]
+docker pull jcerepo.jfrog.io/axesk-docker/axesk-docker:[tag-name]
+
+
+
+
+
+
+
+
+
+Kubernetes Components
+
+SERVICE - STATIC IP ADDRESS
+INGRESS - REVERSE PROXY INSIDE CONTAINER
+CONFIGMAP - 
+SECRET - USED TO STORE SECRET DATA i.e credentials
+		- base64 encoded
+VOLUMES - PERSIST DATA
+
+
+
+

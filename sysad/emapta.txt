@@ -1,0 +1,51 @@
+[Teammates]
+Programmer - jibs
+Programmer - marvin.reyes
+
+
+
+[Research]
+ETL tools and packages
+automate running kubernetes jobs 
+vpn setup GCP 
+Google Sheet to PDF Project
+ldap microservice - https://github.com/telemark/micro-auth-ldap
+Microfrontend Deployment and Repository Management
+GKE DTA deployment review
+k6 poc
+Docker
+JIRA Portal configuration for ETAP ServiceDesk
+empowerteams.emapta.com 
+SMS microservice authentication
+netsuite integration
+cloud mailer cloud function with sendgrid adjustment
+code telemetry implementations
+
+
+
+[Systems]
+eAutomate 
+ESP Production Database
+
+
+
+[Tools]
+jitsi - video conferencing
+sendgrid 
+
+
+
+[Partners]
+Globelabs 
+Whispers
+JeonSoft
+
+
+[Tasks]
+- ITSec Vulnerability Scan Results update
+- ESP Production Server Re-assesment
+- GCP Resource reduction
+- AppsTeam discussion regarding vuln resolution timelines
+- Continue working on Infra POCs and Upgrades
+- password expiration notification testing with Gerszon and Jabbs
+- eAutomate tool it deployment and rollback testing

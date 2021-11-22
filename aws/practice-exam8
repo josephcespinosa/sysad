@@ -1,0 +1,50 @@
+PRACTICE EXAM
+
+Is Federated Storage Engine currently supported by Amazon RDS for MySQL?
+A. Only for Oracle RDS instances
+B. No
+C. Yes
+D. Only in VPC
+Answer : B
+
+Can I move a Reserved Instance from one Region to another?
+A. No
+B. Only if they are moving into GovCloud
+C. Yes
+D. Only if they are moving to US East from another region.
+Answer : A
+
+What is Amazon Glacier?
+A. You mean Amazon “Iceberg”: it’s a low-cost storage service.
+B. A security tool that allows to “freeze” an EBS volume and perform computer forensics on it.
+C. A low-cost storage service that provides secure and durable storage for data archiving and backup.
+D. It’s a security tool that allows to “freeze” an EC2 instance and perform computer forensics on it.
+Answer : C
+
+What is the durability of S3 RRS?
+A. 99.99%
+B. 99.95%
+C. 99.995%
+D. 99.999999999%
+Answer : A
+
+What does specifying the mapping /dev/sdc=none when launching an instance do?
+A. Prevents /dev/sdc from creating the instance.
+B. Prevents /dev/sdc from deleting the instance.
+C. Set the value of /dev/sdc to ‘zero’.
+D. Prevents /dev/sdc from attaching to the instance.
+Answer : D
+
+Is Federated Storage Engine currently supported by Amazon RDS for MySQL?
+A. Only for Oracle RDS instances
+B. No
+C. Yes
+D. Only in VPC
+Answer : B
+
+Is there a limit to how many groups a user can be in?
+A. Yes for all users
+B. Yes for all users except root
+C. No
+D. Yes unless special permission granted
+Answer : A
