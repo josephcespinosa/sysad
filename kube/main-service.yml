@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: <Image>
+        ports:
+        - containerPort: <Port>
+#       env: 
+#       - name: MONGO_INITDB_ROOT_USERNAME
+#         value: 
+#       - name: MONGO_INITDB_ROOT_PASSWORD
+#         value:
+
+
+
