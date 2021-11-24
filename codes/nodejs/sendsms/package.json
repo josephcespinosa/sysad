@@ -1,0 +1,8 @@
+{
+  "name": "send-sms",
+  "version": "0.0.1",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "whispir-node-sdk": "^2.1.1"
+  }
+}

@@ -1,0 +1,23 @@
+[ROADMAP]
+
+Infra Stabilization
+- GKE Migration
+- High Availability
+- Data warehousing [Data lake Phase 1]
+
+GitOps
+- Repository Management
+- IaaC [Terraform / Puppet Enterprise / AWS Cloud Formation]
+
+DevOps
+- CI/CD Implementation
+- Internal Tooling [database, endpoint, etc.]
+- Application/Service Monitoring
+- Data warehousing [Data lake Phase 2]
+
+SecOps
+- Automated Security Testing
+- Secure Network Architecture
+- Data warehousing [Data lake Phase 3]
+
+Multi-Region Implementation
